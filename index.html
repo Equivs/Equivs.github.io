@@ -26,7 +26,7 @@
         
 /* 상단 내비게이션 탭 스타일 */
         nav {
-            text-align: center; /* 탭 전체를 가운데로 */
+            text-align: center;
             margin-bottom: 40px;
             border-bottom: 2px solid #e0deda;
             padding-bottom: 15px;
@@ -36,28 +36,24 @@
             text-decoration: none;
             color: #555555;
             font-weight: 700;
-            margin: 0 5px;
+            margin: 0 10px;
             padding: 8px 16px;
-            border-radius: 12px;
+            border-radius: 20px;
             transition: background-color 0.3s, color 0.3s;
-            
-            /* 💡 구분선 추가 설정 */
             display: inline-block;
         }
 
-        /* 첫 번째 탭(Home)을 제외한 나머지 탭들의 왼쪽에 회색 선 추가 */
-        nav a:not(:first-child) {
-            border-left: 2px solid #d0ccc6; /* 회색 선 두께와 색상 */
-            border-radius: 0; /* 선이 들어가므로 모서리 둥글기 초기화 (원하시면 유지해도 됩니다) */
-            padding-left: 20px;
-            margin-left: 10px;
+        /* 마우스를 올렸을 때 (이제 둥글기나 선에 방해받지 않고 깔끔하게 작동합니다) */
+        nav a:hover {
+            background-color: #82bab3;
+            color: white;
         }
 
-        /* 마우스를 올렸을 때 색상 변화 */
-        nav a:hover {
-            background-color: #e8833a;
-            color: white;
-            border-radius: 12px; /* 호버 시 다시 둥글게 */
+        /* 💡 독립적인 구분선 스타일 */
+        .divider {
+            color: #d0ccc6;          /* 선의 색상 */
+            font-weight: 300;        /* 선의 두께 느낌 조절 */
+            user-select: none;       /* 마우스 드래그로 선택되지 않게 방지 */
         }
 
         /* h1, p 요소를 가운데 정렬 */
@@ -75,8 +71,11 @@
 <body>
     <nav>
         <a href="index.html">Home</a>
+        <span class="divider">|</span>
         <a href="tab1.html">Tab 1</a>
+        <span class="divider">|</span>
         <a href="tab2.html">Tab 2</a>
+        <span class="divider">|</span>
         <a href="tab3.html">Tab 3</a>
     </nav>
     
