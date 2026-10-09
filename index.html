@@ -48,12 +48,16 @@
         /* 첫 번째 탭(Home)을 제외한 나머지 탭들의 왼쪽에 회색 선 추가 */
         nav a:not(:first-child) {
             border-left: 2px solid #d0ccc6; /* 회색 선 두께와 색상 */
+            border-radius: 0; /* 선이 들어가므로 모서리 둥글기 초기화 (원하시면 유지해도 됩니다) */
             padding-left: 20px;
             margin-left: 10px;
+        }
+
         /* 마우스를 올렸을 때 색상 변화 */
         nav a:hover {
-            background-color: #82bab3;
+            background-color: #e8833a;
             color: white;
+            border-radius: 12px; /* 호버 시 다시 둥글게 */
         }
 
         /* h1, p 요소를 가운데 정렬 */
