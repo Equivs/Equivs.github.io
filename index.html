@@ -24,8 +24,38 @@
             line-height: 1.6;
         }
         
+/* 상단 내비게이션 탭 스타일 */
+        nav {
+            text-align: center; /* 탭 전체를 가운데로 */
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e0deda;
+            padding-bottom: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 700;
+            margin: 0 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 마우스를 올렸을 때 색상 변화 */
+        nav a:hover {
+            background-color: #e8833a;
+            color: white;
+        }
+
+        /* h1, p 요소를 가운데 정렬 */
+        h1, p {
+            text-align: center;
+        }
+        
         h1 {
             color: #d35400;
+            margin-top: 20px;
         }
     </style>
 </head>
