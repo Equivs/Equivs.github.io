@@ -127,59 +127,79 @@
         }
 
         p {
-            text-align: left; /* 기본은 좌측 정렬 */
+            text-align: left;
         }
 
         .text-center {
-            text-align: center; /* 필요시 가운데 정렬 */
+            text-align: center;
         }
 
-        /* list-up styles */
-        .subject-list {
-            text-align: left;
+        /* 전체 컨테이너 및 아코디언 리스트 스타일 */
+        .subject-container {
             max-width: 500px;
             margin: 30px auto;
-            padding-left: 0;
-            list-style: none;
+            text-align: left;
         }
 
-        .subject-list > li {
-            margin-bottom: 25px;
+        .year-group {
             background: white;
-            padding: 20px;
+            margin-bottom: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+            transition: background-color 0.2s;
         }
 
-        /* Listing */
-        .subject-list .year {
+        .year-group:hover {
+            background-color: #f7faf9;
+        }
+
+        /* 연도 제목 (클릭 영역) 스타일 */
+        .year {
             font-size: 1.1em;
             font-weight: 700;
             color: #82bab3;
-            padding: 18px 20px;
+            padding: 18px 20px 18px 40px;
             cursor: pointer;
-            list-style: none;
             user-select: none;
             outline: none;
+            position: relative;
+            list-style: none;
+            text-align: left !important;
             display: block;
         }
 
-        /* 브라우저 기본 삼각형 마커 완전히 숨기기 */
         .year::-webkit-details-marker {
             display: none;
+            content: "";
         }
 
-        .subject-list ul {
+        .year::before {
+            content: "▶";
+            position: absolute;
+            left: 20px;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+            color: #82bab3;
+        }
+
+        details[open] > .year::before {
+            transform: rotate(90deg);
+        }
+
+        /* 과목 목록 스타일 */
+        .year-group ul {
             margin: 0;
-            padding-left: 20px;
+            padding: 0 20px 20px 40px;
         }
 
-        .subject-list ul li {
-            margin: 6px 0;
+        .year-group ul li {
+            margin: 8px 0;
             color: #555555;
             list-style-type: disc;
         }
 
+        /* 과목 링크 스타일 */
         .subject-link {
             text-decoration: none;
             color: #555555;
@@ -230,46 +250,49 @@
     <div id="protected-content">
         <p>パスワードつきページの作動をとりあえず試したかっただけなので、まだ中身は何もないですよ。</p>
 
-        <details class="year-group">
-            <summary class="year">~2022 (高校まで)</summary>
-                <ul>
-                    <li><a href="notes/u22/subject1.html" class="subject-link">과목 1</a></li>
+        <div class="subject-container">
+            <details class="year-group">
+                <summary class="year">~2022 (高校まで)</summary>
+                    <ul>
+                        <li><a href="notes/u22/subject1.html" class="subject-link">과목 1</a></li>
                         <li><a href="notes/u22/subject2.html" class="subject-link">과목 2</a></li>
-            </ul>
-        </details>
+                    </ul>
+            </details>
         
-        <details class="year-group">
-            <summary class="year">023 (B1)</summary>
+            <details class="year-group">
+                <summary class="year">023 (B1)</summary>
+                    <ul>
+                        <li><a href="notes/23/lng_cgnt.html" class="subject-link">[Linguistics] Language & Cognition</a></li>
+                        <li><a href="notes/23/el_calc_1.html" class="subject-link">[Maths/Found] Elementary Calculus 1</a></li>
+                    </ul>
+            </details>
+        
+            <details class="year-group">
+                <summary class="year">2024 (B2)</summary>
                 <ul>
-                    <li><a href="notes/23/lng_cgnt.html" class="subject-link">[Linguistics] Language & Cognition</a></li>
-                    <li><a href="notes/23/el_calc_1.html" class="subject-link">[Maths/Found] Elementary Calculus 1</a></li>
+                    <li><a href="notes/24/calc_1.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 1</a></li>
+                    <li><a href="notes/24/calc_2.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 2</a></li>
+                    <li><a href="notes/24/anlys_1.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 1</a></li>
+                    <li><a href="notes/24/anlys_2.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 2</a></li>
+                    <li><a href="notes/24/lnalg_1.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 1</a></li>
+                    <li><a href="notes/24/lnalg_2.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 2</a></li>
+                    <li><a href="notes/24/metsp.html" class="subject-link">[Maths/Pure] Metric Spaces</a></li>
+                    <li><a href="notes/24/elecmag.html" class="subject-link">[Physics] Electromagnetics</a></li>
                 </ul>
-        </details>
+            </details>
         
-        <details class="year-group">
-            <summary class="year">2024 (B2)</summary>
-            <ul>
-                <li><a href="notes/24/calc_1.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 1</a></li>
-                <li><a href="notes/24/calc_2.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 2</a></li>
-                <li><a href="notes/24/anlys_1.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 1</a></li>
-                <li><a href="notes/24/anlys_2.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 2</a></li>
-                <li><a href="notes/24/lnalg_1.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 1</a></li>
-                <li><a href="notes/24/lnalg_2.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 2</a></li>
-                <li><a href="notes/24/metsp.html" class="subject-link">[Maths/Pure] Metric Spaces</a></li>
-                <li><a href="notes/24/elecmag.html" class="subject-link">[Physics] Electromagnetics</a></li>
-            </ul>
-        </details>
-        
-        <details class="year-group">
-            <summary class="year">2025-1 (B3-1)</summary>
-                <ul>
-                    <li><a href="notes/25/discr.html" class="subject-link">[Maths/Found] Discrete Math.s (w/ Recit.)</a></li>
-                    <li><a href="notes/25/toplg.html" class="subject-link">[Maths/Pure] Topology</a></li>
-                    <li><a href="notes/25/diffeqn.html" class="subject-link">[Maths/Appl] Differential Equations</a></li>
-                    <li><a href="notes/25/mchlrn.html" class="subject-link">[Maths/Appl] Math.s for Machine Learning 1</a></li>
-                    <li><a href="notes/25/pbstt.html" class="subject-link">[Maths/Appl] Probability & Statistics</a></li>
-                </ul>
-        </details>
+            <details class="year-group">
+                <summary class="year">2025-1 (B3-1)</summary>
+                    <ul>
+                        <li><a href="notes/25/discr.html" class="subject-link">[Maths/Found] Discrete Math.s (w/ Recit.)</a></li>
+                        <li><a href="notes/25/toplg.html" class="subject-link">[Maths/Pure] Topology</a></li>
+                        <li><a href="notes/25/diffeqn.html" class="subject-link">[Maths/Appl] Differential Equations</a></li>
+                        <li><a href="notes/25/mchlrn.html" class="subject-link">[Maths/Appl] Math.s for Machine Learning 1</a></li>
+                        <li><a href="notes/25/pbstt.html" class="subject-link">[Maths/Appl] Probability & Statistics</a></li>
+                    </ul>
+            </details>
+            
+        </div>
         
     </div>
 
