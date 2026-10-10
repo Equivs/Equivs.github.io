@@ -133,6 +133,58 @@
         .text-center {
             text-align: center; /* 필요시 가운데 정렬 */
         }
+
+        /* list-up styles */
+        .subject-list {
+            text-align: left;
+            max-width: 500px;
+            margin: 30px auto;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .subject-list > li {
+            margin-bottom: 25px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        /* Listing */
+        .subject-list .year {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #d35400;
+            display: inline-block;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0e9e2;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        .subject-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .subject-list ul li {
+            margin: 6px 0;
+            color: #555555;
+            list-style-type: disc;
+        }
+
+        .subject-link {
+            text-decoration: none;
+            color: #555555;
+            transition: color 0.2s;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .subject-link:hover {
+            color: #82bab3;
+        }
     </style>
 </head>
 <body>
@@ -171,12 +223,55 @@
     <!-- Class Notes -->
     <div id="protected-content">
         <p>パスワードつきページの作動をとりあえず試したかっただけなので、まだ中身は何もないですよ。</p>
+
+    <ul class="subject-list">
+            <details class="year-group">
+                <summary class="year">~2022 (高校まで)</summary>
+                <ul>
+                    <li><a href="notes/u22/subject1.html" class="subject-link">과목 1</a></li>
+                    <li><a href="notes/u22/subject2.html" class="subject-link">과목 2</a></li>
+                </ul>
+            </details>
+        
+            <details class="year-group">
+                <span class="year">2023 (B1)</span>
+                <ul>
+                    <li><a href="notes/23/lng_cgnt.html" class="subject-link">[Linguistics] Language & Cognition</a></li>
+                    <li><a href="notes/23/el_calc_1.html" class="subject-link">[Maths/Found] Elementary Calculus 1</a></li>
+                </ul>
+            </details>
+        
+            <details class="year-group">
+                <span class="year">2024 (B2)</span>
+                <ul>
+                    <li><a href="notes/24/calc_1.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 1</a></li>
+                    <li><a href="notes/24/calc_2.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 2</a></li>
+                    <li><a href="notes/24/anlys_1.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 1</a></li>
+                    <li><a href="notes/24/anlys_2.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 2</a></li>
+                    <li><a href="notes/24/lnalg_1.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 1</a></li>
+                    <li><a href="notes/24/lnalg_2.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 2</a></li>
+                    <li><a href="notes/24/metsp.html" class="subject-link">[Maths/Pure] Metric Spaces</a></li>
+                    <li><a href="notes/24/elecmag.html" class="subject-link">[Physics] Electromagnetics</a></li>
+                </ul>
+            </details>
+        
+            <details class="year-group">
+                <span class="year">2025-1 (B3-1)</span>
+                <ul>
+                    <li><a href="notes/25/discr.html" class="subject-link">[Maths/Found] Discrete Math.s (w/ Recit.)</a></li>
+                    <li><a href="notes/25/toplg.html" class="subject-link">[Maths/Pure] Topology</a></li>
+                    <li><a href="notes/25/diffeqn.html" class="subject-link">[Maths/Appl] Differential Equations</a></li>
+                    <li><a href="notes/25/mchlrn.html" class="subject-link">[Maths/Appl] Math.s for Machine Learning 1</a></li>
+                    <li><a href="notes/25/pbstt.html" class="subject-link">[Maths/Appl] Probability & Statistics</a></li>
+                </ul>
+            </details>
+        </ul>
     </div>
 
     <!-- 비밀번호 확인 스크립트 -->
     <script>
         function checkPassword() {
-            const correctPassword = "0911"; // 설정할 비밀번호
+            const correctPassword = "0911";
             
             const userInput = document.getElementById("password-input").value;
             const authScreen = document.getElementById("auth-screen");
