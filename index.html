@@ -6,12 +6,12 @@
 
     <link rel="icon" href="Files/Images/eq_favicon.png" type="image/png">
   
-    <!-- 1. Google Fonts에서 Zen Maru Gothic 불러오기 -->
+    <!-- Importing Fonts: Zen Maru Gothic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- 2. CSS로 폰트 및 간단한 디자인 설정 -->
+    <!-- Designs: Fonts, Backgrouds, Navigations etc. -->
     <style>
         body {
             /* 폰트 지정 (뒤에 sans-serif는 시스템 기본 폰트의 대체재입니다) */
@@ -26,7 +26,7 @@
             line-height: 1.6;
         }
         
-/* 상단 내비게이션 탭 스타일 */
+        /* Navigation (1): Table */
         nav {
             text-align: center;
             margin-bottom: 40px;
@@ -34,6 +34,7 @@
             padding-bottom: 15px;
         }
 
+        /* Navgation (2): Buttons */
         nav a {
             text-decoration: none;
             color: #555555;
@@ -45,13 +46,13 @@
             display: inline-block;
         }
 
-        /* 마우스를 올렸을 때 (이제 둥글기나 선에 방해받지 않고 깔끔하게 작동합니다) */
+        /* Navigation (3): Hovering */
         nav a:hover {
             background-color: #82bab3;
             color: white;
         }
 
-        /* 💡 독립적인 구분선 스타일 */
+        /* Navigation (4): Divisor */
         .divider {
             color: #d0ccc6;          /* 선의 색상 */
             font-weight: 400;        /* 선의 두께 느낌 조절 */
@@ -59,7 +60,19 @@
             user-select: none;       /* 마우스 드래그로 선택되지 않게 방지 */
         }
 
-        /* h1, p 요소를 가운데 정렬 */
+        /* Navigation (5): SNS Favicons */
+        .sns-icon {
+            height: 20px;            /* 아이콘 크기 조절 */
+            vertical-align: middle;  /* 텍스트와 높낮이 맞추기 */
+            margin-left: 10px;       /* 왼쪽 여백 */
+            transition: opacity 0.3s;
+        }
+        
+        .sns-icon:hover {
+            opacity: 0.7;            /* 마우스 올렸을 때 투명도 효과 */
+        }
+
+        /* Centering h1 */
         h1 {
             text-align: center;
             color: #82bab3;
@@ -84,14 +97,21 @@
     <nav>
         <a href="index.html">Home</a>
         <span class="divider"> | </span>
-        <a href="tab1.html">Tab 1</a>
+        <a href="sub1.html">Studies</a>
         <span class="divider"> | </span>
-        <a href="tab2.html">Tab 2</a>
+        <a href="sub2.html">Sakumon</a>
         <span class="divider"> | </span>
-        <a href="tab3.html">Tab 3</a>
+        <a href="sub3.html">Class Notes</a>
+        <span class="divider"> | </span>
+        <a href="https://x.com/Equiv__" target="_blank">
+            <img src="Files/Images/Favicons/favicon_x.png" alt="X (旧 Twitter)" class="sns-icon">
+        </a>
+        <a href="https://mathlog.info/users/Irpyu20e3hMAgrXR8FOOajbKAvu1" target="_blank">
+            <img src="Files/Images/Favicons/favicon_mathlog.png" alt="Mathlog" class="sns-icon">
+        </a>
     </nav>
 
-    <p>ここはメインページです。色々使いたい用途が確定してそれぞれのページが作られたらここもある程度凝らしていくつもりですよ。。</p>
+    <p>ここはメインページです。色々使いたい用途が確定してそれぞれのページが作られたらここもある程度凝らしていくつもりですよ。</p>
     
 </body>
 </html>
