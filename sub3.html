@@ -252,43 +252,27 @@
 
         <div class="subject-container">
             <details class="year-group">
-                <summary class="year">~2022 (高校まで)</summary>
-                    <ul>
-                        <li><a href="notes/u22/subject1.html" class="subject-link">과목 1</a></li>
-                        <li><a href="notes/u22/subject2.html" class="subject-link">과목 2</a></li>
-                    </ul>
-            </details>
-        
-            <details class="year-group">
-                <summary class="year">2023 (B1)</summary>
-                    <ul>
-                        <li><a href="notes/23/lng_cgnt.html" class="subject-link">[Linguistics] Language & Cognition</a></li>
-                        <li><a href="notes/23/el_calc_1.html" class="subject-link">[Maths/Found] Elementary Calculus 1</a></li>
-                    </ul>
-            </details>
-        
-            <details class="year-group">
                 <summary class="year">2024 (B2)</summary>
                 <ul>
-                    <li><a href="notes/24/calc_1.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 1</a></li>
-                    <li><a href="notes/24/calc_2.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 2</a></li>
-                    <li><a href="notes/24/anlys_1.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 1</a></li>
-                    <li><a href="notes/24/anlys_2.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 2</a></li>
-                    <li><a href="notes/24/lnalg_1.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 1</a></li>
-                    <li><a href="notes/24/lnalg_2.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 2</a></li>
-                    <li><a href="notes/24/metsp.html" class="subject-link">[Maths/Pure] Metric Spaces</a></li>
-                    <li><a href="notes/24/elecmag.html" class="subject-link">[Physics] Electromagnetics</a></li>
+                    <li><a href="notes/24/calc_1/calc_1.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 1</a></li>
+                    <li><a href="notes/24/calc_2/calc_2.html" class="subject-link">[Maths/Found] Calculus (w/ Recit.) 2</a></li>
+                    <li><a href="notes/24/anlys_1/anlys_1.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 1</a></li>
+                    <li><a href="notes/24/anlys_2/anlys_2.html" class="subject-link">[Maths/Pure] Introduction to Math'l Analysis 2</a></li>
+                    <li><a href="notes/24/lnalg_1/lnalg_1.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 1</a></li>
+                    <li><a href="notes/24/lnalg_2/lnalg_2.html" class="subject-link">[Maths/Found] Linear Algebra (w/ Recit.) 2</a></li>
+                    <li><a href="notes/24/metsp/metsp.html" class="subject-link">[Maths/Pure] Metric Spaces</a></li>
+                    <li><a href="notes/24/elecmag/elecmag.html" class="subject-link">[Physics] Electromagnetics</a></li>
                 </ul>
             </details>
         
             <details class="year-group">
                 <summary class="year">2025-1 (B3-1)</summary>
                     <ul>
-                        <li><a href="notes/25/discr.html" class="subject-link">[Maths/Found] Discrete Math.s (w/ Recit.)</a></li>
-                        <li><a href="notes/25/toplg.html" class="subject-link">[Maths/Pure] Topology</a></li>
-                        <li><a href="notes/25/diffeqn.html" class="subject-link">[Maths/Appl] Differential Equations</a></li>
-                        <li><a href="notes/25/mchlrn.html" class="subject-link">[Maths/Appl] Math.s for Machine Learning 1</a></li>
-                        <li><a href="notes/25/pbstt.html" class="subject-link">[Maths/Appl] Probability & Statistics</a></li>
+                        <li><a href="notes/25/discr/discr.html" class="subject-link">[Maths/Found] Discrete Math.s (w/ Recit.)</a></li>
+                        <li><a href="notes/25/toplg/toplg.html" class="subject-link">[Maths/Pure] Topology</a></li>
+                        <li><a href="notes/25/diffeqn/diffeqn.html" class="subject-link">[Maths/Appl] Differential Equations</a></li>
+                        <li><a href="notes/25/mchlrn/mchlrn.html" class="subject-link">[Maths/Appl] Math.s for Machine Learning 1</a></li>
+                        <li><a href="notes/25/pbstt/pbstt.html" class="subject-link">[Maths/Appl] Probability & Statistics</a></li>
                     </ul>
             </details>
             
@@ -298,20 +282,33 @@
 
     <!-- 비밀번호 확인 스크립트 -->
     <script>
+        // 페이지가 로드될 때 이미 인증된 상태인지 확인
+        window.onload = function() {
+            if (sessionStorage.getItem("isAuthorized") === "true") {
+                showContent();
+            }
+        };
+
         function checkPassword() {
             const correctPassword = "0911";
-            
             const userInput = document.getElementById("password-input").value;
-            const authScreen = document.getElementById("auth-screen");
-            const protectedContent = document.getElementById("protected-content");
             const errorMsg = document.getElementById("error-msg");
 
             if (userInput === correctPassword) {
-                authScreen.style.display = "none";
-                protectedContent.style.display = "block";
+                sessionStorage.setItem("isAuthorized", "true");
+                showContent();
             } else {
-                errorMsg.textContent = "Invalid Password. Try again.";
+                errorMsg.textContent = "Invalid Password! Try again.";
             }
+        }
+
+        // 콘텐츠를 보여주는 함수 분리
+        function showContent() {
+            const authScreen = document.getElementById("auth-screen");
+            const protectedContent = document.getElementById("protected-content");
+            
+            authScreen.style.display = "none";
+            protectedContent.style.display = "block";
         }
     </script>
 
