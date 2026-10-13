@@ -1,0 +1,1216 @@
+\documentclass[dvipdfmx,a4paper,titlepage,9pt]{jsarticle}
+
+\input{{C:/Users/Lenovo/texlive/2023/Macros/macro}}
+
+\title{``Calculus with Recitation 2'' Class Notes}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\bf ``Calculus with Recitation 2'' Class Notes}
+\fancyhead[C]{}
+\fancyhead[R]{HUFS(G) `23 M. sh}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{}
+
+\usepackage[b]{esvect}
+
+\begin{document}
+\begin{multicols*}{2}
+\Ltitle{9}{\!Parametric Eqn \& Polar Coord.}
+
+\ltitle{Parametric Equation} \v{-6}
+\begin{itemize}
+\item[-] \stitle{Definition} \\
+\;: For a parameter $t$, an equation $\begin{cases}x=f(t),\\\v2y=g(t).\end{cases}$ \\
+
+\item[-] \stitle{Eliminating the Parameter} \v2\\
+\;: Changing $\begin{cases}x=f(t),\\\v2y=g(t)\end{cases}$ \h{-7}to $F(x,\,y)=0$. \\
+\;\;\;But by this progress, the direction disappears. \\
+
+\item[-] \stitle{An Example of P.Eqn} \\
+\;: A circle s.t. its center is on $\mr O$, and its radius is $1$ \\
+\;\;\;can be written to \v{-7}
+$$x=\cos t,\quad y=\sin t,\quad 0\lqs t\lqs2\pi.$$
+\end{itemize}
+
+\v4
+\ltitle{Cycloid}\v{-6}
+\begin{itemize}
+\item[-] \stitle{Definition} \\
+\;: A parametric eqn. family\v{-7}
+$$\begin{cases}x=r(r-\sin\theta),\\\v2y=r(1-\cos\theta)\end{cases}$$\v{-15} \\
+\;\;\;with the parameter $\theta\in\RR$ and the const. $r\in\RR^+$. \\
+
+\item[-] the fastest landing curve. (=brachistochrome)
+\end{itemize}
+
+\v4
+\ltitle{Para.Eqn. Family}\v{-3}
+\begin{itemize}
+\item[-] \stitle{Example}: For $a\in\RR$, $\ds\begin{cases}x=a+\cos t,\\\v2y=a\tan t+\sin t.\end{cases}$
+\begin{itemize}
+\item[$\cdot$] $|a|>0$: asymptote ($x=a$).
+\item[$\cdot$] $|a|=1$: $\exists$ `cusp' at $\mr O$.
+\item[$\cdot$] $a=0$: Circle s.t. $\text{center}=\mr O$ and $r=1$.
+\end{itemize}
+\end{itemize}
+
+\vfill\null
+\columnbreak
+
+\ltitle{Calculus of Para.Eqn.}\v{-6}
+\begin{itemize}
+\item[-] \stitle{Diff.: Tangent} $(y\!:\;\text{d.able fcn. of}\;x)$ \v2
+\begin{itemize}
+\setlength{\leftskip}{-10pt}
+\item[$\cdot$] $\ds\dd xt\neq0$;\; $\ds\dd yx=\frac{\!\d y/\!\d t}{\!\d x/\!\d t}$. \v2
+\item[$\cdot$] $\ds\dd xt=0$;\; vertical asym.\! at $t$ s.t. $x'(t)=0$. \v2
+\item[$\cdot$] $\ds\dd yt=0$;\; horizontal tangent at $t$ s.t. $y'(t)=0$.
+\end{itemize}
+
+\begin{pfbox}
+\begin{proof}[]
+Firstly, by definition, we know that $$\ds\dd yx\equiv\lim_{\D x\to0}\frac{\D y}{\D x}=\lim_{\D x\to0}\frac{y(t+\D t)-y(t)}{x(t+\D t)-x(t)}.$$
+By MVT, $\exists t^*_x,\,t^*_y\in(t,\,t+\D t)$ s.t. \v{-5}
+$$\ds\dd yx=\lim_{\D x\to0}\frac{\ds\D t\cdot y'(t^*_y)}{\ds\D t\cdot x'(t^*_x)}.$$
+Then $\ds\D t=\frac{\D x}{x'(t^*_x)}\longto 0$ as $\D x\longto0$ by the assertion $x'(s)\neq0\;\forall s$, hence $t_x^*,\,t_y^*\longto t$.
+
+Thus we have, as a result,
+$$\dd yx=\lim_{t_x^*,\,t_y^*\to t}\frac{\ds\cancel{\D t}\cdot y'(t^*_y)}{\ds\cancel{\D t}\cdot x'(t^*_x)}=\frac{y'(t)}{x'(t)}=\frac{\!\d y/\!\d t}{\!\d x/\!\d t}.$$
+\end{proof}
+\end{pfbox}
+
+\; \v{-6}
+
+\item[-] \stitle{Int.: Length} \\
+: A length of a curve $S$ s.t.\! $(x(t),\,y(t))\;(\alpha\lqs t\lqs\beta)$ is \v{-7}
+$$L=\int_\alpha^\beta\sqrt{\left(\dd xt\right)^2+\left(\dd yt\right)^2}\dt.$$
+
+\begin{pfbox}
+\begin{proof}[]
+For $n\in\NN$, $\{\alpha,\,\beta\}\subset\dom(S)\;(\alpha\lqs\beta)$, let\\
+$\D t:=(\beta-\alpha)/n$, $\langle t_0,\,t_n\rangle:=\langle\alpha,\,\beta\rangle$, $t_{i+1}=t_i+\D t$, $\D f_{i+1}=f(t_{i+1})-f(t_i)$ for $f_i\in\{x_i,\,y_i\}$, $\,\forall i\in[0,\,n)\cap\ZZ$. \v2
+
+For $\D L_i:=\ds\frac{\D y_i}{\D x_i}$,\h{-2} by MVT, 
+$\exists t^*_{i,x},\,t^*_{i,y}\in(t_i,\,t_{i+1})$ s.t. \v{-3}
+$$\begin{aligned}
+  \!\D L_i&=\sqrt{\left[\D t\cdot \dd{}tx(t^*_{i,x})\right]^2+\left[\D t\cdot \dd{}ty(t^*_{i,y})\right]^2} \\
+        &=\D t\sqrt{\left[\dd{}tx(t^*_{i,x})\right]^2+\left[\dd{}ty(t^*_{i,y})\right]^2}
+  \end{aligned}$$
+
+Since $\D t=(\beta-\alpha)/n\longto 0^+$ as $n\longto \infty$, \\and $t^*_{i,x},\,t^*_{i,y}\longto t_i$ as $\D t\longto 0^+$, we have\v{-7}
+$$\begin{aligned}
+  L&=\lim_{n\to\infty}\sum_{i=1}^n\D L_i \\
+   &=\lim_{n\to\infty}\sum_{i=1}^n\D t\sqrt{\left[\dd{}tx(t^*_{i,x})\right]^2+\left[\dd {}ty(t^*_{i,y})\right]^2} \\
+   &=\int_\alpha^\beta\sqrt{\left(\dd xt\right)^2+\left(\dd yt\right)^2}\dt.
+  \end{aligned}$$
+\end{proof}
+\end{pfbox}
+
+\item[-] \stitle{Int.: Area of `Solid of Revolution'} \\
+: The area of surface that revolved the graph of $(f(t),\,g(t))\;(\alpha\lqs t\lqs\beta)$ around $x$-axis:
+$$S=\int_a^b2\pi y\,\sqrt{\left(\dd xt\right)^{\!2}+\left(\dd yt\right)^{\!2}}\dt.$$
+
+\; \v{-6}
+
+\item[-] \stitle{Bézier curve} \\
+: A curve with $4$ \ti{control points} $\mr P_i(x_i,\,y_i), \\
+\;\;(i=0,\,1,\,2,\,3)$ \v{-9}
+$$x=\sum_{i=0}^3x_i(1-t)^{3-i}t^i,\quad y=\sum_{i=0}^3y_i(1-t)^{3-i}t^i$$
+\;\;with a parameter $0\lqs1\lqs t$. \\
+\;\;This is used for the digitalization of fonts, etc.
+\end{itemize}
+
+\;
+
+\ltitle{Polar Coordinate}\v{-6}
+\begin{itemize}
+\item[-] \stitle{Definitions}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item \brk{Pole}: $\mr O$ on Cart.Coord.
+\item \brk{Polar Axis}: $x^+$-axis on Cart.Coord.
+\item A point $\brk{\mr P(r,\,\theta)}$; \\
+      \; - $r\equiv\mr{\ol{OP}}$, \\
+      \; - $\theta=\angle\mr{XOP}$ for $\mr X(x,\,0)$ $(x\in\RR^+)$.
+\item $(-r,\,\theta)=(r,\,\pi+\theta)$ \\
+\end{itemize}
+\item[-] \stitle{Symmetry} (for a polar equation $F\!: f(r,\,\theta)=0$)
+\begin{itemize}
+\setlength{\leftskip}{-10pt}
+\item[$\cdot$] $f(-r,\,\theta)=f(r,\,\theta)\Longto$ p.axis symmetry \\
+\end{itemize}
+
+\item[-] \stitle{Area \& Length} \v3
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\ds A=\int_a^b\frac12[f(\theta)]^2\d\theta$.
+\begin{pfbox}
+\begin{proof}[]
+For an area of the sector $r^2\theta/2$, and by MVT, we have
+$$\D A_i=\frac12[f(\theta_i^*)]^2\D\theta.$$
+Thus, since $A\approx\sum\D A_i$, we conclude\v{-4}
+$$A=\lim_{n\to\infty}\sum_{i=1}^n\frac12[f(\theta_i^*)]^2\D\theta=\int_a^b\frac12[f(\theta)]^2\d\theta.$$
+\end{proof}
+\end{pfbox}
+\vfill\null\columnbreak
+\item $\ds L=\int_a^b\sqrt{r^2+\left(\dd r\theta\right)^{\!2}}\d\theta$.
+\begin{pfbox}
+\begin{proof}[]
+For a length of a segment $\sqrt{(\D x)^2+(\D y)^2}$ and $(r,\,\theta)_{\tx{Pol}}=(r\cos\theta,\,r\sin\theta)_{\tx{Cart}}$, also by MVT, we have
+$$\begin{aligned}
+  \D L_i&=\sqrt{[x'(\theta^*_i)]^2+y'[(\theta^*_i)]^2}\,\D\theta \\
+        &=\sqrt{(r'\cos\theta-r\sin\theta)^2+(r'\sin\theta+r\cos\theta)^2}\D\theta \\
+        &=\sqrt{r^2+(r')^2}\D\theta.
+  \end{aligned}$$
+Thus, since $L=\sum\D L_i$, we conclude\v{-4}
+$$\begin{aligned}
+  L&=\lim_{n\to\infty}\sum_{i=1}^n\sqrt{r^2+(r')^2}\D\theta \\
+   &=\int_a^b\sqrt{r+\left(\frac{\!\d r}{\!\d\theta}\right)^2}\d\theta.
+   \end{aligned}$$
+\end{proof}
+\end{pfbox}
+\end{itemize}
+
+\;
+
+\item[-] \stitle{Tangent} \v3
+\begin{itemize}
+\setlength{\leftskip}{-10pt}
+\item[$\cdot$] $\ds\dd yx=\dd{y/\!\d\theta}{x/\!\d\theta}=\frac{r'\sin\theta+r\cos\theta}{r'\cos\theta-r\sin\theta}$, \;if $\ds\frac{\!\d x}{\!\d\theta}\neq0$. \\
+\end{itemize}
+\end{itemize}
+
+\ltitle{Conic Sections}
+\begin{itemize}
+\item[-] \stitle{Parabolas: $x^2=4py$}
+\begin{itemize}
+\setlength{\leftskip}{-10pt}
+\item[:] A set of points which are in same distance \\
+         between a \brk{focus}{\color{Gray}($\mr F$, esp. $(0,\,p)$)} and a \brk{directix}{\color{Gray}(esp. $y=-p$)}. \\
+\end{itemize}
+\item[-] \stitle{Ellipses: $x^2/a^2+y^2/b^2=1$}
+\begin{itemize}
+\setlength{\leftskip}{-5pt}
+\item[:] A set of points where the sum of distances between the \brk{focus}{\color{Gray}($\mr{F_1}$ \& $\mr{F_2}$, esp. $(\pm c,\,0)$)} is same. 
+\item[$\cdot$] $a$: Half of \brk{major axis}(segment between two \brk{vertexes})
+\item[$\cdot$] $b=\sqrt{a^2-c^2}$. \\
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\item[-] \stitle{Hyperbola: $x^2/a^2-y^2/b^2=1$}
+\item[:] A set of points where the difference of distances between the \brk{focus}{\color{Gray}($\mr{F_1}$ \& $\mr{F_2}$, esp. $(\pm c,\,0)$)} is same.
+\item[$\cdot$] $a$: Half of the length of a \brk{major axis} \\
+\;\;\;\;(segment between two \brk{vertices})
+\item[$\cdot$] $b^2=c^2-a^2$.
+
+\begin{pfbox}
+\begin{proof}[]
+For $\mr F_1(c,\,0)$ and $\mr F_2(-c,\,0)$, let $a,\,c$ be the positive real number.
+
+Then, for a point $\mr P(x,\,y)$,\v{-4}
+$$|\mr{\ol{PF_1}}|=\sqrt{(x-c)^2+y^2},\v{-6}$$
+$$|\mr{\ol{PF_2}}|=\sqrt{(x+c)^2+y^2}.$$
+
+Now, consider the equation of $c$ s.t.\v{-4}
+$$|\mr{\ol{PF_1}}|-|\mr{\ol{PF_2}}|=\pm 2a\iff|\mr{\ol{PF_1}}|=|\mr{\ol{PF_2}}|\pm 2a,\v{-4}$$
+which may be the equation of a hyperbola.
+
+Then we compute
+$$\begin{aligned}
+   & \sqrt{(x-c)^2+y^2}=\sqrt{(x+c)^2+y^2}\pm 2a; \\
+   & \begin{aligned}
+      &x^2-2cx+y^2 \\
+     ={}&x^2+2cx+y^2\pm4a\sqrt{(x+c)^2+y^2}+4a^2;
+     \end{aligned} \\
+   & 4cx+4a^2=\mp4a\sqrt{(x+c)^2+y^2}; \\
+   & cx+a^2=\mp a\sqrt{(x+c)^2+y^2}; \\
+   & c^2x^2+\cancel{2a^2cx}+a^4=a^2x^2+\cancel{2a^2cx}+a^2c^2+a^2y^2; \\
+   & (c^2-a^2)x^2-a^2y^2=a^2(c^2-a^2); \\
+   & bx^2-a^2y^2=a^2b^2; \\
+   & \frac{x^2}{a^2}-\frac{y^2}{b^2}=1,
+  \end{aligned}\v{-4}$$
+for $b\in\RR$ s.t. $b^2=c^2-a^2$, since $c>a$ in case of \ti{hyperbolas}.
+
+If we had computed the equation of \ti{ellipses}, then we would have let $b^2=a^2-c^2$, which is $\times(-1)$ to the one of the hyperbolas.
+\end{proof}
+\end{pfbox}
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\Ltitle{11}{\!Vec.'s \& Geometry of Space}
+
+\ltitle{3D Cartesian Coord. Space} \v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Projection onto a plane} \\
+: $\mr P'$ is a \brk{projection onto a plane $L$} of $\mr P$,\\
+\;\;if $\mr P'$ is a foot of perpendicular of $\mr P$ onto $L$. \v2 \\
+\;\;ex) $(2,\,3,\,0)$ is a projection onto $xy$-plane of $(2,\,3,\,1)$. \\
+\end{itemize}
+
+\ltitle{Vectors in $\RR^3$} \v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \\
+: $\brk{\vec{v}=\mb v}\equiv\ang{v_1,\,v_2,\,v_3}\in\RR$. \\
+
+\item\stitle{Plain with 2 Vectors} \\
+: $\{c\mb u+d\mb v:c,\,d\in\RR\}$ for vectors $\mb{u,\,v}\in V\setminus\{\mb0\}$ \\
+\;\;represents a plane $L$ including $\mb{u,\,v}$. \v2 \\
+\;\;\ti{Finding $\mb N$ s.t. $\mb N\perp L$ is a goal of \S11}. \\
+
+\item\stitle{Vector Spaces} \ti{\scriptsize\color{Gray}(From Ln.Algebra)} \\ 
+: A triple $\vssp$ is a vector space, \\
+\;\;if $c\mb u+d\mb v\in V$ for all $c,\,d\in\RR$ and $\mb{u,\,v}\in V$. \\
+\end{itemize}
+
+\ltitle{Operation between Vectors} \\
+\quad{\color{Gray}($\mb u=\ang{u_1,\,u_2,\,u_3},\;\mb v=\ang{v_1,\,v_2,\,v_3}\in\RR^3$, $c\in\RR$)}\v{-4}
+\begin{itemize}[label={-}]
+\item\stitle{Vector Addition} \\
+: $\mb{u+v}\equiv\ang{u_1+v_1,\;u_2+v_2,\;u_3+v_3}$. \\
+
+\item\stitle{Scalar Multiplication} \\
+: $c\mb v\equiv\ang{cv_1,\,cv_2,\,cv_3}$. \\
+
+\item\stitle{Inner Product / Dot Product} \\
+: $\mb{u\cdot v}\equiv\ds\sum_{i=1}^3 u_iv_i$. \\
+
+\item\stitle{Outer Product / Cross Product} \\
+$\begin{aligned}
+ \text{:}\;\mb{u\times v}&\equiv\left|\mt{\mb i & \mb j & \mb k \v{-2} \\
+                                          u_1   & u_2   & u_3   \v{-2} \\
+                                          v_1   & v_2   & v_3          } \right| \\
+                         &=\left|\mt{u_2&u_3\\v_2&v_3}\right|\mb i-\left|\mt{u_1&u_3\\v_1&v_3}\right|\mb j+\left|\mt{u_1&u_2\\v_2&v_2}\right|\mb{k}\text{,}
+ \end{aligned}$ \v4 \\
+\;\;for $\mb i=\ang{1,\,0,\,0}$, $\mb j=\ang{0,\,1,\,0}$, and $\mb k=\ang{0,\,0,\,1}$. \\
+
+\item\stitle{Magnitude/Norm} \\
+: $\nrm{\mb v}\equiv\sqrt{v_1^{\;2}+v_2^{\;2}+v_3^{\;3}}$. \\
+\end{itemize}
+
+\newpage
+
+\ltitle{Extra Information} \v{-7}
+\begin{itemize}[label={-}]
+\item\stitle{Eigenvalues \& Eigenvectors} \\
+: For a vector space $V$ s.t. $\dim V=n\in\NN$ and an $n\times n$ matrix $A$, we call each \brk{a scalar $\lambda$} and \brk{a nonzero vector $\mb v\in V$} an \brk{eigenvector} and  an \brk{eigenvalue} of $A$, if \v{-4}
+$$A\mb v=\lambda\mb v\tx{.}$$
+\item\stitle{Quadratic Surface} \ti{\scriptsize\color{Gray}(From \S11.6)} \\
+\;\;: A surface able to express with
+$$\left(\!\bm{x&y&z}\!\!\bm{A&D&E\\D&B&F\\E&F&C}\!+\bm{G&H&I}\!\right)\!\!\bm{x\\y\\z}+J=0$$
+or
+$$\sum_{\substack{(i.\,j,\,k)\,\in\,P\\1\,\lqs\,n\,\lqs\,10}}K_nx^iy^jz^k\v{-4}$$
+for $P=\{(i,\,j,\,k)\in\NN_0^{\;3}:i+j+k\lqs2\}$.\\
+\end{itemize}
+
+\ltitle{Inner/Dot Product} \v{-7}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \\
+: \brk{Inner product} of $\mb u$ and $\mb v\in V_n$ is defined to a function\v{-4}
+$$\cdot: V_n\times V_n\longto \RR\tx{,}\v{-6}$$
+\;\;where \brk{$\mb{u\cdot v}\equiv \ds\sum_{i=1}^nu_iv_i$},\\
+\;\;for $\mb u=\ang{u_1,\,u_2,\,\ldots,\,u_n}$ and $\mb v=\ang{v_1,\,v_2,\,\ldots,\,v_n}$.\\
+
+\item\stitle{Theorems} ($\mb u$, $\mb v$, $\mb w\in V_n$, $c\in\RR$)\v2
+\begin{enumerate}[label=(\roman*)]
+\setlength{\leftskip}{-2pt}
+\item $\mb{v\cdot v}=\nrm{\mb v}^2$.
+\item $\mb{u\cdot v=v\cdot u}$.
+\item $\mb{v\cdot(u+w)=v\cdot u+v\cdot w}$.
+\item $(c\mb u)\cdot v=c(\mb{u\cdot v})=\mb u\cdot(c\mb v)$.
+\item $\mb{0\cdot v}=0$. \\
+\end{enumerate}
+
+\item\stitle{Angle Between Vectors}
+\begin{itemize}[label=$\cdot$]
+\setlength{\leftskip}{-5pt}
+\item For $\theta=\angle(\mb{u,\,v})$, \brk{$\mb{u\cdot v}=\nrm{\mb u}\nrm{\mb v}\cos\theta$}, i.e.,\v{-4}
+$$\brk{\cos\theta=\frac{\mb{u\cdot v}}{\nrm{\mb u}\nrm{\mb v}}}\tx{.}$$
+\item \brk{$\mb{u\perp v}$\quad iff\quad$\mb{u\cdot v}=0$}.\quad($\because\;\cos 90^\circ=0$) \\
+\end{itemize}
+
+\item\stitle{Direction Cosines}\v2
+\begin{itemize}[label=$\cdot$]
+\setlength{\leftskip}{-5pt}
+\item For $\begin{cases}\alpha=\angle(\Vec{x_+},\,\mb v),\v{-2}\\
+                        \beta=\angle(\Vec{y_+},\,\mb v), \v{-2}\\
+	                        \gamma=\angle(\Vec{z_+},\,\mb v),\end{cases}$ \h{-9}we say \brk{$\cos\alpha$}, \brk{$\cos\beta$} and \brk{$\cos\gamma$} \v2\\
+  the \brk{direction cosines} of $\bf v$. \\
+
+\item \brk{$\cos\alpha=\ds\frac{v_1}{\nrm{\mb v}}$},\;\;\brk{$\cos\beta=\ds\frac{v_2}{\nrm{\mb v}}$},\;\;\brk{$\cos\gamma=\ds\frac{v_3}{\nrm{\mb v}}$}. \\
+
+\item $\ds\frac1{\nrm{\mb v}}\mb{v}=(\tx{unit vector of $\mb v$})=\ang{\cos\alpha,\,\cos\beta,\,\cos\gamma}$.
+\end{itemize}
+\vfill\null\columnbreak
+
+\item\stitle{Vector/Scalar Projection}\v2
+\begin{itemize}[label=$\cdot$]
+\setlength{\leftskip}{-5pt}
+\item $\ds\brk{\comp_{\mb u}\mb v\equiv\nrm{\mb v}\cos\theta}=\frac{\mb{u\cdot v}}{\nrm{\mb u}}$. \v2
+\item $\ds\brk{\proj_{\mb u}\mb v\equiv(\comp_{\mb u}\mb v)\frac{\mb u}{\nrm{\mb u}}}=\frac{\mb{u\cdot v}}{\nrm{\mb u}^2}\mb u$. \\
+\end{itemize}
+
+\item\stitle{Work}\\
+: $W\,[\mr J]=\mb{F\cdot D}\;[\mr{N{\cdot}m}]$. \\
+
+\item\stitle{Extra Information: Regression Analysis}\v2
+\begin{itemize}
+\item[:] For $\mb y=X\bs\upbeta+\bs\upepsilon$,\\
+         find $\bs\upbeta=\hat{\bs\upbeta}$ minimizing $\bs\upepsilon=\mb y-X\bs\upbeta$. \v2\\
+         $\begin{aligned}
+          \nrm{\mb y=X\bs\upbeta}^2={}&\nrm{\mb y}^2+\nrm{X\bs\upbeta}^2-2\mb y\cdot X\bs\upbeta \\
+                                   ={}&\mb{y^\top y}+\bs\upbeta^\top X^\top X\bs\upbeta-2\mb y^\top X\bs\upbeta\tx{,} \\
+\xTo{\partial/\partial\bs\upbeta}{}&\bs\upbeta^\top X^\top X-2\mb y^\top X=\mb 0\tx{;}\;\;\mb y=\ds\frac12X\bs\upbeta\tx{.}
+          \end{aligned}$\v2\\
+\end{itemize}
+\end{itemize}
+
+\ltitle{Vector/Outer/Cross Product}\v{-7}
+\begin{itemize}[label={-}]
+\item\stitle{Determinants}\v4
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item $\Det{cc}{a&b\\c&d}\equiv ad-bc$. \v2
+\item $\Det{ccc}{a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}}\equiv\ds\sum_{k=1}^3(-1)^{1+k}a_{1k}\det(A_{1k})$. \v2
+\end{itemize}
+\;\;\ti{\Gray(For more info, go to LnAlgebra I.)}\\
+
+\item\stitle{Definition} \v2\\
+$\begin{aligned}
+ \tx{:\;}\mb{u\times v}&\equiv\Det{ccc}{\mb i & \mb j & \mb k\\u_1&u_2&u_3\\v_1&v_2&v_3} \\
+                       &=\Det{cc}{u_2&u_3\\v_2&v_3}\,\mb i-\Det{cc}{u_1&u_3\\v_1&v_3}\,\mb j+\Det{cc}{u_1&u_2\\v_1&v_2}\,\mb k\tx{.}
+ \end{aligned}$ \v4\\
+ 
+\item\stitle{Properties \& Theorems}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item $\mb{u\perp(u\times v)}$, $\mb{v\perp(u\times v)}$.
+\item $\mb{u\para v}$\quad iff\quad $\mb{u\times v=0}$.
+\item $\mb{u\times v=-(v\times u)}$.\\
+\end{itemize}
+
+\item\stitle{Triple Products}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item \brk{Scalar triple product} \\
+      : $\mb{a\cdot(b\times c)}=\abs{\,\begin{array}{c}\mb a\\\hline\mb b\\\hline\mb c\end{array}\,}=\Det{ccc}{a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3}$\v4\\
+      \h{53}$=\mb{(a\times b)\cdot c}$.\\
+\item \brk{Vector triple product} \\
+     : $\mb{a\times (b\times c)=(a\cdot c)b-(a\cdot b)c}$.
+\end{itemize}
+\end{itemize}
+
+\newpage
+
+\ltitle{Equation of Lines/Planes}\v{-7}
+\begin{itemize}[label={-}]
+\item\stitle{Line: Vector Equation}\v2\\
+: For $\mb r_0=\Vec{\mr{OP_0}}$ and $\mb v\in\RR^3$, an equation of \\
+\;\;\brk{a line parallel to $\mb v$ and containing $\mr P_0$} is\v{-7}
+$$\brk{\mb r=\mb r_0+t\mb v}\tx{.}$$
+
+\item\stitle{Line: Parametic Equation}\\
+: An equation\v{-7}
+$$\brk{x=x_0+at},\quad \brk{y=y_0+bt},\quad \brk{z=z_0+ct}\v{-7}$$
+\;\;shows \brk{a line $\para\ang{a,\,b,\,c}$ and contains $(x_0,\,y_0,\,z_0)$}. \\
+
+\item\stitle{Line: Symmetric Equation}\v2\\
+: For $\mb v=\ang{a,\,b,\,c}$ and $\Vec{\mr{OP_0}}=\ang{x_0,\,y_0,\,z_0}$,\v{-7}\\
+$$\brk{\frac{x-x_0}a=\frac{y-y_0}b=\frac{z-z_0}c}\v{-4}$$
+\;\;\brk{represents a line} $\mb r=\Vec{\mr{OP_0}}+t\mb v$. \\
+
+\item\stitle{Line: Vector Equation of segment}\\
+: For $\mb r_0$, $\mb r_1\in\RR^3$, an equation\v{-7}
+$$\brk{\mb r=(1-t)\mb r_0+t\mb r_1}\quad(0\lqs t\lqs1)\v{-7}$$
+\;\;represents \brk{a segment from $\mb r_0$ to $\mb r_1$}. \v4\\
+
+\item\stitle{Plane: Vector Equation} \\
+: An equation\v{-2}
+$$\brk{\mb{n\cdot(r}-\mb r_0)=0}\v{-7}$$
+\;\;represents a plane such that \v4\\
+\;\;$\begin{cases}\tx{(i) its \brk{normal vector is $\mb n$},}\v{-2} \\
+                  \tx{(ii) it \brk{contains $\mr P_0$} s.t. $\mb r_0=\Vec{\mr{OP_0}}$.}\end{cases}$ \v{10}\\
+                  
+\item\stitle{Plane: Scalar Equation} \\
+: An equation\v{-7}
+$$\brk{a(x-x_0)+b(y-y_0)+c(z-z_0)=0}\v{-7}$$
+\;\;represents a plane such that \v4\\
+\;\;$\begin{cases}\tx{(i) its \brk{normal vector is $\ang{a,\,b,\,c}$},}\v{-2} \\
+                  \tx{(ii) it \brk{contains $\mr P_0(x_0,\,y_0,\,z_0)$}.}\end{cases}$ \v{10}\\
+
+\item\stitle{Plane: Containing 3 Points} \\
+: An equation\v{-7}
+$$\brk{{(\Vec{\mr{PQ}}\times\Vec{\mr{PR}})\cdot(\mb r-\Vec{\mr{OP}})=0}}\v{-7}$$
+represents \brk{a plane containing 3 points $\mr P$, $\mr Q$, $\mr R$}.
+
+\vfill\null\columnbreak
+
+\item\stitle{Intersection Point between Plane \& Line} \v4\\
+: For $\begin{cases}x=x_0+at\tx{,}\;\;y=y_0+bt\tx{,}\;\;z=z_0+ct\tx{,}\\
+                    px+qy+rz=s\tx{,}\end{cases}$\v4\\
+\;\;find $t$ such that \v{-7}
+$$\brk{p(x_0+at)+q(y_0+bt)+r(z_0+ct)=s}\tx{.}$$
+
+\item\stitle{Angle between 2 Planes}\v2\\
+: $\theta=\cos^{-1}\left(\ds\frac{\mb n_1\cdot\mb n_2}{\nrm{\mb n_1}\nrm{\mb n_2}}\right)$.\v4\\
+\;\;{\Gray(from $\mb n_1\cdot\mb n_2=\nrm{\mb n_1}\nrm{\mb n_2}\cos\theta$)} \\
+
+\item\stitle{Intersection Line between 2 Planes} \\
+: For normal vectors $\mb n_1$ \& $\mb n_2$, set \brk{$\mb v=\mb n_1\times\mb n_2$}. \\
+
+\item\stitle{Distance between Point and Plane} \v2\\
+: The distance between a plane $ax+by+cz+d=0$, \\
+\;\;and a point $(x_1,\,y_1,\,z_1)$ is\v{-7}\\
+$$\brk{D=\ds\frac{|ax_1+by_1+cz_1+d|}{\sqrt{a^2+b^2+c^2}}}\tx{.}$$ \\
+
+\Cdot \;$d=\left|\comp_{\mb{a\times b}}\mb c\right|=\ds\frac{\mb{|(a\times b)\cdot c|}}{\mb{\nrm{a\times b}}}$.\v{25}
+
+\begin{center}\h{-45}\includegraphics[width=0.25\textwidth, bb=0 0 266 215]{Calc_dist(Plane,Pt).png}\end{center}
+\end{itemize}
+
+\newpage
+
+\Ltitle{11}{\!Vec.'s \& Geometry of Space}
+
+\ltitle{Vector Functions \& Space Curve} \v{-7}
+\begin{itemize}[label={-}]
+\item\stitle{Definition: Vector Functions} \\
+: For a v.space $V$, a \brk{vector function} is defined by a map\v{-6}
+$$\brk{\mb r\!:\,\RR\longto V}\tx{.}\v{-4}$$
+\;\;Especially, in Calculus, for real-valued function $f$, $g$ and $h$, a map\v{-4}
+$$\brk{\mb r\!:\,\RR\longto\RR^3}(=V_3)\v{-4}$$
+\;\;s.t. \brk{$\mb r(t)=\ang{f(t),\,g(t),\,h(t)}$} is called a vector function. \\
+
+\item\stitle{Limit of Vector Function} \\
+: \brk{$\ds\lim_{t\to a}\mb r(t)\equiv\ang{\lim_{t\to a}f(t),\,\lim_{t\to a}g(t),\,\lim_{t\to a}h(t)}$}. \\
+
+\item\stitle{Space Curve} \\
+: A \brk{space curve} defined on $I$ is a set\v{-4}
+$$\{(f(t),\,g(t),\,h(t):t\in I\}\v{-4}$$
+\;\;for real-valued functions $f$, $g$ and $h$.\\
+\end{itemize}
+
+\ltitle{Calculus of Vector Functions}\v{-7}
+\begin{itemize}[label={-}]
+\item\stitle{Derivative of Vector Function}\v4\\
+: $\brk{\mb r'(t)}=\brk{\ds\frac{\mr d\mb r}{\mr dt}}\equiv\brk{\ds\lim_{h\to0}\frac{\mb r(t+h)-\mb r(t)}h}$.\\
+
+\item If $\mb r(t)=\ang{f(t),\,g(t),\,h(t)}$ and $f$, $g$ and $h$ are d.able,\v{-7}\\
+$$\brk{\mb r'(t)=\ang{f'(t),\:g'(t),\:h'(t)}}\tx{.}$$
+
+\item\stitle{Unit Tangent Vector $\mb T$}\v4\\
+: $\brk{\mb T(t)\equiv\ds\frac{\mb r'(t)}{\nrm{\mb r'(t)}}}$. \\
+
+\item\stitle{Differentiation Rules}\\
+($\mb u$, $\mb v$: vector fcn., $f$: real-valued fcn., $c$: const.)\v4
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item $\ds\ddt(\mb{u+v})=\mb u'+\mb v'$.\v4
+\item $\ds\ddt(c\mb v)=c\mb v'$.\v4
+\item $\ds\ddt(f\mb v)=f'\mb v+f\mb v'$.\v4
+\item $\ds\ddt(\mb{u\cdot v})=\mb{u'\cdot v+u\cdot v'}$.\v4
+\item $\ds\ddt(\mb{u\times v})=\mb{u'\times v+u\times v'}$.\v4
+\item $\ds\ddt(\mb u\circ f)=f'(\mb u'\circ f)$. \hfill{\Gray (Chain Rule)}\\
+\end{itemize}
+
+\item If \brk{$\nrm{\mb r(t)}$ is const.}, then \brk{$\mb r\perp\mb r'$} for all $t$. \\
+{\Gray ($\nrm{\mb r(t)}=\sqrt{f^2+g^2+h^2}$: const. $\ifff$ $\mb r$ is on a sphere.)} \\
+
+\item \brk{$\mb T(t)\perp\mb T'(t)$} for all $\mb T$, $t$.
+
+\vfill\null\columnbreak
+
+\item\stitle{Integrals of Vector Function}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item\stitle{Definite Integrals} \v2\\
+: $\ds\int_a^b\mb r(t)\dt\equiv\ang{\int_a^bf(t)\dt,\,\int_a^bg(t)\dt,\,\int_a^bh(t)\dt}$. \\
+
+\item\stitle{Antiderivatives} \v4\\
+: $\ds\int\mb r(t)\equiv\ang{\int f(t)\dt,\,\int g(t)\dt,\,\int h(t)\dt}+\mb C$. \v2\\
+\;\;($\mb C$: constant vector.) \\
+\end{itemize}
+\end{itemize}
+
+\ltitle{Length of Arcs}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Constant Length} \v2\\
+$\begin{aligned}
+ \tx{:\;}L&=\ds\brk{\int_a^b\sqrt{\left(\frac{\!\dx}{\!\dt}\right)^{\!2}+\left(\frac{\!\d y}{\!\dt}\right)^{\!2}+\left(\frac{\!\d z}{\!\dt}\right)^{\!2}}\dt}\\
+          &=\ds\brk{\int_a^b\nrm{\mb r'(t)}\dt}\tx{.}
+ \end{aligned}$\v4\\
+ 
+\item Even if we \ul{change the parameter $t$ to sth. else}, \\
+i.e., \brk{parametrization}, \ul{the value of $L$ does not change}.\\
+ 
+\item\stitle{Arc Length Function} \v2\\
+$\begin{aligned}
+ \tx{:\;}\brk{s(t)}&\brk{{}\equiv\int_a^t\nrm{\mb r'(u)}\d u} \\
+             &=\ds\brk{\int_a^b\sqrt{\left(\frac{\!\dx}{\!\d u}\right)^{\!2}+\left(\frac{\!\d y}{\!\d u}\right)^{\!2}+\left(\frac{\!\d z}{\!\d u}\right)^{\!2}}\d u}\tx{.}
+ \end{aligned}$ \\ \; \\
+\end{itemize}
+
+\ltitle{Curvative}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \v4\\
+: $\ds\kappa(t)\equiv\brk{\Nrm{\frac{\!\d\mb T}{\!\d s}}}$. \v7 \\
+
+\item \brk{$\ds\kappa=\frac{\nrm{\mb T'(t)}}{\nrm{\mb r'(t)}}=\frac{\nrm{\mb r'(t)\times\mb r''(t)}}{\nrm{\mb r'(t)}^3}$}.
+\begin{Pfbox}
+We know that $\mb T=\ds\frac{\mb r'}{\nrm{\mb r'}}$, and $\nrm{\mb r'}=\ds\frac{\!\d s}{\!\d t}$, \v2\\
+$\therefore\;\mb r'=\nrm{\mb r'}\mb T=\ds\frac{\!\d s}{\!\d t}\mb T$, \;$\mb r''=\ds\frac{\!\d^2 s}{\!\d t^2}\mb T+\frac{\!\d s}{\!\d t}\mb T'$.\v2
+
+$\Longto\;\mb r'\times\mb r''=\ds\left.\cancel{\frac{\!\d s}{\!\d t}\frac{\!\d^2 s}{\!\d t^2}(\mb T\times\mb T)}\right.^{\,\mb0}+\left(\frac{\!\d s}{\!\d t}\right)^{\!2}(\mb T\times\mb T')$,\v2\\
+$\Longto\;\nrm{\mb r'\times\mb r''}=\ds\left(\frac{\!\d s}{\!\d t}\right)^{\!2}\nrm{\mb T}\nrm{\mb T'}=\nrm{\mb r'}^2\nrm{\mb T'}$,\v1\\
+\qquad since $\mb T\perp\mb T'$, and $\nrm{\mb T}=1$.\v3\\
+$\Longto\;\ds\frac{\nrm{\mb r'\times\mb r''}}{\nrm{\mb r'}^3}=\frac{\nrm{\mb T'}}{\nrm{\mb r'}}=\kappa$.
+\end{Pfbox}
+\end{itemize}
+
+\newpage
+
+\ltitle{Normal Vectors}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{$\mb N$: (Principal) Unit Normal Vector}\v2\\
+: \brk{$\mb N(t)\equiv\ds\frac{\mb T'(t)}{\nrm{\mb T'(t)}}$}. \\
+
+\item\stitle{$\mb B$: Binormal Vector}\\
+: \brk{$\mb B(t)\equiv\mb T(t)\times\mb N(t)$}.\\
+
+\item Each $\brk{\mb T}$, $\brk{\mb N}$, $\brk{\mb B}$ is a \brk{unit vector}, \\
+and \brk{perpendicular with each other}. \\
+
+\item\stitle{Planes}\\
+\Cdot \;\brk{Normal Plane}: A plane made by $\mb N$ and $\mb B$. \\
+\Cdot \;\brk{Osculting Plane}: A plane made by $\mb N$ and $\mb T$.\v4\\
+
+\begin{center}\h{-60}\includegraphics[width=0.24\textwidth, bb=0 0 255 209]{Calc_NTB.png}\end{center}
+\end{itemize}
+
+\;
+
+\ltitle{Velocity \& Acceletation}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item \stitle{Velocity}: $\brk{\mb v(t)\equiv\ds\lim_{h\to0}\frac{\mb r(t+h)-\mb r(t)}h}=\mb r'(t)$.\v5
+
+\item \stitle{Speed}: $\brk{v=\nrm{\mb v(t)}}=\nrm{\mb r'(t)}$.\v3
+
+\item \stitle{Acceleration}: $\brk{\mb a(t)\equiv\mb v'(t)}=\mb r''(t)$.\\
+\end{itemize}
+
+\item\stitle{Separating Acceleration to Tangent/Normal} \\
+: For position vector $\mb r(t)$, let $v=\nrm{\mb v(t)}$. Then\v{-4}
+$$\brk{\mb a=v'\mb T+v^2\kappa\mb N}\tx{.}$$
+\begin{Pfbox}
+$\begin{aligned}
+ \ds\mb a(t)&=\frac{\mr d^2}{\mr dt^2}\mb r(t)=\ddt\left(\ddt\mb r(t)\right) \\
+            &=\ddt\mb r'(t)=\ddt[v\mb T(t)] \\
+            &=v'\mb T(t)+v\mb T'(t) \\
+            &=v'\mb T(t)+v\nrm{\mb T'(t)}\mb N(t) \\
+            &=v'\mb T(t)+v^2\kappa\mb N(t)\tx,
+\end{aligned}$\v4\\
+$\therefore\; \mb a=v'\mb T+v^2\kappa\mb N$. 
+\end{Pfbox}\v7
+
+\item\stitle{Newton's laws of motion} \\
+: $\mb F=m\mb a$.
+
+\vfill\null\columnbreak
+
+\item\stitle{Example: Circular Works} ($a>0$)\v2
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item $\mb r(t)=\ang{a\cos t,\,a\sin t,\,0}$.\v3
+\item $\mb v(t)=\ang{-a\sin t,\,a\cos t,\,0}$. \\
+$\quad\Longto\; v(t)=\nrm{\mb v(t)}=a$.\v3
+\item $\mb a(t)=\ang{-a\cos t,\,-a\sin t,\,0}$.\v3
+\item $\mb T(t)=\ang{-\sin t,\,\cos t,\,0}$. \\
+$\quad\Longto\; \nrm{\mb T(t)}=1$.\v5
+\item $\kappa=\ds\frac1a$.\v5
+\item $\mb T'(t)=\ang{-\cos t,\,-\sin t,\,0}$. \\
+$\quad\Longto\; \nrm{\mb T'(t)}=1$.\v3
+\item $\mb N(t)=\ang{-\cos t,\,-\sin t,\,0}{}(=\mb r(t)/a)$.\v3
+\item $\mb B(t)=\mb T(t)\times\mb N(t)=\ang{0,\,0,\,1}$.\v{35}
+
+\begin{center}\h{-60}\includegraphics[width=0.38\textwidth, bb=0 0 530 317]{Calc_CircleNTB.png}\end{center}\v{11}
+\end{itemize}
+
+\item\stitle{Example: Projectiles} ($0<\alpha<\pi/2$, $\nrm{\mb v_0}=v_0>0$)
+\begin{itemize}[label=\Cdot]
+\item $\mb a(t)=-g\,\mb j$. {\Gray($g=9.8\,\mr{m/s^2}$: Gravity constant)} \v5
+
+\item $\mb v(t)=\ds\int_0^t \mb a(u)\d u+\mb v_0=\mb v_0-g\,\mb j$. \v3
+
+\item $\mb v_0=v_0\cos\alpha\,\mb i+v_0\sin\alpha\,\mb j$.\v5
+
+\item[$\Longto$] $\ds\mb r(t)=\int_0^t\mb v(u)\d u+\mb r_0=t\mb v_0-\frac12gt^2\,\mb j+\mb r_0$\v1\\
+\h{18.6}$=\ds(v_0t\cos\alpha+x_0)\,\mb i+\left(v_0t\sin\alpha-\frac12gt^2+y_0\right)\mb j$.\v7
+
+\item[$\Longto$] The eq. $\proj_{\mb j}\mb r(t)=0$: Extract $t=t_0\;(>0)$.\\
+then, $d=\proj_{\mb i}\mb r(t_0)-\proj_{\mb i}\mb r(0)$.\v{35}
+
+\begin{center}\h{-60}\includegraphics[width=0.25\textwidth, bb=0 0 291 184]{Calc_Projectile.png}\end{center}
+\end{itemize}
+\end{itemize}
+
+\newpage
+
+\Ltitle{13}{Partial Derivatives}
+
+\ltitle{Functions of Many Variables}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition}\v4\\
+: $f\!:\begin{array}{ccc}\brk{D(\subseteq\RR^n)}&\longto&\RR\\(x_1,\,x_2,\,\ldots,\,x_n)&\longmapsto&y=f(x_1,\,x_2,\,\ldots,\,x_n)\end{array}$\v2\\
+\;\;is a \brk{function of many variables}.\v4\\
+\;\;In this book, we usually treat \\
+\;\;\brk{$f_2\!:\,\RR^2\longto\RR$} and \brk{$f_3\!:\,\RR^3\longto\RR$}.\\
+
+\item\stitle{Graph of $z=f(x,\,y)$} \\
+: \brk{Graph of} $\brk{f}\!:D(\subseteq\RR^2)\longto\RR$ is defined by a set\v{-6}
+$$\brk{\{(x,\,y,\,f(x,\,y)):(x,\,y)\in D\}}\tx{.}\v{20}$$
+
+\begin{center}\h{-60}\includegraphics[width=0.25\textwidth, bb=0 0 410 303]{Calc_3dimGraph.png}\end{center}
+
+\;\;If $z=f(x,\,y)$ is `\brk{linear equation},' ($z=ax+by+c$)\\
+\;\;then its graph \brk{expresses a plane}.\\
+\end{itemize}
+
+\ltitle{Limit \& Continuity}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Limit}\\
+: $\ds\brk{\lim_{(x,\,y)\to(a,\,b)}f(x,\,y)=L}$, if, given $\epsilon>0$, $\exists\delta>0$ s.t.\v{-4}
+$$\brk{\sqrt{(x-a)^2+(y-b)^2}<\delta\tx{\;\;implies\;\;}|f(x)-L|<\epsilon}\tx{.}$$
+
+\item\stitle{Operation of Limits}\nc{\li}{\opn{li}}\\
+: Let $\opn{li}=\ds\lim_{(x,\,y)\to(a,\,b)}$. If each limit exists, then\v2
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item $\li{}(f\pm g)=\li f\pm\li g$.\v2
+\item $\li{}(cf)=c\li f$.\v2
+\item $\li{}(fg)=\li f\li g$.\v2
+\item $\ds\li\left(\frac fg\right)=\frac{\li f}{\li g}.$\quad($\li g\neq0$)\\
+\end{itemize}
+
+\item\stitle{Continuity}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $f\!:\,\RR^2\longto\RR$ is \brk{continuous at $(a,\,b)$}, if\\
+$\ds\brk{\lim_{(x,\,y)\to(a,\,b)}f(x,\,y)=f(a,\,b)}$.\v4
+\item $f$ is \brk{cont. on $D$}, \;if $f$ is \brk{cont. at every $(a,\,b)\in D$}.
+\end{itemize}
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\ltitle{Partial Derivative}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition}\v4
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $\brk{f_x(x,\,y)}=\ds\brk{\frac{\Pt f}{\Pt x}}\equiv\lim_{h\to0}\frac{f(x+h,\,y)-f(x,\,y)}h$.\v6
+\item $\brk{f_y(x,\,y)}=\ds\brk{\frac{\Pt f}{\Pt y}}\equiv\lim_{h\to0}\frac{f(x,\,y+h)-f(x,\,y)}h$.\\
+\end{itemize}
+\item\stitle{Higher Partial Derivative}\v4
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $\ds\brk{\frac{\Pt^2\!f}{\Pt x^2}}\equiv\frac{\Pt}{\Pt x}\!\left(\frac{\Pt f}{\Pt x}\right)$.\qquad\quad\Cdot\;\;$\ds\brk{\frac{\Pt^2\!f}{\Pt y^2}}\equiv\frac{\Pt}{\Pt y}\!\left(\frac{\Pt f}{\Pt y}\right)$.\v4
+\item $\ds\brk{\frac{\Pt^2\!f}{\Pt x\,\Pt y}}\equiv\frac{\Pt}{\Pt x}\!\left(\frac{\Pt f}{\Pt y}\right)$.\qquad\h{1.5}\Cdot\;\;$\ds\brk{\frac{\Pt^2\!f}{\Pt y\,\Pt x}}\equiv\frac{\Pt}{\Pt y}\!\left(\frac{\Pt f}{\Pt x}\right)$.\\
+\end{itemize}
+\item\stitle{Meaning on Geometry}\\
+: $f_y(a,\,b)$ is the \brk{slope of tangent line} of $z=f(x,\,y)$,\\
+\;\;in \brk{plane $y=b$}.\v{15}
+
+\begin{center}\h{-60}\includegraphics[width=0.25\textwidth, bb=0 0 404 319]{Calc_3DimPartDerv.png}\end{center}
+
+\item\stitle{Many Variables}\\
+: For $f\!:\,\ds\prod_{i=1}^n[a_i,\,b_i](\subseteq\RR^n)\longto\RR$,\v{-7}
+$$\frac{\Pt f}{\Pt x_i}\equiv\lim_{h\to0}\frac{f(x_1,\,\ldots,\,x_i+h,\,\ldots,\,x_n)-f(\ldots,\,x_i,\,\ldots)}{h}\tx{.}\v7$$
+
+\item\stitle{Clairaut's Theorem}\\
+: If both \brk{$\Pt f/(\Pt x\,\Pt y)$ and $\Pt f/(\Pt y\,\Pt x)$ are cont. on $D$},\v3\\
+\;\;then \brk{$\ds\frac{\Pt f}{\Pt x\,\Pt y}=\frac{\Pt f}{\Pt y\,\Pt x}$}.\v4\\
+
+\item\stitle{Partial Differential Equation}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Laplace's Equation}\\
+: Find the \brk{harmony ftn.} $u$ s.t. \brk{$\D u\equiv\ds\sum_{i=1}^n\frac{\Pt^2u}{\Pt x_i^{\;2}}=0$}.\\
+\hfill ex) $e^x\sin y$\\
+\item\stitle{Wave Equation}\\
+: Find a ftn. $u$ s.t. $\ds\brk{\frac{\Pt^2u}{\Pt t^2}=a^2\frac{\Pt^2u}{\Pt x^2}}$ for $a\in\RR$.\v{-2}\\
+\hfill ex) $\sin{}(x-at)$
+\end{itemize}
+\end{itemize}
+
+\newpage
+
+\ltitle{Tangent Plane \& Linear Approximation}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Tangent Plane}\\
+: The eq. of the tan. plane of $z=f(x,\,y)$ at $(x_0,\,y_0)$ is\v{-4}
+$$\brk{z-z_0=f_x(x_0,\,y_0)(x-x_0)+f_y(x_0,\,y_0)(y-y_0)}\tx{.}$$
+
+\item\stitle{Linear Approximation}\\
+: For $A=f_x(x_0,\,y_0)$ and $B=f_y(x_0,\,y_0)$,\\
+\;\;\brk{$f(x,\,y)\approx f(x_0,\,y_0)+A(x-x_0)+B(y-y_0)$}.\\
+
+\item\stitle{Differentiable}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Definition}\\
+: For $z=f(x,\,y)$, \brk{$f$ is diff.ble at $(a,\,b)$}, if $\exists\epsilon_1$, $\epsilon_2$ s.t.\\
+\;\;$(\epsilon_1,\,\epsilon_2)\longto(0,\,0)$ as $(\D x,\,\D y)\longto(0,\,0)$, and\v{-4}
+$$\brk{\D z=(f_x(a,\,b)+\epsilon_1)\D x+(f_y(a,\,b)+\epsilon_2)\D y}\tx{.}$$
+
+\vfill\null\columnbreak
+
+\item\stitle{Judging Theorem of Diff.ble}\\
+: If \brk{$f_x$ and $f_y$ exists \& cont. at $(a,\,b)$},\\
+\;\;then \brk{$f$ is differentiable at $(a,\,b)$}.
+
+\begin{Pfbox}
+If $f$ is diff.ble at $x=a$, \\
+then $\ds\frac{\D y}{\D x}\longto f'(a)$ as $\D x\longto 0$,\\
+thus if we define $\epsilon=\ds\frac{\D y}{\D x}-f'(a)$, then $\ds\lim_{\D x\to0}\epsilon=0$,\\
+and we can express $\D y=f'(a)\D x+\epsilon\D x$.\v5
+
+Then, for $f(x,\,y)$, we can define\v{-4}
+$$\epsilon_1'=\frac{f(a\!+\!\D x,\,b\!+\!\D y)\!-\!f(a,\,b\!+\!\D y)}{\D x}-f_x(a,\,b+\D y)\tx{,}\v{-4}$$
+$$\epsilon_2=\frac{f(a,\,b+\D y)-f(a,\,b)}{\D y}-f_y(a,\,b)\tx{,}\v{-4}$$
+where $(\epsilon_1',\,\epsilon_2)\longto(0,\,0)$ as $(\D x,\,\D y)\longto(0,\,0)$, and\v{-4}
+$$\begin{aligned}
+\D z&=f(a+\D x,\,b+\D y)-f(a,\,b)\\
+&=f(a+\D x,\,b+\D y)-f(a,\,b+\D y)\\
+&\quad+f(a,\,b+\D y)-f(a,\,b)\\
+&=\D f_{\D x}+\D f_{\D y} \\
+&=(f_x(a,\,b+\D y)+\epsilon_1')\D x+(f_y(a,\,b)+\epsilon_2)\D y\tx{.}
+\end{aligned}$$
+
+But, if $f_x$ is cont. at $(a,\,b)$, then\v{-4}
+$$\lim_{\D y\to 0}f_x(a,\,b+\D y)=f_x(a,\,b)\tx{,}\v{-4}$$
+thus if we define $\epsilon_1''=f_x(a,\,b+\D y)-f_x(a,\,b)$, then $\ds\lim_{\D y\to0}\epsilon_1''=0$.\v5
+
+Then we have\v{-4}
+$$\begin{aligned}
+\D z&=(f_x(a,\,b)+\epsilon_1''+\epsilon_1')\D x+(f_y(a,\,b)+\epsilon_2)\D y \\
+&=(f_x(a,\,b)+\epsilon_1)\D x+(f_y(a,\,b)+\epsilon_2)\D y
+\end{aligned}\v{-4}$$
+for $\epsilon_1=\epsilon_1'+\epsilon_1''$, where\\
+\h{-7}$\ds\lim_{(\D x,\,\D y)\to(0,\,0)}\epsilon_1=\lim_{\D x\to0}\epsilon_1'+\lim_{\D y\to0}\epsilon_1''=0+0=0$.\\
+\end{Pfbox}
+\end{itemize}
+
+\item\stitle{Total Derivative/Differential}\v2\\
+: $\ds\brk{\!\d z}\equiv\brk{\frac{\Pt z}{\Pt x}\dx+\frac{\Pt z}{\Pt y}\d y}\tx{.}\;\;(=\lim_{(\D x,\,\D y)\to(0,\,0)}\D z)$\\
+\end{itemize}
+
+\ltitle{Chain Rule}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Case 1: $z=f(x(t),\,y(t))$}\v3\\
+: $\ds\dd zt=\frac{\Pt z}{\Pt x}\frac{\!\dx}{\!\dt}+\frac{\Pt z}{\Pt y}\frac{\!\d y}{\!\dt}$.\\
+
+\item\stitle{Case 2: $z=f(x(s,\,t),\,y(s,\,t))$}\v3\\
+: $\ds\frac{\Pt z}{\Pt s}=\frac{\Pt z}{\Pt x}\frac{\Pt x}{\Pt s}+\frac{\Pt z}{\Pt y}\frac{\Pt y}{\Pt s}$,\quad$\ds\frac{\Pt z}{\Pt t}=\frac{\Pt z}{\Pt x}\frac{\Pt x}{\Pt t}+\frac{\Pt z}{\Pt y}\frac{\Pt y}{\Pt t}$.\\
+
+\item\stitle{General Case}\\
+: If $z=f(x_1,\,x_2,\,\ldots,\,x_n)$ with each $x_j(t_1,\,t_2,\,\ldots,\,t_m)$,\v{-4}
+$$\brk{\frac{\Pt z}{\Pt t_i}=\sum_{j=1}^n\frac{\Pt z}{\Pt x_j}\frac{\Pt x_j}{\Pt t_i}}\tx{.}\v7$$
+
+\item\stitle{Implicit Funtion Theorem}\\
+: For $F(x,\,y)=0$ where $y=f(x)$, \;\brk{$\ds\dd yx=-\frac{F_x}{F_y}$}. ($F_y\neq0$)
+
+\begin{Pfbox}
+Since $y$ is ftn. of $x$, we have\v{-4}
+$$\frac{\Pt F}{\Pt x}\dd xx+\frac{\Pt F}{\Pt y}\dd yx=\frac{\Pt F}{\Pt x}+\frac{\Pt F}{\Pt y}\dd yx=0\tx{,}\v{-4}$$
+thus, if $\Pt F/\Pt y\neq0$,\v{-4}
+$$\dd yx=-\frac{\ds\frac{\Pt F}{\Pt x}}{\ds\frac{\Pt F}{\Pt y}}=-\frac{F_x}{F_y}\tx{.}\v{-9}$$
+\end{Pfbox}
+\end{itemize}
+
+\;
+
+\ltitle{Directional Derivatives \& Gradient Vectors}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Directional Derivatives}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Definition}\\
+: \brk{The directional drv. of $f$ to $\mb u$ direction} is def. by\v{-4}
+$$\h{-10}D_{\mb u}f(x_0,\,y_0)\equiv\lim_{h\to0}\frac{f(x_0+ha,\,y_0+hb)-f(x_0,\,y_0)}{h}\v{-4}$$
+\;\;for $\mb u=\ang{a,\,b}$.\v9
+
+\item \brk{$\ds D_{\mb u}f=a\rr fx+b\rr fy$}.
+
+\begin{Pfbox}
+Let $x_0'=x_0+ha$, $y_0'=y_0+hb$, $\mb x'=(x_0',\,y_0')$, \\
+$\mb x=(x_0,\,y_0)$.
+$$\begin{aligned}
+D_{\mb u}f(\mb x)&=\lim_{h\to0}\frac{f(\mb x')-f(\mb x)}{h}\\
+&=\lim_{h\to0}\frac1h\left(\begin{aligned}&f({\mb x'})-f(x_0,\,{y_0'})\\+{}&f(x_0,\,{y_0'})-f(\mb x)\end{aligned}\right)\\
+&=\lim_{h\to0}\left(\begin{aligned}&a(f({\mb x'})-f(x_0,\,{y_0'}))/(ah)\\+{}&b(f(x_0,\,{y_0'})-f(\mb x))/(bh)\end{aligned}\right)\\
+&=a\rr fx+b\rr fy\tx{.}
+\end{aligned}\v{-10}$$
+\end{Pfbox}
+\end{itemize}
+\;
+
+\item\stitle{Gradient Vectors}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Definition}\\
+: \brk{The gradient vector of $f$ at $(x_0,\,y_0)$} is defined by\v{-4}
+$$\h{-10}\brk{\Nabla f=\ang{\rr fx,\,\rr fy,\,\rr fz}}\quad\tx{or}\quad\brk{\Nabla f=\ang{\rr fx,\,\rr fy}}\tx{.}\v4$$
+
+\item$\brk{\ds D_{\mb u}f=\Nabla f\cdot\mb u}$.\v9
+
+\item\stitle{Maximum of $D_{\mb u}f$}\\
+: \brk{$D_{\mb u}f\lqs\nrm{\Nabla f}$}. {\Gray ($D_{\mb u}f=\Nabla f\cdot\mb u=\nrm{\Nabla f}\nrm{\mb u}\cos\theta)$}\\
+\;\;``$=$'' stands if $\mb u\mathrel{\tx{\ti{l\!\!\:\!\:l}}} \Nabla f$.
+\end{itemize}
+\vfill\null\columnbreak
+\item\stitle{Tangent Plane to Level Surfaces}\\
+: The \brk{equation of tangent plane} to\\
+\;\;\,the \brk{level surface $f(x,\,y,\,z)=k$}, at $\mr P(x_0,\,y_0,\,z_0)$ is\v{-4}
+$$\brk{\Nb f(\mb r_0)\cdot(\mb r-\mb r_0)=0}\v{-4}$$
+\;\;\,with $\mb r=\ang{x,\,y,\,z}$, $\mb r_0=\Vec{\mr{OP}}$.\v7
+\end{itemize}
+
+\ltitle{Maximum \& Minimum}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Global Max/min.}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $f$ is \brk{(global) maximum} at $(a,\,b)$, if\\
+\brk{$f(a,\,b)\gqs f(x,\,y)$ for all $(x,\,y)$} in domain of $f$.\v3
+\item $f$ is \brk{(global) minimum} at $(a,\,b)$, if\\
+\brk{$f(a,\,b)\lqs f(x,\,y)$ for all $(x,\,y)$} in domain of $f$.\v{15}
+\end{itemize}
+\item\stitle{Local Max/min.}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $f$ is \brk{local maximum} at $(a,\,b)$, if\\
+\brk{$f(a,\,b)\gqs f(x,\,y)$ for all $(x,\,y)$: nbh. of $(a,\,b)$}.\v3
+\item $f$ is \brk{local minimum} at $(a,\,b)$, if\\
+\brk{$f(a,\,b)\lqs f(x,\,y)$ for all $(x,\,y)$: nbh. of $(a,\,b)$}.\v9
+\end{itemize}
+\item\stitle{First Derivatives Test}\\
+: If \brk{$f$ has local max/min.} and $\exists$ pt.deriv.s at $(a,\,b)$,\\
+\;\;\,then \brk{$\Nb f(a,\,b)=\mb0$}.\v{15}
+\item\stitle{Critical Point}\\
+: $(a,\,b)$ is a \brk{critical point} of $f$,\\
+\;\;\,if \brk{$\not\!\exists$ any pt.deriv.} or \brk{$f_{xy}f_{yx}=0$ at $(a,\,b)$}.\v9
+\item\stitle{Second Derivative Test}\\
+: For $f(x,\,y)$ s.t. $f_{xy}$ \& $f_{yx}$ are cont. and $=0$ at $(a,\,b)$,\v3\\
+\;\;let $D=\abs{\Mt{cc}{f_{xx}(a,\,b)&f_{xy}(a,\,b)\\f_{yx}(a,\,b)&f_{yy}(a,\,b)}}$. Then\v5
+\begin{enumerate}[label=(\roman*)]
+\setlength{\leftskip}{3pt}
+\item If \brk{$D>0$ \& $f_{xx}>0$}, then $f$: \brk{local min.} at $(a,\,b)$.\v2
+\item If \brk{$D>0$ \& $f_{xx}<0$}, then $f$: \brk{local max.} at $(a,\,b)$.\v2
+\item If \brk{$D<0$}, then $f$ has a \brk{saddle point} at $(a,\,b)$.
+\end{enumerate}
+
+\newpage
+
+\item\stitle{Concaveness}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Definition}\\
+: For a function $f\!:D(\subseteq\RR)\longto\RR$\\
+\;\;and its tangent line $y=L_{x_0}(x)$ at $x_0\in I\subseteq D$,\v4
+\begin{itemize}[label={-}]
+\setlength{\leftskip}{-12pt}
+\item $f$ is \brk{concave upward}(CU), if for each $x_0\in I$, \\
+\brk{$f(x)-L_{x_0}(x)>0$ for all $x\in I\setminus\{x_0\}$}.\v3
+\item $f$ is \brk{concave downward}(CD), if for each $x_0\in I$, \\
+\brk{$f(x)-L_{x_0}(x)<0$ for all $x\in I\setminus\{x_0\}$}.\v9
+\end{itemize}
+\item If \brk{$f''(x)>0$} on $I$, then $f$ is \brk{CU on $I$}.\v4
+\item If \brk{$f''(x)<0$} on $I$, then $f$ is \brk{CD on $I$}.
+
+\begin{Pfbox}[(CU)]
+Since $L_{x_0}(x)=f(x_0)+f'(x_0)(x-x_0)$, \\
+\h{-5}it suffices to check\v{-4}
+$$f(x)>f(x_0)+f'(x_0)(x-x_0)\tx{.}\v{-4}$$
+\h{-5}for $x\in I\setminus\{x_0\}$.\v5
+
+Since $f''(x)>0$, $f'$ is increasing on $I$, thus\\
+\h{-5}if $x>x_0$, then $f'(x)>f'(x_0)$ on $\{x\in I:x>x_0\}$,\\
+\h{-5}if $x<x_0$, then $f'(x)<f'(x_0)$ on $\{x\in I:x<x_0\}$.\v5
+
+Also, by MVT, $\exists c$ between $x_0$ and $x$ s.t.\v{-4}
+$$\frac{f(x)-f(x_0)}{x-x_0}=f'(c)\tx.\v{-4}$$
+
+Then we have if $x>x_0$, then $f'(c)>f'(x_0)$,\v2 \\
+\h{-5}thus $\ds\frac{f(x)-f(x_0)}{x-x_0}>f'(x_0)$, hence we conclude\v2\\
+\h{-5}$f(x)>f(x_0)+f'(x_0)(x-x_0)$, since $x-x_0>0$.\v5
+
+On the other side, if $x<0$, then $f'(c)<f'(x_0)$,\\
+\h{-5}so $\ds\frac{f(x)-f(x_0)}{x-x_0}>f'(x_0)$, therefore we take\\
+\h{-5}$f(x)>f(x_0)+f'(x_0)(x-x_0)$, since $x-x_0<0$.
+\end{Pfbox}\;
+\end{itemize}
+
+\item\stitle{Lagrange Multiplier Method}\\
+: \brk{Critical points of $f(\mb x)$ subject to $g(\mb x)=k$} can be found\\
+\;\;by solving following eq. of $x$, $y$, $z$ and $\lambda$:\v{-4}
+$$\brk{\begin{cases}\Nabla \h{-1}f(\mb x)=\lambda \Nabla g(\mb x)\tx,\v3\\g(\mb x)=k{\color{black}\tx.}\end{cases}}\v{-4}$$
+\;\;[$\mb x$ is a two- or three-dimension variable vector.]
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\Ltitle{14}{Multiple Integrals}
+
+\ltitle{Double Integrals} {\color{TGreen}(over rectangle)}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition}\\
+: The \brk{double integral} of $f$ over $R$ is defined by\v{-4}
+$$\brk{\iint_{\h{-1}R} f(x,\,y)\d A}\equiv\brk{\lim_{\substack{m\to\infty\\n\to\infty}}\sum_{i=1}^m\sum_{j=1}^n f(x_{ij}^*,\,y_{ij}^*)\D A}\tx{.}\v{-4}$$
+\;\;{\Gray(Sets of $\D A$, $x_{ij}^*$, etc. are sim. to ones of single int.)}\\
+
+\item For nonnegative function $f\!: R(\subseteq\RR^2)\longto\RR$,\v{-4}
+$$\brk{V=\iint_{\h{-1}R} f(x,\,y)\d A}.\v4$$
+
+\item\stitle{Fubini's Theorem}\\
+: For $R=[a,\,b]\times[c,\,d]$ and $f\!: R\longto\RR$,\v{-4}
+$$\brk{\begin{aligned}
+  \iint_{\h{-1}R} f(x,\,y)\d A&=\int_{\!a}^b\h{-5.5}\int_{\!c}^d f(x,\,y)\dy\dx\\
+                      &=\int_{\!c}^d\h{-5.5}\int_{\!a}^bf(x,\,y)\dx\dy
+  \end{aligned}}\v{-4}$$
+\;\;if $f$ is cont. on $R$ (or bdd. \& finitely discont. on $R$).\\
+
+\item For a \brk{seperatable} function $f$ on $R=[a,\,b]\times[c,\,d]$,\\
+i.e., \brk{$f(x,\,y)=g(x)h(y)$} for some $g$ and $h$,\v{-4}
+$$\brk{\iint_{\h{-1}R}f(x,\,y)\d A=\int_{\!a}^bg(x)\dx\int_{\!c}^dh(y)\dy}\tx.$$\;
+\end{itemize}
+
+\ltitle{Double Integrals over General Regions}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Type I}{\color{TGreen}: Fixed $x$}\\
+: If $D=\{(x,\,y):a\lqs x\lqs b,\;g_1(x)\lqs y\lqs g_2(x)\}$,\v{-4}
+$$\brk{\iint_{\h{-1}D}f(x,\,y)\d A=\int_a^b\h{-5.5}\int_{g_1(x)}^{g_2(x)}f(x,\,y)\dy\dx}\tx.$$\;\v{-4}
+
+\item\stitle{Type II}{\color{TGreen}: Fixed $y$}\\
+: If $D=\{(x,\,y):h_1(y)\lqs x\lqs h_2(y),\;c\lqs y\lqs d\}$,\v{-4}
+$$\brk{\iint_{\h{-1}D}f(x,\,y)\d A=\int_c^d\h{-5.5}\int_{h_1(x)}^{h_2(x)}f(x,\,y)\dx\dy}\tx.$$\;\v{-4}
+
+\item\stitle{General Region $D$}\v3\\
+: \brk{$\ds\iint_{\h{-1}D}f(x,\,y)\d A=\iint_{\h{-1}R}F(x,\,y)\d A$}\v3\\
+\;\;for some rectangular region $R$ s.t. $D\subseteq R$,\v3\\
+\;\;and \brk{$F(x,\,y)=\left\{\h{-4}\begin{tabular}{ll}$f(x,\,y)$ & if $(x,\,y)\in D$,\v2\\$0$ & if $(x,\,y)\in R\setminus D$.\end{tabular}\right.$}
+\end{itemize}
+
+\newpage
+
+\ltitle{Double Integrals in Polar Coord.}
+
+: For $R=\{(r,\,\theta):0\lqs a\lqs r\lqs b,\;\alpha\lqs\theta\lqs\beta\}$,\v{-4}
+$$\brk{\ds\iint_{\h{-1}R}f(x,\,y)\d A=\int_{\!\alpha}^\beta\h{-5.5}\int_{\!a}^b f(r\cos\theta,\,r\sin\theta)\,r\d r\d\theta}\tx.$$
+
+\begin{Pfbox}[($\!\d A=r\d r\d\theta$)]
+$$\begin{aligned}
+\D A&=\frac12r_{i+1}^{\;2}\D\theta-\frac12r_i^{\;2}\D\theta\\
+&=\frac{r_{i+1}+r_i}2\D r\D\theta\\
+&=\ol{r_i}\D r\D\theta\\
+&\longto r\d r\d\theta\tx{\quad as $\D r$, $\D\theta\longto 0$,}
+\end{aligned}\v{-4}$$
+thus $\d A=r\d r\d\theta$.
+\end{Pfbox}
+
+\;
+
+\ltitle{Surface Area}
+
+: For a cont. ftn. $f\!: D(\subseteq\RR^2)\longto\RR$,\\
+\;\;\;\;the \brk{area of surface $S$ on $D$} is\v{-4}
+$$\brk{A(S)=\iint_{\!D}\sqrt{1+\left(\rr zx\right)^{\!\!2}+\left(\rr zy\right)^{\!\!2}}}\tx.$$
+
+\begin{Pfbox}
+Write $\mb r(t)=\vv{(x_i,\,y_i,\,f(x_i,\,y_i))(x_{i+1},\,y_i,\,f(x_{i+1},\,y_i))}$\v2\\
+and $\mb s(t)=\vv{(x_i,\,y_i,\,f(x_i,\,y_i))(x_i,\,y_{i+1},\,f(x_i,\,y_{i+1}))}$\\
+with $(x_i,\,y_i)\in D$ and $x_{i+1}=x_i+t\D x$, $y_{i+1}=y_i+t\D y$.\v3
+
+Then each tangent vector of $\mb r$ and $\mb s$ is\v{-4}
+$$\mb r'(t)=\D x\ang{1,\,0,\,f_x}\tx,\quad\mb s'(t)=\D y\ang{0,\,1,\,f_y}\v{-4}$$
+Then, $\D A=\nrm{\mb{r'\times s'}}=\D x\D y\sqrt{{f_x}^2+{f_y}^2+1}$.
+\end{Pfbox}\v9
+
+\ltitle{Triple Integrals}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition}\\
+: The \brk{triple integral} of $f$ on a rectangle area $R$ is\v{-4}
+$$\iiint_{\!E} f(\mb x)\d V=\lim_{l,m,n\to\infty}\sum_{i=1}^l\sum_{j=1}^m\sum_{k=1}^n f(\mb x_{ijk}^*)\,\D V\v{-4}$$
+\;\;with $\mb x=(x,\,y,\,z)$ and $\mb x_{ijk}^*=(x_{ijk}^*,\,y_{ijk}^*,\,z_{ijk}^*)$.\\
+
+\item\stitle{Fubini's Theorem on Triple Integrals}\\
+: If $f$ is continuous on $B=[a,\,b]\times[c,\,d]\times[r,\,s]$,\v{-4}
+$$\brk{\iiint_{\!B} f(x,\,y,\,z)\d V=\int_{\!r}^s\h{-5}\int_{\!c}^d\h{-5}\int_{\!a}^bf(x,\,y,\,z)\dx\dy\d z}\tx.\v{-4}$$
+\;\;($x$, $y$, $z$ can be shuffled; careful to range.)\\
+
+\item\stitle{Volume}\\
+: The volume of 3-dim area $V(E)$ is\v{-4}
+$$\brk{V(E)=\iiint_{\!E}\d V}\tx.$$ 
+
+\vfill\null\columnbreak
+
+\item\stitle{On Cylinderical Coordinates}\\
+: Convert $(x,\,y,\,z)$ to $(r,\,\theta,\,z)$,\\
+\;\;using \brk{$x=r\cos\theta$}, \brk{$y=r\sin\theta$}, \brk{$z=z$}.\\
+\end{itemize}
+
+\ltitle{Examples of Calculating Integrals}\v{-6}
+\begin{itemize}[label={-}]
+\item For $E$: on $(\RR^+)^3$, bdd. with $z=12xy$, $x=1$, $y=x$,\v{-4}
+$$\ds\iiint_{\!E}z\d V$$
+
+\begin{solbox}
+\rnc{\qedsymbol}{}
+Given $x\in[0,\,1]$, $0\lqs y\lqs x$ and $0\lqs z\lqs 12xy$.\\
+Then we have\v{-4}
+$$\begin{aligned}
+\iiint_{\!E}z\d V&=\int_{\h{-1}0}^1\h{-4}\int_{\h{-1}0}^x\h{-4}\int_{\h{-1}0}^{12xy}z\d z\dy\dx\\
+&=\int_{\h{-1}0}^1\h{-4}\int_{\h{-1}0}^x\frac{144}2x^2y^2\dy\dx\\
+&=\int_0^1\frac{144}6x^5\dx=4\tx.
+\end{aligned}\v{-24.5}$$
+\hfill\Bsq\\
+\v{-6}
+\end{solbox}\v9
+
+\item For $E$: bounded with $y=x^2+z^2$ and $y=4$,\v{-4}
+$$\ds\iiint_{\!E}\sqrt{x^2+z^2}\d V$$
+
+\begin{solbox}
+\rnc{\qedsymbol}{}
+Given $y\in[0,\,4]$, if we let $x=r\cos\theta$, $y=r\sin\theta$,\\
+and $D=\{(x,\,z):x^2+z^2\lqs4\}$,\v{-4}
+$$\begin{aligned}
+\iiint_{\!E}\sqrt{x^2+z^2}\d V&=\int_{\h{-1}0}^{2\pi}\h{-4}\int_{\h{-1}0}^4\h{-4}\int_{\h{-1}0}^{\sqrt y}r\cdot r\d r\d\theta\\
+&=2\pi\int_0^4\frac{y^{3/2}}3\d r\\
+&=2\pi\cdot\frac13\cdot\frac25y^{5/2}\bigg]^4_0=\frac{128}{15}\pi\tx.
+\end{aligned}\v{-24.5}$$
+\hfill\Bsq\\
+\v{-6}
+\end{solbox}\v9
+
+\item Volume of bounded solid $E$ with\\
+$x+2y+z=2$, $x=2y$, $x=0$, $z=0$
+
+\begin{solbox}
+\rnc{\qedsymbol}{}
+Given $x\in[0,\,1]$, $x/2\lqs y\lqs 1-x/2$,\\
+$0\lqs z\lqs 2-x-2y$. Then we have\v{-4}
+$$\begin{aligned}
+\iiint_{\!E}\d V&=\int_0^1\h{-4}\int_{x/2}^{1-x/2}\h{-4}\int_0^{2-x-2y}\d z\dy\dx\\
+&=\int_0^1\h{-4}\int_{x/2}^{1-x/2}(2-x-2y)\dy\dx\\
+&=\int_0^1(x^2-2x+1)\dx=\frac13\tx.
+\end{aligned}\v{-24.5}$$
+\hfill\Bsq\\
+\v{-6}
+\end{solbox}
+\end{itemize}
+
+\newpage
+\Ltitle{-}{Continuous Random Variables}
+
+\ltitle{Denstity/Distribution Functions}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Cumulative Distribution Function}\\
+: A function $F_X$ with \brk{$F_X(x)=\mr P(X\lqs x)$}.\\
+\;\;Note that every CDF are non-decreasing.\v9
+
+\item\stitle{Probability Density Function}\\
+: A function $f\!: D(\subseteq\RR)\longto\RR$ s.t.
+\begin{itemize}[label=\Cdot]
+\item $f(x)\gqs 0$ for all $x\in D$,\v2
+\item \brk{$\ds\int_D f(x)\dx=1$},
+\item \brk{$\ds\mr P(X\in A)=\int_{\!A} f(x)\dx$}.
+\end{itemize}\v9
+
+\item For $x\in\RR$ and an interval $A\subseteq\RR$, note that\v{-7}
+$$\begin{array}{c}\brk{\mr P(X=x)=0}\tx{, thus}\\
+\brk{\mr P(X\in A)=\mr P(X\in\ol A)=\mr P(X\in\inner A)}\tx.
+\end{array}$$
+
+\item\stitle{Percentiles}\\
+: \brk{$(100p)$-th percentile} (denoted by \brk{$\pi_p$}) is defined by\v{-4}
+$$\brk{p=\int_{-\infty}^{\pi_p} f(x)\dx=\mr P(X\lqs \pi_p)=F_X(\pi_p)}\tx.$$
+
+\begin{itemize}[label=\Cdot]
+\item \brk{$\pi_{0.25}=q_1$}: First quartile.
+\item \brk{$\pi_{0.5}=q_2=m$}: Second quartile (Median).
+\item \brk{$\pi_{0.75}=q_3$}: Third quartile.
+\end{itemize}\v{15}
+
+\item\stitle{Two Normal Distribution}\\
+: For $X$, $Y\sim \mr N(\mu,\,\sigma^2)$, their (J)PDF is\v{-4}
+$$f(x,\,y)=\frac1{2\pi\sigma^2}\exp\left(-\frac{(x-\mu)^2+(y-\mu)^2}{2\sigma^2}\right)\tx.$$
+
+\begin{Pfbox}[$f$: PDF?]
+Let $u=x-\mu$, $t=y-\mu$,\\
+then $u$, $t\in\RR$, $(\!\d u,\dt)=(\!\dx,\dy)$;\v{-4}
+$$\iint_{\RR^2}f=\frac1{\sqrt{2\pi}\sigma}\int_\RR\!\int_\RR\exp\left(-\frac{u^2+t^2}{2\sigma^2}\right)\d u\dt\tx,\v2$$
+convert to polar coordinate:
+$$\begin{aligned}
+&=\frac1{2\pi\sigma^2}\int_0^{2\pi}\!\!\!\int_0^\infty\exp\left(-\frac{r^2}{2\sigma^2}\right)r\d r\d\theta\\
+&=\frac1{\sigma^2}\int_0^\infty\exp\left(-\frac{r^2}{2\sigma^2}\right)r\d r\\
+&=\left.\exp\left(-\frac{r^2}{2\sigma^2}\right)\right]^\infty_0=0-(-1)=1\tx.
+\end{aligned}$$
+\end{Pfbox}
+
+\;\;\stitle{cf.} For $X\sim\mr N(\mu,\,\sigma^2)$, its PDF is\v{-4}
+$$f(x)=\frac1{\sqrt{2\pi}\sigma}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\tx.$$
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\ltitle{Expectations}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Mean}\\
+: $\mu=\mr E(X)=\ds\int_{-\infty}^\infty xf(x)\dx$.\v5
+
+\item\stitle{Variance}\\
+: $\Var(X)=\mr E(X^2)-[\mr E(X)]^2{\Gray\left(=\!\ds\int_\RR (x-\mu)^2f(x)\dx\right)}$.\v5
+
+\item\stitle{Standard Deviation}\\
+: $\sigma=\sqrt{\Var(X)}$.\v5
+
+\item\stitle{Moment Gerenerating Function}\\
+: $M(t)=\ds\int_{-\infty}^\infty e^{tx}f(x)\dx\;{\Gray(=\mr E(e^{tX}))}$.\v3
+
+\;\;Note that \brk{$M'(0)=\mr E(X)$}, \brk{$M''(0)-(M'(0))^2=\Var(X)$}.\v9
+\end{itemize}
+
+\ltitle{Typical Distribution}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Mixture Distribution}\\
+: For some PDF $f_1$, $f_2$ and $a\in[0,\,1]$,\v{-4}
+$$\brk{f(x)=af_1(x)+(1-a)f_2(x)}\tx.$$
+
+\item\stitle{Piecewise Distribution}\\
+: For some ftn.s $f_1$ on $A$ and $f_2$ on $B$, $f$ on $A\cup B$ s.t.\v{-4}
+$$\brk{\int_{A\cup B}f=\int_A f_1+\int_B f_2}\tx.\v5$$
+
+\item\stitle{Uniform Distribution}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Definition}\\
+: A distribution $U(a,\,b)$ s.t. for $X\sim U(a,\,b)$,\v{-4}
+$$\brk{f(x)=\frac1{b-a}}\quad\tx{for all $x\in(a,\,b)$.}$$
+
+\item\stitle{Expectations}
+\begin{itemize}[label=-]
+\setlength{\leftskip}{-5pt}
+\item $\mr E(X)=\dfrac{a+b}2$.\v3
+\item $\Var(X)=\dfrac{(b-a)^2}{12}$.\v3
+\item $M(t)=\dfrac{e^{tb}-e^{ta}}{t(b-a)}$.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{multicols*}
+\end{document}
