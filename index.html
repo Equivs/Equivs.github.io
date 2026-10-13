@@ -100,24 +100,16 @@
     <h1>≡'s Garage</h1>
     <p class="text-center">授業とか自習とかのノートの保管所としてとか、色々使ってます。</p>
     
-    <nav>
-        <a href="index.html">Home</a>
-        <span class="divider"> | </span>
-        <a href="sub1.html">Studies</a>
-        <span class="divider"> | </span>
-        <a href="sub2.html">Sakumon</a>
-        <span class="divider"> | </span>
-        <a href="sub3.html">Class Notes</a>
-        <span class="divider"> | </span>
-        <a href="https://x.com/Equiv__" target="_blank" class="sns-link">
-            <img src="Files/Images/Favicons/favicon_x.png" alt="X (旧 Twitter)" class="sns-icon">
-        </a>
-        <a href="https://mathlog.info/users/Irpyu20e3hMAgrXR8FOOajbKAvu1" target="_blank" class="sns-link">
-            <img src="Files/Images/Favicons/favicon_mathlog.png" alt="Mathlog" class="sns-icon">
-        </a>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <p>ここはメインページです。色々使いたい用途が確定してそれぞれのページが作られたらここもある程度凝らしていくつもりですよ。</p>
-    
+
+    <script>
+        fetch('nav.html') // nav.html 파일의 상대 경로에 맞게 수정
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
