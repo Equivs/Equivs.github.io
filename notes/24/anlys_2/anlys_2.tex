@@ -1,0 +1,1631 @@
+\documentclass[dvipdfmx,a4paper,titlepage,9pt]{jsarticle}
+
+\input{{C:/Users/Lenovo/texlive/2023/Macros/macro}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\bf ``Introduction of Mathematical Analysis 2'' Class Notes}
+\fancyhead[C]{}
+\fancyhead[R]{HUFS(G) `23 M. sh}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{}
+
+\title{``Introduction of Mathematical Analysis 2'' Class Notes}
+
+\begin{document}
+\begin{multicols*}{2}
+\Ltitle{0}{Reviews of Analysis 1}
+
+\ltitle{Sets} {\color{Gray}($A$: a nonempty set)} \v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Maximum / Minimum of Sets} 
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $M\in A$ is \brk{the maximum of $A$}, if $M\gqs a\;\;\forall a\in A$. \v2
+\item $m\in A$ is \brk{the minimum of $A$}, if $m\lqs a\;\;\forall a\in A$.
+\end{itemize}
+
+\; \v{-4}
+
+\item\stitle{Bound of Sets}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $L$ is \brk{an upper bound for $A$}, if $L\gqs a\;\;\forall a\in A$. \v2
+\item $l$ is \brk{a lower bound for $A$}, if $l\lqs a\;\;\forall a\in A$. \v2
+\item $M$ is \brk{the supremum of $A$}, denoted by \brk{$\sup A$}, \\
+               if $\exists M=\min{}\{L:L\text{\;is an upper bound for $A$}\}$. \v2
+\item $m$ is \brk{the infimum of $A$}, denoted by \brk{$\inf A$}, \\
+               if $\exists m=\max{}\{l:l\text{\;is a lower bound for $A$}\}$.
+\end{itemize}
+\end{itemize}
+
+\;
+
+\ltitle{Sequences \& Series'} {\color{Gray}($(a_n)$: a real sequence)} \v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{The Limit of Sequences} \\
+: $\brk{\lim a_n=a}\in\RR$ \\
+$\;\;\;\defar\;\FA\epsilon>0,\;\exists N>0\;\text{s.t.}\;n>N\;\tx{implies}\;|a_n-a|<\epsilon.$
+
+\; \v{-4}
+
+\item\stitle{$\limsup$'s and $\liminf$'s}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\ds\brk{\limsup a_n}\equiv\lim_{N\to\infty}\sup{}\{a_n:n>N\}$.
+\item $\ds\brk{\liminf a_n}\equiv\lim_{N\to\infty}\inf{}\{a_n:n>N\}$. \v3
+\item If $\limsup a_n\neq\liminf a_n$, then $\nex\lim a_n$.
+\end{itemize}
+
+\;\v{-4}
+
+\item\stitle{Subsequence}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $(a_{n_k})$ is a \brk{subsequence of $(a_n)$} \\
+               for an increasing natural sequence $(n_k)$. \v2
+\item $a$ is \brk{a subsequential limit of $(a_n)$} if $\ds\lim_{k\to\infty} a_{n_k}=a$. \v4
+\item $\limsup a_n=\sup A$ and $\liminf a_n=\inf A$ \\
+               for $A=\{L:L\;\text{is a subsequential limit of $(a_n)$}\}$. \\
+               $\Longto\;\lim a_n$ is defined iff $|A|=1$.
+\end{itemize}
+
+\; \v{-4}
+
+\item\stitle{Cauchy Sequences}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $(a_n)$ is a \brk{Cauchy sequence} if $\FA\epsilon>0$; \\
+$\exists N>0\;\text{s.t.}\;n>m>N\;\tx{implies}\;|a_n-a_m|<\epsilon.$ \v2
+
+\item$(a_n)$ converges iff $(a_n)$ is a Cauchy sequence.
+\end{itemize}
+
+\; \v{-4}
+
+\item\stitle{Convergence of Series'}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item \brk{$\sum a_n$ converges to $S$} if a sequence $(S_n)$ s.t. \v{-8}
+$$S_n=\sum_{i=m}^n a_i\quad(m=\min n)\quad\FA n\tx{,}\v{-6}$$
+which are ``the partial sums of $(a_n)$,'' converges to $S$. \v2
+
+\item If $\sum a_n\in\RR$, then $\lim a_n=0$. 
+\end{itemize}
+
+\; \v{-4}
+
+\item\stitle{Absolute Convergence of Seq.'s \& Series'}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $(a_n)$ absolutely converges if $(|a_n|)$ converges. \v2
+\item If $\sum |a_n|\in\RR$, then $\sum a_n\in\RR$.
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\item\stitle{Limit Theorems of Seq.'s \& Series'} \v2
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\ds\lim_{n\to\infty}\frac1{n^p}=0$\quad if $p>0$. \v4
+\item $\ds\lim_{n\to\infty}r^n=0$\quad if $|r|<1$.\v4
+\item $\ds\lim_{n\to\infty}\left(1+\frac rn\right)^n=e^r$. \v5
+\item \brk{Squeeze Theorem} ($a_n,\,b_n,\,c_n$: seq.'s) \\
+               : If $b_n\lqs a_n\lqs c_n$ $\forall n>N$ and $\lim b_n=\lim c_n=L$,\\
+               \;\;then $\lim a_n=L.$ \v5
+\item $\sum\ds\frac1{n^p}$\quad if $p>1$. 
+\end{itemize}
+
+\; \v{-4}
+
+\item\stitle{Alternating Series Theorem}
+\begin{itemize}
+\setlength{\leftskip}{-10pt}
+\item[:] $\sum |a_n|$ converges if 
+\begin{itemize}
+\setlength{\leftskip}{-10pt}
+\item[(i)] $\exists N_1>0$ s.t. $i>N_1$ implies $|a_i|>|a_{i+1}|$,
+\item[(ii)] $\exists N_2>0$ s.t. $j>N_2$ implies $a_ja_{j+1}<0$,
+\item[(iii)] $\lim a_n=0$.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\;
+
+\ltitle{Convergence Tests/Theorems of Series'} \v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Comparison Test} {\color{Gray}($a_n\gqs0\;\;\forall n$)}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\sum a_n\in\RR$ $\wedge$ $|b_n|\lqs a_n\;\;\forall n\;\Longto\;\sum b_n$ converges. \v2
+\item $\sum a_n=+\infty$ $\wedge$ $b_n\gqs a_n\;\;\forall n\;\Longto\;\sum b_n+\infty$.
+\end{itemize}
+
+\;\v{-4}
+
+\item\stitle{Ratio Test}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\sum a_n$ (abs.) converges\quad iff\quad $\limsup\ds\left|\frac{a_{n+1}}{a_n}\right|<1$. \v4
+\item $\sum a_n$ diverges\quad iff\quad $\liminf\ds\left|\frac{a_{n+1}}{a_n}\right|>1$. \v4
+\end{itemize}
+
+\;\v{-4}
+
+\item\stitle{Root Test}
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\sum a_n$ (abs.) converges\quad iff\quad $\limsup{}|a_n|^{1/n}<1$. \v4
+\item $\sum a_n$ diverges\quad iff\quad $\liminf|a_n|^{1/n}>1$. \v4
+\end{itemize}
+
+\;\v{-4}
+
+\item\stitle{Cauchy Criterion} \\
+: $\sum a_n$ converges iff it satisfies the Cauchy criterion:\v{-4}
+$$\text{Given}\;\epsilon>0,\;\exists N>0\quad\tx{s.t.}\v{-6}$$
+$$n>m>N\quad\tx{implies}\quad\left|\sum_{k=m}^na_k\right|<\epsilon.$$
+
+\; \v{-4}
+
+\item\; \v{-15}\\
+$\begin{aligned}\ds\liminf\left|\frac{a_{n+1}}{a_n}\right|&\lqs\liminf|a_n|^{\frac1n}\\&\lqs\limsup|a_n|^{\frac1n}\lqs\limsup\left|\frac{a_{n+1}}{a_n}\right|.\end{aligned}$
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\Ltitle{23}{Power Series}
+
+\ltitle{Power Series}\v{-6}
+\begin{itemize}[label={-}]
+\item \stitle{Definition} \\
+: a series
+$$\sum_{n=0}^\infty a_n(x-a)^n\v{-4}$$
+\;\;with a real sequence $(a_n)_{n=0}^\infty$, a variable $x$, and $a\in\RR$. \\
+\;\;It becomes a function of $x$ if it converges. \\
+\end{itemize}
+
+\ltitle{Convergence of Power Series}\v{-3}
+\begin{Pfbox}
+For a power series $\sum a_nx^n$, let $b_n=a_nx^n$ for all $n$, and let $\beta=\limsup|a_n|^{1/n}$. \\
+Then $\limsup{}|b_n|^{1/n}=|x|\cdot\limsup{}|a_n|^{1/n}=\beta|x|$, thus for\v{-4}
+$$R=\begin{cases}0 & \text{if}\;\beta=+\infty, \\ 1/\beta & \text{if}\;0<\beta<+\infty, \\+\infty & \text{if}\;\beta=0,\end{cases}$$
+by the Root Test, we have\v{-4}
+$$\sum a_nx^n\;\begin{cases}\tx{converges} & \tx{if}\;|x|<R,\\\tx{diverges} & \tx{if}\;|x|>R,\\\tx{has to be checked} & \tx{if}\;|x|=R.\end{cases}\v{-4}$$
+\end{Pfbox}
+\begin{itemize}[label={-}]
+\item We call $R$ the \brk{radius of convergence for $\sum a_nx^n$}. \v4
+\item We call $x=\pm R$ the \brk{endpoints}. \v4
+\item We call the set of $x$ where $\sum a_nx^n$ converge \\
+      the \brk{interval of convergence for $\sum a_nx^n$}. \v6
+ 
+\item \stitle{Examples} \v2
+\begin{itemize}[label={$\cdot$}]
+\setlength{\leftskip}{-10pt}
+\item $\sum x^n\!/n!$ converges for all $x\in\RR$.
+\begin{solbox}
+Let $a_n=1/n!$. Then $\beta=\ds\lim\left|\frac{a_{n+1}}{a_n}\right|=0$, thus $R=+\infty$, and the interval of convergence is $(-\infty,\,+\infty)$.
+\end{solbox} \v4
+\item $\sum x^n\!/n$ converges on $[-1,\,1)$.
+\begin{solbox}
+Let $a_n=1/n$. Then $\beta=\ds\lim\left|\frac{a_{n+1}}{a_n}\right|=1$, thus $R=1$. \\
+Judge endpoints: $\sum (-1)^n\!/n$ converges, but $\sum1/n$ diverges. \\
+Therefore, the interval of convergence is $[-1,\,1)$.
+\end{solbox}
+\end{itemize}
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\Ltitle{24}{Uniform Convergence}
+
+\ltitle{Pointwise Convergence}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \\
+: For a seq.\! of real-valued ftn.s defined on $S\subseteq\RR$: $(f_n)$, \\
+\;\;if $\exists$ a real-valued ftn. $f$ defined on $S$ s.t.\v{-4}
+$$\lim_{n\to\infty}f_n(x)=f(x)\quad\FA x\in S\tx{,}\v{-4}$$
+$(f_n)$ \brk{converges pointwise}. \\
+\end{itemize}
+
+\ltitle{Uniform Convergence}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \\
+: For a seq.\! of real-valued ftn.s $(f_n)$ defined on $S\subseteq\RR$,\\
+\;\;and for a real-valued ftn.\! $f$ defined on $S$, if\v{-4}
+$$\tx{for each\;}\epsilon>0\tx{,\;}\exists N>0\tx{\;s.t.}\v{-6}$$
+$$|f_n(x)-f(x)|<\epsilon\quad\FA n>N\tx{\;and\;}\FA x\in S\tx{,}\v{-4}$$
+\;\;$(f_n)$ \brk{converges uniformly}. \\
+
+\item\stitle{Continuity of the limit fcn.}\v2 \\
+: If each \brk{$f_n$ is cont.\! on $x_0\in S$} \& $f_n\longto f$ unif. on $S$,\v2\\
+\;\;then \brk{$f$ is also cont. on $x_0$}.
+\begin{Pfbox}
+Let $\epsilon>0$. Since $f_n\longto f$ uniformly on $S$,\v{-3}
+$$\exists N>0\tx{\;s.t.\;}|f_n(x)-f(x)|<\epsilon/3\v{-4}$$
+for all $n>N$ and for all $x\in S$. \v2\\
+And also since every $f_n$ is continuous at $x_0\in S$,\v{-3}
+$$\exists\delta>0\tx{\;s.t.\;}|x-x_0|<\delta\tx{\;implies\;}|f_n(x)-f_n(x_0)|<\epsilon/3.\v{-3}$$
+Let $n>N$, and $|x-x_0|<\delta$ for $x\in S$. Then, by the triangle inequality,\v{-3}
+$$\begin{aligned}
+        &|f(x)-f(x_0)| \\
+     ={}&|f(x)-f_n(x)+f_n(x)-f_n(x_0)+f_n(x_0)-f(x_0)| \\
+  \lqs{}&|f(x)-f_n(x)|+|f_n(x)-f_n(x_0)|+|f_n(x_0)-f(x_0)| \\
+     <{}&3\cdot\epsilon/3=\epsilon,
+  \end{aligned}\v{-3}$$
+which shows that $f$ is continuous at $x_0$.
+\end{Pfbox}
+
+\newpage
+
+\item\stitle{Remark} \\
+: $(f_n)$ on $S\subseteq\RR$ converges unif. to $f$ on $S$ \brk{iff}\v{-4}
+$$\brk{\lim_{n\to\infty}\sup{}\{|f(x)-f_n(x)|:x\in S\}=0}\tx{.}$$
+\begin{Pfbox}
+($\Longto$) Let $\epsilon>0$. Then\v{-4}
+$$\exists N>0\tx{\;s.t.\;}|f_n(x)-f(x)|<\epsilon\;\;\FA n>N,\;\FA x\in S\tx{.}\v{-6}$$
+Since, we have\v{-4}
+$$\sup{}\{|f_n(x)-f(x)|:x\in S\}<\epsilon\;\;\FA n>N\tx{,}\v{-6}$$
+which implies\v{-4}
+$$\ds\lim_{n\to\infty}\sup{}\{|f_n(x)-f(x)|:x\in S\}=0\v{-6}\tx{.}$$
+\end{Pfbox}
+\end{itemize}
+
+\; \\
+
+\Ltitle{25}{More on Uniform Convergence}
+
+\ltitle{Limits of Integrals} \v3
+
+: For $(f_n)$ where $f_n$ is real-valued \brk{cont.} \!fcn. \!on $[a,\,b]$\; $\forall n$,\\
+\h{16}if \brk{$f_n\longto f$ uniformly}, then\v{-4}
+$$\brk{\lim_{n\to\infty}\int_a^b f_n(x)\dx=\int_a^b\lim_{n\to\infty}f_n(x)\dx=\int_a^b f(x)\dx}\tx{.}$$
+
+\begin{Pfbox}
+Since $f_n$ is continuous; integrable on $[a,\,b]$, and $f_n\longto f$ uniformly, $f$ is continuous; integrable on $[a,\,b]$, and thus $f_n-f$ is so.
+
+Since $f_n\longto f$ uniformly on $[a,\,b]$, for any $\epsilon>0$,
+$$\exists N>0\quad\tx{s.t.\;}|f_n(x)-f(x)|<\frac{\epsilon}{b-a}\quad \FA x\in[a,\,b]\tx{,}\;\FA n>N\tx{.}$$
+
+Then we have $n>N$ implies
+$$\begin{aligned}
+  \abs{\int_a^b f_n(x)\dx-\int_a^b f(x)\dx}&=\abs{\int_a^b(f_n-f)(x)\dx} \\
+                               &\lqs\int_a^b|(f_n-f)(x)|\dx \\
+                               &\lqs\int_a^b\frac{\epsilon}{b-a}\dx \\
+                               &=\epsilon\tx{,}
+  \end{aligned}$$
+thus we conclude $\ds\lim_{n\to\infty}\int_a^b f_n(x)\dx=\int_a^b f(x)\dx$.
+\end{Pfbox}
+
+\vfill\null\columnbreak
+
+\ltitle{Uniformly Cauchy}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \\
+: For $(f_n)$ where $f_n$ is a ftn. \!defined on $S\subseteq\RR$ \;$\FA n$,\\
+\;\;$(f_n)$ is \brk{uniformly Cauchy} on $S$, if\v{-4}
+$$\tx{for each $\epsilon>0$, $\exists N>0$ such that}\v{-6}$$
+$$\brk{|f_n(x)-f_m(x)|<\epsilon}\quad \FA x\in S\tx{,}\;\;\FA n\tx{,}\;m>N\tx{.}$$
+
+\item\stitle{Relation with Convergence} \\
+: For $(f_n)$ where $f_n$ is a ftn. \!defined on $S\subseteq\RR$ \;$\FA n$,\v{-4}
+$$\tx{\brk{$(f_n)$ is uniformly Cauchy on $S$} \quad if and only if}\v{-6}$$
+$$\tx{$\exists$ a ftn. \!$f$ s.t. \brk{$f_n\longto f$ uniformly}.}$$
+
+\begin{Pfbox}
+($\Longto$) Since $(f_n)$ is uniformly Cauchy on $S$, \\
+for each $\epsilon>0$, and for each $x_0\in S$, $\exists N_0>0$ s.t. \\
+$n$, $m>N_0$ implies $|f_n(x_0)-f_m(x_0)|<\epsilon$. \v4
+
+Then $(f_n(x_0))$ is a Cauchy seq. for each $x_0\in S$, thus $(f_n(x_0))$ is a convergent seq., which makes us be able to define a fcn. $f$ on $S$ s.t. $f(x)=\ds\lim_{n\to\infty}f_n(x)\;\FA x\in S$. \v{-6}
+
+Since $(f_n)$ is uniformly Cauchy on $S$, $\exists N>0$ s.t.,\v{-4}
+$$f_n(x)\in(f_m(x)-\epsilon/2,\;f_m(x)+\epsilon/2)\v{-6}$$
+$\FA x\in S$, for $\epsilon>0$ and $\FA n>N$, and fixed $m>N$.
+
+Then, since $f_n\longto f$ pointwise on $S$, we can see\v{-4}
+$$\begin{aligned}
+           & f(x)\in[f_m(x)-\epsilon/2,\,f_m(x)+\epsilon/2] \\
+  \Longto{}& |f(x)-f_m(x)|\lqs\epsilon/2.
+  \end{aligned}\v{-2}$$
+  
+Thus, we have\v{-4}
+$$\begin{aligned}
+  |(f_n-f)(x)|&   =|(f_n-f_m)(x)+(f_m-f)(x)| \\
+              &\lqs|(f_n-f_m)(x)|+|(f_m-f)(x)| \\
+              &   <\epsilon/2+\epsilon/2=\epsilon\quad\FA x\in S\tx{,}
+  \end{aligned}\v{-4}$$
+which implies $f_n\longto f$ uniformly on $S$. \hfill \Sq \v2
+
+\dotfill \v{-4}\\
+
+\h9($\Longfrom$) Since $f_n\longto f$ uniformly on $S$, for $\epsilon>0$, $\exists N>0$ s.t.\v{-4}
+$$n>N\tx{\;implies\;}|f_n(x)-f(x)|<\epsilon/2\quad\FA x\in S\tx{.}\v{-4}$$
+Then, for $n>m>N$,
+$$\begin{aligned}
+  |(f_n-f_m)(x)|&   =|(f_n-f)(x)-(f-f_m)(x)| \\
+                &\lqs|(f_n-f)(x)-|(f_m-f)(x)| \\
+                &   <\epsilon/2+\epsilon/2=\epsilon\quad\FA x\in S\tx{,}
+  \end{aligned}\v{-4}$$
+which implies $(f_n)$ is uniformly Cauchy on $S$.
+\end{Pfbox}
+\end{itemize}
+
+\newpage
+
+\ltitle{Series of Functions}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition of Convergence/Divergence} \\
+: For a sequence $(g_k)_{k=0}^\infty$ of function on $S\subseteq\RR$,\\
+\;\;\brk{$\ds\sum_{k=0}^\infty g_k(x)=\sum g_k$ converges} if a sequence $(f_n)$ of\v{-5}\\
+\;\;\brk{partial sums of $g_k$}, i.e., $f_n(x)=\ds\sum_{k=0}^ng_k(x)$, converges. \\
+
+\item\stitle{Continuity of Limit Function} \v2\\
+: For a series $\sum g_k$ of functions on $S\subseteq\RR$, \v4\\
+\;\;if $\left[\begin{array}{l}\tx{(i) \brk{$g_k$ is continuous} on $S$ for each $k$,}\\\tx{(ii) \brk{$\sum g_k$ uniformly converges} on $S$,}\end{array}\right.\v4$ \\
+\;\;then \brk{$\sum g_k$ represents a continuous function} on $S$.
+\begin{Pfbox}
+Let $f_n=\ds\sum_{k=0}^n g_k$. \\
+Since $g_k$ is cont. on $S$ $\FA k$, $f_n$ is also cont. on $S$ $\FA n$,\\
+and by the assumption, $f_n\longto f$ uniformly on $S$ for a function $f$, which is cont., by Thm 24.3.\\
+Thus we have $\sum g_k$ represents a cont. ftn. on $S$.
+\end{Pfbox} \;
+
+\item\stitle{Cauchy Criterion} \v2\\
+: For a series $\sum g_k$ of functions on $S\subseteq\RR$, \v2\\
+\;\begin{tabular}{ll}
+          & $\sum g_k$ \brk{converges uniformly} on $S$, \v2\\
+      iff & $\sum g_k$ \brk{satisfies the Cauchy criterion uniformly} on $S$.
+    \end{tabular}\v4
+\begin{Pfbox}
+Let $f_n=\ds\sum_{k=0}^ng_k$, and apply Thm 25.4 \& Exc 25.4.
+\end{Pfbox} \;
+
+\vfill\null\columnbreak
+
+\item\stitle{Weierstrass $\bs M$-test} \v2\\
+: For a seq. $(M_k)$ of nonnegative real number, \v2\\
+\;\;and a seq. $(g_k)$ of functions on $S\in\RR$,\v4\\
+\;\;if \brk{$\sum M_k<+\infty$}, and \brk{$|g_k(x)|\lqs M_k$}\; $\FA k$ and $\FA x\in S$,\v2\\
+\;\;then \brk{$\sum g_k$ converges uniformly on $S$}.
+\begin{Pfbox}
+Since $\sum M_k<\infty$, it satisfies Cauchy criterion on $S$;\\
+given $\epsilon>0$, $\exists N>0$ such that
+$$n\gqs m>N\;\tx{implies}\quad\abs{\sum_{k=m}^nM_k}<\epsilon\tx{.}$$
+
+Let $n\gqs m>N$ and $x\in S$. Then
+$$\abs{\sum_{k=m}^ng_k(x)}\lqs\sum_{k=m}^n|g_k(x)|\lqs\sum_{k=m}^n M_k<\epsilon\tx{,}$$
+so we have that $\sum g_k$ satisfies Cauchy criterion uniformly on $S$, thus $\sum g_k$ converges uniformly on $S$.
+\end{Pfbox} \;
+
+\item If \brk{$\sum g_n$ converges uniformly} on $S$, \v2\\
+      then \brk{$\ds\lim_{n\to\infty}\sup{}\{|g_n(x)|:x\in S\}=0$}.
+\begin{Pfbox}
+Let $\epsilon>0$. Since $\sum g_n$ converges uniformly,\\
+$\exists N>0$ such that, $\FA x\in S$,
+$$n\gqs m>N\;\tx{implies}\quad\abs{\sum_{k=m}^ng_k(x)}<\epsilon{.}$$
+If we set $n=m$, then, $\FA x\in S$, 
+$$\begin{aligned}
+            & \;\tx{$n>N$ implies\quad$|g_n(x)|<\epsilon$,}\\
+  \Longto{} & \;\tx{$n>N$ implies\quad$\sup{}\{|g_n(x)|:x\in S\}<\epsilon$,}\\
+    \ifff{} & \;\ds\lim_{n\to\infty}\sup{}\{|g_n(x)|:x\in S\}=0\tx{.}
+  \end{aligned}\v{-22}$$
+\end{Pfbox}
+\end{itemize}
+
+\newpage
+
+\Ltitle{26}{Diff. \& Int. of Power Series}
+
+(In this page, $\ds\sum_{n=0}^\infty a_nx^n$ is a power series\\
+\quad with the radius of convergence $R$.) \\
+
+\ltitle{Continuity of Power Series}\v{-2}
+\begin{itemize}[label={-}]
+\item For $0<R_1<R$, \brk{$\sum a_nx^n$ is continuous on $[-R_1,\,R_1]$}.
+\begin{Pfbox}
+Since $|a_nx^n|\lqs|a_n|R_1^{\;n}$, where $\sum|a_n|R_1^{\;n}<\infty$,\\
+by the Weierstrass $M$-test, $\sum a_nx^n$ converges uniformly on $[-R_1,\,R_1]$.
+
+\;\;And also each $a_nx^n$ is continuous on $[-R_1,\,R_1]$, \\
+thus $\sum a_nx^n$ converges uniformly on $[-R_1,\,R_1]$ to a continuous function.
+\end{Pfbox} \;
+
+\item $\sum a_nx^n$ is continuous on $(-R,\,R)$.
+\begin{Pfbox}
+For $x_0\in(-R,\,R)$, $\exists R_1$ s.t. $x_0\in(-R_1,\,R_1)$.
+
+\;\;Thus $\sum a_nx^n$ is cont. at any $x_0\in(-R,\,R)$,\\
+which is equivalent to $\sum a_nx^n$ is cont. on $(-R,\,R)$.
+\end{Pfbox} \;
+\end{itemize}
+
+\ltitle{Diff. \& Int. of Power Series}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Radius of Convergence}\v2\\
+: $\ds\brk{\sum_{n=1}^\infty na_nx^{n-1}}\quad\tx{and}\quad\brk{\sum_{n=0}^\infty\frac{a_n}{n+1}x^{n+1}}$ \v2\\
+\;\;also have \brk{radius of convergence $R$}.
+\begin{Pfbox}
+Since $\beta:=1/R=\limsup{}|a_n|^{1/n}$,\v2
+\begin{itemize}
+\setlength{\leftskip}{-5pt}
+\item[(i)] $\limsup{}|na_n|^{1/n}=\limsup n^{1/n}|a_n|^{1/n}=\beta$;
+\item[(ii)] $\ds\limsup{}\abs{\frac{a_n}{n+1}}^{1/n}=\limsup\frac{|a_n|^{1/n}}{|n+1|^{1/n}}=\beta$,\v2
+\end{itemize}
+which implies the proposition stands.
+\end{Pfbox} \;
+
+\vfill\null\columnbreak
+
+\item\stitle{Integration of Power Series}\v2\\
+\!\!: \!\brk{$\ds\int_0^x\left(\sum_{n=0}^\infty a_nt^n\!\right)\!\dt=\sum_{n=0}^\infty\int_0^xa_nt^n\dt=\sum_{n=0}^\infty\frac{a_n}{n+1}x^{n+1}$}.\v2\\
+($\ifff$ Power series \brk{can be integrated term by term}.)
+\begin{Pfbox}
+Let $f(x)=\sum a_nx^n$, and fix $x\in(-R,\,0)$. \\
+Then, $\sum a_kt^k$ converges uniformly on $[x,\,0]$.\v2
+
+Thus, by Thm 25.2, we have\v{-6}
+$$\begin{aligned}
+  \int_{\!x}^0\left(\sum_{n=0}^\infty a_nt^n\!\right)\!\dt&=\lim_{n\to\infty}\int_{\!x}^0\left(\sum_{k=0}^na_kx^k\!\right)\!\dt \\
+  &=\lim_{n\to\infty}\sum_{k=0}^n\int_{\!x}^0a_kt^k\dt \\
+  &=\sum_{n=0}^\infty\frac{a_n}{n+1}x^{n+1}\tx{.}
+  \end{aligned}\v{-6}$$
+\end{Pfbox}\;
+
+\item\stitle{Differentiation of Power Series}\v2\\
+: For $f(x)=\sum_{n=0}^\infty a_nx^n$,\v2
+\begin{itemize}
+\setlength{\leftskip}{5pt}
+\item[(i)] $f$ is \brk{d.able on $(-R,\,R)$};\v2
+\item[(ii)] \brk{$f'(x)=\ds\sum_{n=0}^\infty\ddx a_nx^n=\sum_{n=1}^\infty na_nx^{n-1}$}.
+\end{itemize}
+\begin{Pfbox}
+Let $g(x)=\sum_{n=1}^\infty na_nx^{n-1}$, and observe that its radius of convergence is $R$.\v2
+
+By Thm 26.4, for $|x|<R$,\v{-6}
+$$\begin{aligned}
+  \int_0^xg(t)\dt&=\sum_{n=1}^\infty\int_0^xna_nt^{n-1}\dt\\
+  &=\sum_{n=1}^\infty a_nx^n =\sum_{n=0}^\infty a_nx^n-a_0\tx{.}
+  \end{aligned}\v{-6}$$
+  
+Thus, for $0<R_1<R$ and $|x|\lqs R_1$,\v{-6}
+$$\begin{aligned}
+  f(x)&=\int_0^x g(t)\dt+a_0 \\
+      &=\int_{\!-R_1}^xg(t)\dt\underbrace{-\int_{\!-R_1}^0g(t)\dt+a_0}_{=:\,k}\\
+      &=\int_{\!-R_1}^xg(t)\dt+k\tx{.}
+  \end{aligned}\v{-6}$$
+
+By above and since $g$ is continuous on $(-R,\,R)$, by Thm 34.4(FTC2),\\
+$f$ is d.able and $f'(x)=g(x)$ on $(-R,\,R)$.
+\end{Pfbox}\;
+\end{itemize}
+
+\ltitle{Abel's Theorem}\v{-6}
+\begin{itemize}
+\item If \brk{$\sum a_nx^n$ converges} at $x=R$ or $x=-R$, \\
+then \brk{$f$ is cont.} at $x=R$ or $x=-R$, respectively.
+\end{itemize}
+
+\newpage
+
+\Ltitle{-}{Midterm Test Review}
+
+\ltitle{Continuity of Functions}\v{-6}
+\begin{itemize}[label={:}]
+\item $f$ is continuous at $x_0$, if given $\epsilon>0$, $\exists \delta>0$ s.t. \v{-4}
+$$|x-x_0|<\delta\;\wedge\;x\in\dom f\;\Longto\;|f(x)-f(x_0)|<\epsilon\tx{.}\v4$$
+\end{itemize}
+
+\ltitle{Convergence of Sequences}\v{-6}
+\begin{itemize}[label={:}]
+\item For a sequence $(a_n)$, $\lim a_n=a$ if\\
+given $\epsilon>0$, $\exists N>0$ s.t.\v{-4}
+$$n>N\quad\tx{implies}\quad |a_n-a|<\epsilon\tx{.}\v4$$
+\end{itemize}
+
+\ltitle{Convergence of Sequences of Functions}\v{-6}
+\begin{itemize}[label={-}]
+\item For a sequence $(f_n)$ of ftns on $S\subseteq\RR$, \\
+$\lim f_n(x)=f(x)$ if given $\epsilon>0$ and $x\in S$, $\exists N>0$ s.t.\v{-4}
+$$n>N\quad\tx{implies}\quad |f_n(x)-f(x)|<\epsilon\tx{.}$$
+
+\item $f_n\longto f$ uniformly on $S$ if given $\epsilon>0$, $\exists N>0$ s.t.\v{-4}
+$$n>N\;\wedge\;x\in S\quad\tx{implies}\quad |f_n(x)-f(x)|<\epsilon\tx{.}$$
+\end{itemize}
+
+\newpage
+
+\Ltitle{28}{Basic Properties of the Derivative}
+
+\ltitle{Derivative}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition} \\
+: $f$ is \brk{differentiable} at $a$, or $f$ \brk{has a derivative} at $a$, if \v3\\
+\;\; the limit $\brk{\ds f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}}$ exists, and is finite. \v3\\
+\;\;{\Gray($f$: real-valued function on an open interval $I$, $a\in I$.)}\\
+
+\item\stitle{Basic Derivatives}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-5pt}
+\item $f(x)=x^n$; $f'(a)=na^{n-1}$. \;($n\in\NN$, $a\in\dom f$)\\
+\end{itemize}
+
+\item\stitle{Continuity of Diff.ble Function}\\
+: If $f$ is diff.ble at $a$, then $f$ is cont. at $a$.
+
+\begin{Pfbox}
+Since $f$ is diff.ble at $a$, there exists\v{-4}
+$$f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\v{-6}$$
+s.t. $|f'(a)|<+\infty$.\v2
+
+We derive that for $x\neq a$,\v{-4}
+$$f(x)=\frac{f(x)-f(a)}{x-a}\cdot(x-a)+f(a)\tx{.}\v{-4}$$
+
+Take the limit ``$\ds\lim_{x\to a}$'':\v{-4}
+$$\begin{aligned}
+  \lim_{x\to a}f(x)&=\lim_{x\to a}\left(\frac{f(x)-f(a)}{x-a}\cdot(x-a)+f(a)\right)\\
+  &=f'(a)\cdot0+f(a)=f(a)\tx{,}
+  \end{aligned}\v{-4}$$
+so we conclude that $f$ is continuous on $a$.
+\end{Pfbox}\v{12}
+\end{itemize}
+\ltitle{Differential Rules}
+
+: For diff.ble ftns $f$ \& $g$ at $a$ and $c\in\RR$, \\
+\;\;\brk{$cf$}, \brk{$f+g$}, \brk{$fg$}, \brk{$f/g$} are also \brk{diff.ble at $a$};\v{-4}
+\begin{itemize}[label={-}]
+\item $(cf)'(a)=c\cdot f'(a)$,\v2
+\item $(f+g)'(a)=f'(a)+g'(a)$,\v2
+\item $(fg)(a)=f'g(a)+fg'(a)$,\hfill\ti{\Gray[product rule]}\v3
+\item $\ds{\left(\frac fg\right)\!}'\!(a)=\frac{f'(a)g(a)-f(a)g'(a)}{(g(a))^2}$.\hfill\ti{\Gray[quotient rule]}\v3\\
+\ti{\Gray(For only on the quotient rule, $a$ must satisfy $g(a)\neq 0$.)}
+\end{itemize}
+\begin{Pfbox}[(Constant Multi. \& Addition)]
+\!\!$\begin{aligned}\tx{(i)}\;\ds(cf)'(a)&=\lim_{x\to a}\frac{(cf)(x)-(cf)(a)}{x-a}\\&=c\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=cf'(a)\tx{.}\end{aligned}\v3$
+
+$\begin{aligned}\tx{(ii)}\;\ds(f+g)'(a)&=\lim_{x\to a}\frac{(f+g)(x)-(f+g)(a)}{x-a}\\&=\frac{f(x)-f(a)+g(x)-g(a)}{x-a}\\&=f'(a)+g'(a)\tx{.}\end{aligned}\v3$
+\end{Pfbox}
+
+\begin{Pfbox}[(Product \& Quotient)]
+\h{-15}$\begin{aligned}\tx{(iii)}\;\ds(fg)'(a)&=\lim_{x\to a}\frac{(fg)(x)-(fg)(a)}{x-a}\\&=\lim_{x\to a}\frac{f(x)g(x)-f(a)g(a)}{x-a} \\&=\lim_{x\to a}\frac{(fg)(x)-f(x)g(a)+f(x)g(a)-(fg)(a)}{x-a}\\&=f'(a)g(a)+f(a)g'(a)\tx{.}\end{aligned}\v7$
+
+\h{-9}(iv) Let $I\subseteq \dom f$ be an open interval including $a$ s.t. $g(x)\neq 0$ on $x\in I$. ($\exists$ such $I$ by the cont. at $a$ of $g$.)
+
+Let $x\in I\setminus\{a\}$. Then\v{-4}
+$$\begin{aligned}&\left(\frac fg\right)\!(x)-\left(\frac fg\right)(a)\\={}&\frac{f(x)g(a)-f(a)g(x)}{g(x)g(a)} \\
+={}&\frac{f(x)g(a)-(fg)(a)+(fg)(a)-f(a)g(x)}{g(x)g(a)} \\
+={}&\frac{g(a)(f(x)-f(a))-f(a)(g(x)-g(a))}{g(x)g(a)}\tx{,}
+\end{aligned}$$
+
+so\v{-4}
+$$\begin{aligned}&\frac{(f/g)(x)-(f/g)(a)}{x-a}\\={}&\frac{g(a)\dfrac{f(x)-f(a)}{x-a}-f(a)\dfrac{g(x)-g(a)}{x-a}}{g(x)g(a)} \\
+\longto{}&\frac{g(a)f'(a)-f(a)g'(a)}{(g(a))^2}\end{aligned}\v{-4}$$
+as $x\longto a$.
+\end{Pfbox}\v{12}
+
+\ltitle{Chain Rule}
+
+: If $f$ is diff.ble at $a$ and so is $g$ at $f(a)$, \\
+\quad then \brk{$g\circ f$ is diff.ble at $a$}, and \brk{$(g\circ f)'(x)=g'(f(x))f'(x)$}.
+
+\begin{Pfbox}
+\v{-12}
+$$\begin{aligned}(g\circ f)'(a)&=\lim_{x\to a}\frac{(g\circ f)(x)-(g\circ f)(a)}{x-a} \\
+&=\lim_{x\to a}\frac{g(f(x))-g(f(a))}{x-a} \\
+&=\lim_{x\to a}\left(\frac{g(f(x))-g(f(a))}{f(x)-f(a)}\cdot\frac{f(x)-f(a)}{x-a}\right) \\
+&=g'(f(a))f'(a)\tx{.}
+\end{aligned}\v{-18}$$
+\end{Pfbox}
+
+\newpage
+
+\Ltitle{29}{The Mean Value Theorem}
+
+\ltitle{Derivative at Max/Min Point}
+
+: For a function $f$ on open inteval $I$ and $x_0\in I$,\v4\\
+\;\;\;\;\;\,if $\left\{\begin{aligned}&\tx{$f$ has max/min value at $x_0$,\v{-3}}\\&\tx{$f$ is differentiable at $x_0$,}\end{aligned}\right.$\v4\\
+\;\;\;\;\;\,then $f'(x_0)=0$.
+
+\begin{Pfbox}
+Let $f$ be a ftn on $I=(a,\,b)$ max. at $x_0$.\hfill$\cdots\cdots\;(1)$\\
+Assume that $f'(x_0)>0$. Since\v{-4}
+$$f'(x_0)=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\tx{,}\v{-4}$$
+$\exists\delta>0$ s.t. $(x_0-\delta,\,x_0+\delta)\subseteq(a,\,b)$ and\\
+$0<|x-x_0|<\delta$ implies $\ds\frac{f(x)-f(x_0)}{x-x_0}>0$.\\
+But if we select $x\in(x_0,\,x_0+\delta)$, then $x-x_0>0$,\\
+thus $f(x)-f(x_0)>0$, which contrd. to $(1)$.\\
+Hence $f'(x_0)\not>0$, $\therefore\;f'(x_0)\lqs0$.\hfill$\cdots\cdots\;(2)$\v3\\
+By similar way, we can show $f'(x_0)\gqs0$.\hfill$\cdots\cdots\;(3)$\v3\\
+By $(2)$ \& $(3)$, we have $f'(x_0)=0$.
+\end{Pfbox}\;
+
+\ltitle{Rolle's Theorem}
+
+: For a function $f$ on $[a,\,b]$, if\v4\\
+\;\;\;\;\;\,$\left\{\begin{aligned}&\tx{$f$ is continuous on $[a,\,b]$,\v{-3}}\\&\tx{$f$ is differentiable on $(a,\,b)$,\v{-3}}\\&\tx{$\brk{f(a)=f(b)}$,}\end{aligned}\right.$\v4\\
+\;\;\;\;\;\,then \brk{$\exists$ (at least one) $x\in(a,\,b)$} s.t. \brk{$f'(x)=0$}.
+
+\begin{Pfbox}
+Since $f$ is cont. on $[a,\,b]$, $\exists x_0$, $y_0\in[a,\,b]$ s.t.\\
+$f(x_0)\lqs f(x)\lqs f(y_0)$ for all $x\in[a,\,b]$,\hfill$\cdots\cdots\;(1)$\\
+i.e., $f$ has its min. value at $x_0$, and max. value at $y_0$.\v3
+
+(i) If $x_0$ and $y_0$ are both endpoints of $[a,\,b]$,\\
+then $f(a)=f(b)=f(x_0)=f(y_0)$,\\
+but by $(1)$, $f$ is constant ftn, thus $f'(x)=0$ for all $x\in[a,\,b]$.\v3
+
+(ii) If $x_0$ or $y_0$ belongs to $(a,\,b)$,\\
+then $\exists x\in(a,\,b)$ s.t. $f(x)$ is max. or min. value,\\
+which implies $f'(x)=0$ by the theorem ubove.
+\end{Pfbox}\;
+
+\vfill\null\columnbreak
+
+\ltitle{Mean Value Theorem}
+
+: For a function $f$ on $[a,\,b]$, if\v4\\
+\;\;\;\;\;\,$\left\{\begin{aligned}&\tx{$f$ is continuous on $[a,\,b]$,\v{-3}}\\&\tx{$f$ is differentiable on $(a,\,b)$,}\end{aligned}\right.$\v4\\
+\;\;\;\;\;\,then \brk{$\exists$ (at least one) $x\in(a,\,b)$} s.t. $\brk{\ds f'(x)=\frac{f(b)-f(a)}{b-a}}$.
+
+\begin{Pfbox}
+Let $L(x)=f(x)-\ds\frac{f(b)-f(a)}{b-a}(x-a)+f(a)$.\v2
+
+Then $L$ is cont. on $[a,\,b]$ and diff.ble on $(a,\,b)$, and since\v{-4}
+$$L(a)=L(b)=0\tx{,}\v{-4}$$
+by the Rolle's theorem, $\exists x\in(a,\,b)$ s.t. $L'(x)=0$,\v2
+thus\\ $f'(x)=\ds\frac{f(b)-f(a)}{b-a}$.
+\end{Pfbox}\;
+
+\ltitle{Corollaries of MVT}\v{-6}
+\begin{itemize}[label={-}]
+\item For a diff.ble function $f$ on an open interval $I$,\\
+if \brk{$f'(x)=0$} for all $x\in I$, then \brk{$f$ is constant ftn.} on $I$.
+
+\begin{Pfbox}
+Assume that $f$ is not const. ftn. on $I$.\\
+Then $\exists x_1$, $x_2\in I$ s.t. $x_1\neq x_2$ and $f(x_1)\neq f(x_2)$.\v4
+
+Since $f$ is cont. on $[x_1,\,x_2]$ and diff.ble on $(x_1,\,x_2)$,\\
+by the Mean Value Theorem, $\exists x\in(x_1,\,x_2)$ s.t.\v{-4}
+$$f'(x)=\frac{f(x_2)-f(x_1)}{x_2-x_1}\neq0\tx{,}\v{-4}$$
+which contrd. to the assumption. \v4
+
+Thus $f(x_1)=f(x_2)$.
+\end{Pfbox}\;
+
+\item If \brk{$f'=g'$} on an open interval $I$,\\
+then $\exists c\in\RR$ s.t. \brk{$f(x)=g(x)+c$} for all $x\in I$.
+
+\begin{Pfbox}
+Apply the corollary above to $h=f-g$.
+\end{Pfbox}
+\end{itemize}
+
+\newpage
+
+\ltitle{Inc./Dec. of Functions}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Definition}\\
+: For real-valued ftn. $f$ on an open interval $I$,\\
+\;\;\,and $x_1$, $x_2\in I$ s.t. $x_1<x_2$,
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $f$ is \brk{strictly increasing} if \brk{$f(x_1)<f(x_2)$}.
+\item $f$ is \brk{strictly decreasing} if \brk{$f(x_1)>f(x_2)$}.
+\item $f$ is \brk{increasing} if \brk{$f(x_1)\lqs f(x_2)$}.
+\item $f$ is \brk{decreasing} if \brk{$f(x_1)\gqs f(x_2)$}.\\
+\end{itemize}
+
+\item\stitle{Property}\\
+: For a diff.ble $f$ on an open interval $I$,
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $f$ is \brk{strictly increasing} \hfill if \brk{$f'(x)>0$} for all $x\in I$.\qquad\phantom{.}
+\item $f$ is \brk{strictly decreasing} \hfill if \brk{$f'(x)<0$} for all $x\in I$.\qquad\phantom{.}
+\item $f$ is \brk{increasing} \hfill if \brk{$f'(x)\gqs 0$} for all $x\in I$.\qquad\phantom{.}
+\item $f$ is \brk{decreasing} \hfill if \brk{$f'(x)\lqs 0$} for all $x\in I$.\qquad\phantom{.}\\
+\end{itemize}
+\end{itemize}
+
+\ltitle{Intermediate Value Theorem for Derivatives}
+
+: For a diff.ble function $f$ on $I=(a,\,b)$,\\
+\h{15}let $x_1$, $x_2\in(a,\,b)$ s.t. $x_1<x_2$,\\
+\h{15}and $c\in\RR$ lies between $f'(x_1)<f'(x_2)$.\v3\\
+\h{15}Then \brk{$\exists$ at least one $x\in(x_1,\,x_2)$ s.t. $f'(x)=c$}.
+
+\begin{Pfbox}
+Assume $f'(x_1)<f'(x_2)$, and define $g(x)=f(x)-cx$.\v3
+
+Then $g'(x)=f'(x)-c$, hence $g'(x_1)<0<g'(x_2))$,\\
+and $g$ is cont. on $[x_1,\,x_2]$, so $g$ is bounded on $[x_1,\,x_2]$.\v3
+
+Assume $g$ has its minimum value at $x_0\in[x_1,\,x_2]$.\\
+Then, since\v{-4}
+$$g'(x_1)=\lim_{y\to {x_1}\!^+}\frac{g(y)-g(x_1)}{y-x_1}<0\tx{,}\v{-4}$$
+$g(y)-g(x_1)<0$ for $y_1=x_1+\epsilon$ for some $\epsilon>0$ s.t. $y_1<x_2$.\v3
+
+Then $g(y_1)<g(x_1)$, thus $\ds\min_{x\h{0.7}\in\h{0.7}I} g(x)\neq g(x_1)$. Similarly,
+
+$\exists y_2\in(x_1,\,x_2)$ s.t. $g(y_2)<g(x_2)$, thus $\ds\min_{x\h{0.7}\in\h{0.7}I} g(x)\neq g(x_2)$.\v3
+
+Therefore, $x_0\notin\{x_1,\,x_2\}$, hence $x_0$ s.t. $\ds\min_{x\h{0.7}\in\h{0.7}I} g(x)=g(x_0)$ belongs to $(x_1,\,x_2)$, thus $g'(x_0)=0$, $f'(x_0)=c$.
+\end{Pfbox}
+
+\vfill\null\columnbreak
+
+\ltitle{Derivatives of Inverse Functions}
+
+: For one-to-one continuous ftn. $f$ on an open interval $I$,\\
+\h{15}if $f$ is diff.ble on $x_0\in I$ and if $f'(x_0)\neq0$, then\\
+\h{15}$f^{-1}$ is diff.ble at $y_0=f(x_0)$, and\v{-4}
+$$\brk{(f^{-1})'(y_0)=\frac1{f'(x_0)}}{\Gray\;\left(=\frac1{f'(f^{-1}(y_0))}\right)}\tx{.}$$
+
+\begin{Pfbox}
+Note that $J=f(I)$ is also an open interval.
+
+Since $f'(x_0)\neq0$, $f(x)\neq f(x_0)$ for $x$ near $x_0$, thus\v{-4}
+$$\lim_{x\to x_0}\frac{x-x_0}{f(x)-f(x_0)}=\frac1{f'(x_0)}\tx{.}$$
+
+Then, for given $\epsilon>0$, $\exists \delta>0$ s.t. $0<|x-x_0|<\delta$ implies\v{-4}
+$$\abs{\frac{x-x_0}{f(x)-f(x_0)}-\frac1{f'(x_0)}}=\abs{\frac{g(y)-g(y_0)}{y-y_0}-\frac1{f'(x_0)}}<\epsilon\v{-4}$$
+with $y=f(x)$ on $I$, $y_0=f(x_0)$, and $g=f^{-1}$.
+
+Since $g$ is cont. at $y_0$, $\exists\eta>0$ s.t. $0<|y-y_0|<\eta$ implies\v{-4}
+$$|g(y)-g(y_0)|=|g(y)-x_0|<\delta\tx{.}$$
+
+Hence we obtain\v{-4}
+$$0<|y-y_0|<\eta\quad\tx{implies}\quad\abs{\frac{g(y)-g(y_0)}{y-y_0}-\frac1{f'(x_0)}}<\epsilon\tx{,}\v{-4}$$
+which is equivalent to\v{-4}
+$$\lim_{y\to y_0}\frac{g(y)-g(y_0)}{y-y_0}=(f^{-1})'(y_0)=\frac1{f'(x_0)}\tx{.}\v{-8}$$
+\end{Pfbox}
+
+\newpage
+
+\Ltitle{31}{Taylor's Theorem}
+
+\ltitle{Taylor Series}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Coefficients of Power Series}\\
+: Consider a power series $f(x)=\sum_{k=0}^\infty a_kx^k$ for $|x|<R$.\\
+\;\;Then $f$ is indefinitely diff.ble on $(-R,\,R)$;\v3
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-3pt}
+\item $f'(x)=\sum_{k=1}^\infty ka_kx^{k-1}$,\v1
+\item $f''(x)=\sum_{k=2}^\infty k(k-1)a_kx^{k-2}$,\v1\\
+\qquad\qquad$\vdots$\v1
+\item $f^{(n)}(x)=\sum_{k=n}^\infty k(k-1)\cdots(k-n+1)a_kx^{k-n}$,\v3
+\end{itemize}
+\;\;thus $f^{(n)}(0)=n\times(n-1)\times\cdots2\times1\times a_n=n!\,a_n$,\v2\\
+\;\;so $a_n=\ds\frac{f^{(n)}(0)}{n!}$, hence we have\v{-6}
+$$f(x)=\sum_{k=0}^\infty\frac{f^{(k)}(0)}{k!}x^k\quad\tx{for $|x|<R$.}\v6$$
+
+\item\stitle{Taylor Series}\\
+: For a ftn. $f$ possessing derivatives of all orders at \\
+\;\;$c\in\dom(f)$, then the \brk{Taylor series for $f$ about $c$} is\v{-4}
+$$\brk{\sum_{k=0}^\infty\frac{f^{(k)}(c)}{n!}(x-c)^k}\tx{.}\v6$$
+
+\item\stitle{Remainder}\\
+: For $n\gqs1$, the \brk{remainder} is defined by\v{-4}
+$$\brk{R_n(x)=f(x)-\sum_{k=0}^{n-1}\frac{f^{(k)}(c)}{n!}(x-c)^k}\tx{.}\v6$$
+
+\item $\ds\lim R_n(x)=0$\;\;if and only if\;\;$f(x)=\ds\sum_{k=0}^\infty\frac{f^{(k)}(c)}{n!}(x-c)^k$.\\
+
+\item\stitle{Example of Taylor Series}\v3
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $e^x=\ds\sum_{k=0}^\infty\frac{x^k}{k!}$.\v3
+\item $\ds\frac1{1-x}=\sum_{k=0}^\infty x^k\;\Longto\;\ln{}(1-x)=\sum_{k=1}^\infty\frac{x^k}k$.\quad$(|x|<1)$\v3
+\item $\ds\sin x=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1}$.\v3
+\item $\ds\cos x=\sum_{k=0}^\infty\frac{(-1)^{k+1}}{(2k)!}x^{2k}$.
+\end{itemize}
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\ltitle{Taylor's Theorem}
+
+: For a ftn. $f$ on $(a,\,b)$, let $c\in(a,\,b)$,\\
+\h{15}and assume $\exists f^{(n)}$ on $(a,\,b)$. Then for each $x\neq c$ in $(a,\,b)$,\v2\\
+\h{15}\brk{$\exists y$ between $x$ and $c$} s.t. \brk{$\ds R_n(x)=\frac{f^{(n)}(y)}{n!}(x-c)^n$}.\v4\\
+\h{15}This form is called \ti{Lagrange form of the remainder}.
+
+\begin{Pfbox}
+Let $x\neq c$, $n\gqs 1$ and $M$ be the unique solution of the eq.\v{-4}
+$$f(x)=\sum_{k=0}^{n-1}\frac{f^{(k)}(c)}{k!}(x-c)^k+\frac M{n!}(x-c)^n\tx{.}\v{-28.5}$$
+\hfill$(1)$\v{11}
+
+We have to show $R_n(x)=M(x-c)^n/n!=f^{(n)}(y)(x-c)^n/n!$, i.e., $M=f^{(n)}(y)$ for some $y$ between $x$ and $c$.\v3
+
+Let $g(t)=\ds\sum_{k=0}^{n-1}\frac{f^{(k)}(c)}{k!}(t-c)^k+\frac M{n!}(t-c)^n-f(t)$.
+
+Then $g(c)=f(c)-f(c)=0$, $g'(c)=f'(c)-f'(c)=0$, $\ldots$,\\
+$g^{(n-1)}(c)=f^{(n-1)}(c)-f^{(n-1)}(c)=0$.\v3
+
+By the choice of $M$ on $(1)$, $g(x)=0$. Since $g$ is cont. \& diff.ble on $(x,\,c)$ or $(c,\,x)$, by the Rolle's theorem,\\
+$\exists x_1$ between $x$ and $c$ s.t. $g'(x_1)=0$.\v3
+
+Then $g'(x_1)=g'(c)=0$, thus $\exists x_2$ bt. $x_1$ \& $c$ s.t. $g''(x_2)=0$.\v3
+
+\h{90}$\vdots$\v3
+
+$g^{(n-1)}(x_{n-1})=g^{(n-1)}(c)=0$, $\exists x_n$\\
+between $x_{n-1}$ \& $c$ s.t. $g^{(n)}(x_n)=0$.\v4
+
+So $g^{(n)}(x_n)=n!\cdot\ds\frac M{n!}(x-c)^0-f^{(n)}(x_n)=M-f^{(n)}(x_n)=0$,\v2\\
+we derive $M=f^{(n)}(y)$ with $y=x_n$.\v4
+
+Hence we have $R_n(x)=\ds\frac{f^{(n)}(y)}{n!}(x-c)^n$.
+\end{Pfbox}\;
+
+- \stitle{Corollary}
+
+\h{15}: For a function $f$ on $(a,\,b)$, if all $f^{(n)}$ exists on $(a,\,b)$,\\
+\h{30}and if \brk{$f$ is bounded by a single constant $C$}, then\v{-4}
+$$\brk{\lim R_n(x)=0}\quad\tx{for all $x\in(a,\,b)$.}\v{-4}$$
+
+\begin{Pfbox}
+By the Taylor's theorem, $\exists y$ between $x$ and $c\in(a,\,b)$ s.t.
+$$\begin{aligned}
+|R_n(x)|=\abs{\frac{f^{(n)}(y)}{n!}(x-c)^n}&=\frac{|f^{(n)}(y)|}{n!}|x-c|^n\\
+&\lqs\frac C{n!}|x-c|^n\tx{.}
+\end{aligned}$$
+Since $|x-c|^n/n!\longto 0$ as $n\to\infty$, by the squeeze theorem, we have $\lim R_n(x)=0$.
+\end{Pfbox}
+
+\newpage
+
+\Ltitle{32}{The Riemann Integral}
+
+\ltitle{Darboux Integrals}
+
+: Let $f$ be a bounded function on $[a,\,b]$, and $S\subseteq[a,\,b]$.\v{-4}
+\begin{itemize}[label={-}]
+\item\stitle{Darboux Sum}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item $M(f,\,S)=\sup{}\{f(x):x\in S\}$.
+\item $m(f,\,S)=\inf{}\{f(x):x\in S\}$.\v7
+\item \stitle{Partition of $[a,\,b]$}\\
+: $\brk P=\brk{\{a=t_0<t_1<\cdots<t_n=b\}}$.\v7
+\item \stitle{Upper Darboux Sum of $f$ with respect to $P$}\\
+: $\brk{U(f,\,P)}\equiv\brk{\ds\sum_{k=1}^nM(f,\,[t_{k-1},\,t_k])\cdot(t_k-t_{k-1})}$.\v7
+\item \stitle{Lower Darboux Sum of $f$ with respect to $P$}\\
+: $\brk{L(f,\,P)}\equiv\brk{\ds\sum_{k=1}^nm(f,\,[t_{k-1},\,t_k])\cdot(t_k-t_{k-1})}$.\v7
+\item $m(f,\,[a,\,b])(b-a)\lqs L(f,\,P)$\\
+\h{81.5}$\lqs U(f,\,P)\lqs M(f,\,[a,\,b])(b-a)$\v2\\
+for any partition $P$ of $[a,\,b]$.\v{30}
+
+\begin{center}\h{-60}\includegraphics[width=0.35\textwidth, bb=0 0 560 335]{Analysis2_DbSum.png}\end{center}
+
+\item A partition $Q$ is \brk{finer} than $P$, if $|P|\gqs|Q|$.\\
+Especially, if $P\subseteq Q$, $Q$ is called a \brk{refinement} of $P$.\v3\\
+As \brk{$P$ gets finer}, \brk{$U(f,\,P)$ $\searrow$} \;\&\; \brk{$L(f,\,P)$ $\nearrow$}.\\
+\end{itemize}
+
+\item\stitle{Darboux Integral}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Upper Darboux Integral} {\Gray(often denoted by $\ol{\int_a^b}f$)}\\
+: $\brk{U(f)}\equiv\brk{\inf{}\{U(f,\,P):\tx{$P$ is a partition of $[a,\,b]$}\}}$.\v7
+\item\stitle{Lower Darboux Integral} {\Gray(often denoted by $\ul{\int_a^b}f$)}\\
+: $\brk{L(f)}\equiv\brk{\sup{}\{L(f,\,P):\tx{$P$ is a partition of $[a,\,b]$}\}}$.\v7
+\item If $f$ is bounded on $[a,\,b]$, then $L(f)\lqs U(f)$.\v7
+\item\stitle{Darboux Integral}\\
+: If $U(f)=L(f)$, then $f$ is \brk{integrable} on $[a,\,b]$,\\
+\;\;and its \brk{Darboux integral} on $[a,\,b]$ is defined by\v{-4}
+$$\h{-30}{\Gray\left(\mcl D\int_a^b f=\right)}\brk{\int_a^bf}=\brk{\int_a^bf(x)\dx}\equiv U(f)=L(f)\tx{.}$$
+\end{itemize}
+\vfill\null\columnbreak
+
+\item\stitle{Theorems} ($f$: a bdd. ftn. on $[a,\,b]$.)
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item For partitions $P$ \& $Q$ of $[a,\,b]$ s.t. $P\subseteq Q$,\v{-4}
+$$\brk{L(f,\,P)\lqs L(f,\,Q)\lqs U(f,\,Q)\lqs U(f,\,P)}\tx{.}$$
+
+\begin{Pfbox}[\!\!: $L(f,\,P)\lqs L(f,\,Q)$]
+Without lost of generallity, for a partition $P=\{a=t_0<\cdots<t_n=b\}$, it suffices to show  where $Q=P\cup\{u\}$ and $u\in(t_{k-1},\,t_k)$ f.s. $k$.\v3
+
+Let $m(f,\,[p,\,q])(q-p)=\mu_{p,q}(q-p)=\D_{p,q}$ \\
+for $p,\,q\in Q$ s.t. $p<q$. Then\v{-4}
+$$\begin{aligned}
+\h{-5}L(f,\,Q)-L(f,\,P)&=\D_{t_{k-1},u}+\D_{u,\,t_k}-\D_{t_{k+1},t_k}\\
+&=\h{10}\D_{t_{k-1},u}+\D_{u,\,t_k}\v{-2}\\
+&\h{10}-\mu_{t_{k+1},t_k}(t_k-u+u-t_{k-1})\\
+&\gqs 0\tx{,}
+\end{aligned}\v{-4}$$
+since $\mu_{t_{k-1},t_k}\lqs\min{}\{\mu_{t_{k-1},u},\,\mu_{u,t_k}\}$,\\
+thus we have $L(f,\,Q)\gqs L(f,\,P)$.
+\end{Pfbox}\;
+
+\item For partitions $P$ \& $Q$ of $[a,\,b]$,\v{-4}
+$$\brk{L(f,\,P)\lqs U(f,\,Q)}\tx{.}$$
+
+\begin{Pfbox}
+Since $P\cap Q$ is a partition of $[a,\,b]$,\\
+and $P$, $Q\subseteq P\cap Q$, we have\v{-4}
+$$\begin{aligned}
+L(f,\,P)&\lqs L(f,\,P\cap Q)\\
+&\lqs U(f,\,P\cap Q)\lqs U(f,\,Q)\tx,
+\end{aligned}\v{-4}$$
+hence $L(f,\,P)\lqs U(f,\,Q)$.
+\end{Pfbox}\;
+
+\item \brk{$L(f)\lqs U(f)$}.
+
+\begin{Pfbox}
+Let $P$ be a partition of $[a,\,b]$.
+
+Since $L(f,\,P)\lqs U(f,\,Q)$ for any partition $Q$ of $[a,\,b]$, $L(f,\,P)\lqs U(f)$.
+
+Thus we have $L(f)\lqs U(f)$.
+\end{Pfbox}\;
+
+\item\stitle{Cauchy Criterion for Integrability (1)}\\
+: \brk{$f$ is integrable} if and only if \\
+\brk{for each $\epsilon>0$}, \brk{$\exists$ a partition $P$} of $[a,\,b]$ s.t.\v{-4}
+$$\brk{U(f,\,P)-L(f,\,P)<\epsilon}\tx.$$
+\rnc{\qedsymbol}{\Sq}
+\begin{Pfbox}[($\Longfrom$)]
+For $\epsilon>0$ and some partition $P$,\v{-4}
+$$\begin{aligned}
+U(f)&\lqs U(f,\,P)=U(f,\,P)-L(f,\,P)+L(f,\,P)\\
+&<\epsilon+L(f,\,P)\lqs\epsilon+L(f)\tx.
+\end{aligned}\v{-4}$$
+Since $\epsilon$ is arbitrary, we have $U(f)\lqs L(f)$.
+
+But it is trivial that $U(f)\gqs L(f)$, thus we have\\
+$U(f)=L(f)$, which implies $f$ is int.ble.
+\end{Pfbox}
+
+\newpage
+\rnc{\qedsymbol}{\Bsq}
+\begin{Pfbox}[($\Longto$)]
+Let $\epsilon>0$. As $P$ gets finer, i.e., $|P|\longto\infty$,\\
+$(L(f,\,P),\,U(f,\,P))\longto(L(f),\,U(f))$,\\
+thus $\exists P_1$ \& $P_2$: partitions of $[a,\,b]$ s.t.\v{-5}
+$$L(f,\,P_1)>L(f)-\epsilon/2\tx,\;U(f,\,P_2)<U(f)+\epsilon/2\tx.\v{-6}$$
+Then, for $P=P_1\cup P_2$,\v{-4}
+$$\begin{aligned}
+  U(f,\,P)-L(f,\,P)&\lqs U(f,\,P_2)-L(f,\,P_1)\\
+  &=U(f)-L(f)+\epsilon=\epsilon\tx.
+  \end{aligned}\v{-4}$$
+\end{Pfbox}\;
+
+\item Suppose there exist $\left\{\h{-5}\begin{tabular}{l}$(U_n)$: seq. of upper D. sum,\\$(L_n)$: seq. of lower D. sum.\end{tabular}\right.$\v3\\
+If \brk{$\lim{}(U_n-L_n)=0$}, then \brk{$f$ is integrable}, and\v{-4}
+$$\brk{\int_a^b f=\lim L_n=\lim U_n}\tx.$$
+
+\begin{pfbox}
+\rnc{\qedsymbol}{\Sq}
+\begin{proof}[\color{TGreen}\ul{Integrability}.] Let $U_n=U(f,\,P_n)$, $L_n=(f,\,Q_n)$\\
+\h{-10}for seq. $(P_n)$, $(Q_n)$ of pttn., and $P=P_n\cup Q_n$.\v3
+
+We derive\v{-4}
+$$U(f,\,P)-L(f,\,P)\lqs U(f,\,P_n)-L(f,\,Q_n)\quad(1)\v{-4}$$
+\h{-10}since $P$ is finer than both $P_n$ and $Q_n$,\\
+\h{-10}and $(1)$ converges to $0$ by the assumption.\v3
+
+Hence, for any $\epsilon>0$, $\exists N>0$ s.t.\v{-4}
+$$n>N\quad\tx{implies}\quad U(f,\,P)-L(f,\,P)<\epsilon\tx{.}$$
+
+Therefore, with $P$ for such $n$,\\
+\h{-10}we can show $f$ is integrable on $[a,\,b]$.
+\end{proof}\v{-3}
+
+\h{-10}\dotfill
+
+\rnc{\qedsymbol}{\Bsq}
+\begin{proof}[\color{TGreen}\ul{Equality}.]
+Note that\v{-4}
+$$L_n\lqs L(f)=\int_a^b f=U(f)\lqs U_n\v{-4}$$
+\h{-10}since $f$ is integrable by the proof above.\v3
+
+Then we have\v{-4}
+$$\begin{cases}\ds0\lqs\int_a^bf-L_n\lqs U_n-L_n\tx,\\\ds L_n-U_n\lqs\int_a^b-U_n\lqs0\tx,\end{cases}\v{-4}$$
+\h{-10}but if we take the limit $n\longto\infty$,\v{-4}
+$$\begin{cases}\ds0\lqs\int_a^bf-\lim L_n\lqs \lim{}(U_n-L_n)\tx,\\\ds0=\lim{}(L_n-U_n)\lqs\int_a^b-\lim U_n\lqs0\tx,\end{cases}\v{-4}$$
+\h{-10}hence we conclude $\ds\int_a^bf=\lim L_n=\lim U_n$.
+\end{proof}
+\end{pfbox}\;
+\end{itemize}
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\ltitle{Riemann Integrals}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Mesh}\\
+: The \brk{mesh} of $P=\{a=t_0<t_1<\cdots<t_n=b\}$\\
+\;\;is defined by a number s.t.\v{-4}
+$$\brk{\mesh(P)=\max{}\{t_k-t_{k-1}:k=1\tx,\,2\tx,\,\ldots\tx,\,n\}}\tx.\v3$$
+
+\item\stitle{Cauchy Criterion for Integrability (2)}\\
+: A \brk{bdd. ftn $f$} on $[a,\,b]$ is \brk{integrable} if and only if\\
+\;\; for each $\epsilon>0$, $\exists\delta>0$ s.t.\v{-4}
+$$\brk{\mesh(P)<\delta\quad\tx{implies}\quad U(f,\,P)-L(f,\,P)<\epsilon}\tx.\v3$$
+
+\begin{Pfbox}[($\Longto$)]
+Let $\epsilon>0$, and select a partition\v{-6}
+$$P_0=\{a=u_0<u_1<\cdots<u_m=b\}\v{-6}$$
+s.t. $U(f,\,P_0)-L(f,\,P_0)<\epsilon/2$.\hfill$\cdots\cdots\;(1)$\\
+(Its existence is proved by Thm 32.5.)\v3
+
+Since $f$ is bdd. on $[a,\,b]$, $\exists B\gqs 0$ s.t.\v{-6}
+$$-B\lqs f(x)\lqs B\quad\tx{and}\quad{-B\lqs -f(x)\lqs B}\tx.\v{-6}$$
+for all $x\in[a,\,b]$.\v3
+
+Let $\delta=\epsilon/(8B(m-1))$, and consider a partition\v{-6}
+$$P=\{a=t_0<t_1<\cdots<t_n=b\}\quad\tx{s.t. $\mesh(P)<\delta$,}\v{-6}$$
+and let $Q$ be a partition s.t. $Q=P_0\cup P$.\v3
+
+(i) If $|Q|=|P|+1$, i.e., $Q\setminus P=\{u\}$ for some $u\in(t_{k-1},\,t_k)$,\v{-6}
+$$\begin{aligned}
+L(f,\,Q)-L(f,\,P)&=\D_{t_{k-1},u}+\D_{u,t_k}-\D_{t_{k-1},t_k}\\
+&\lqs 2B(t_k-t_{k-1})\\
+&< 2B\delta\tx.
+\end{aligned}\v{-3}$$
+
+(ii) If $|Q|-|P|\lqs 1$, then $|Q|\lqs |P|+(m-1)$,\\
+by (i) and the inductive argument, we have\\
+$L(f,\,Q)-L(f,\,P)<2B(m-1)\delta=\epsilon/4$.\hfill$\cdots\cdots\;(2)$\v4
+
+Since $P_0\subseteq Q$, $L(f,\,P_0)\lqs L(f,\,Q)$, thus
+$L(f,\,P_0)-L(f,\,P)\lqs L(f,\,Q)-L(f,\,P)<\epsilon/4$.\hfill$\cdots\cdots\;(3)$\v4
+
+Similarly, we can derive\v{-4}
+$$\min{}\{U(f,\,P)-U(f,\,Q),\,U(f,\,P)-U(f,\,P_0)\}<\epsilon/4\tx.\v{-6}$$
+\hfill$\cdots\cdots\;(4)$\v4
+
+By $(1)$-$(4)$, we conclude\v{-4}
+$$\begin{aligned}
+U(f,\,P)-L(f,\,P)&<U(f,\,P_0)+\epsilon/4-L(f,\,P_0)+\epsilon/4\\
+&=U(f,\,P_0)-L(f,\,P_0)+\epsilon/2\\
+&<\epsilon/2+\epsilon/2=\epsilon\tx.
+\end{aligned}\v{-19.8}$$
+\end{Pfbox}
+
+\newpage
+
+\item\stitle{Riemann Sum}\\
+: A \brk{Riemann sum of $f$ associated with $P$} is defined by\v{-6}
+$$(S=)\brk{\sum_{k=1}^nf(x_k)(t_k-t_{k-1})}\v{-4}$$
+\;\;with a bdd. ftn. $f$ on $[a,\,b]$,\\
+\;\;a partition $P=\{a=t_0<\cdots<t_n=b\}$ of $[a,\,b]$, and\\
+\;\;$x_k\in[t_{k-1},\,t_k]$ for $k=1$, $2$, $\ldots$, $n$.\v7
+
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item\stitle{Right/Left Riemann Sum}\\
+: A Riemann sum where $x_k=t_k$(R) / $t_{k-1}$(L).\v7
+
+\item Since the choice of $x_n$ is arbitrary, \brk{$|(\tx{R.}\Sigma)|=\infty$}.\v7
+
+\item\stitle{Inequality between D.Sum \& R.Sum}\\
+: For any R.Sum $S$ with $P$, \brk{$L(f,\,P)\lqs S\lqs U(f,\,P)$}.\\
+\end{itemize}
+
+\item\stitle{Riemann Integrability}\\
+: $f$ is \brk{Riemann integrable} on $[a,\,b]$,\\
+\;\;if $\exists r\in\RR$ s.t. for each $\epsilon>0$, $\exists\delta>0$ s.t.\v{-4}
+$$\brk{\mesh(P)<\delta\quad\tx{implies}\quad |S-r|<\epsilon}\v{-4}$$
+\;\;for any Riemann sum $S$ of $f$ with $P$.\\
+
+\item\stitle{Riemann Integral}\\
+: The \brk{Riemann integral of $f$ on $[a,\,b]$} is defined by\\
+\;\;\brk{such $r\in\RR$} (s.t. \brk{$|S-r|<\epsilon$}) on def. of Riemann int.bility,\\
+\;\;and we denote it\v{-4}
+$$\brk{r=\mcl R\int_a^bf}\tx.$$
+
+\item \brk{A function $f$ is Riemann int.ble} on $[a,\,b]$,\\
+if and only if \brk{it is [Darboux] int.ble} on $[a,\,b]$.
+
+\begin{Pfbox}[($\Longfrom$)]
+\rnc{\qedsymbol}{\Sq}
+Suppose $f$ is D. int.ble on $[a,\,b]$.\\
+Then, for $\epsilon>0$, $\exists\delta>0$ s.t.\v{-5}
+$$\mesh(P)<\delta\quad\tx{implies}\quad U(f,\,P)-L(f,\,P)<\epsilon\v{-6}$$
+for any partition $P$ of $[a,\,b]$.\v2
+
+Let $P$ be a partition of $[a,\,b]$ s.t. $\mesh(P)<\delta$. Then\v{-4}
+$$U(f,\,P)<L(f,\,P)+\epsilon\lqs L(f)+\epsilon=\int_a^bf +\epsilon\tx,\;\;(1)\v{-6}$$
+$$L(f,\,P)>U(f,\,P)-\epsilon\gqs U(f)-\epsilon-\int_a^bf-\epsilon\tx.\;\;(2)\v{-4}$$
+
+For any Riemann sum $S$ with partition $P$,\v{-4}
+$$L(f,\,P)\lqs S\lqs U(f,\,P)\tx,\v{-4}$$
+thus, by $(1)$ \& $(2)$,\v{-4}
+$$\int_a^b f-\epsilon<S<\int_a^bf+\epsilon\;\;\ifff\;\;\abs{S-\int_a^bf}>\epsilon\tx,\v{-4}$$
+hence $f$ is Riemann int.ble, and $\ds\mcl R\int_a^bf=\int_a^bf$.
+\end{Pfbox}
+
+\vfill\null\columnbreak
+
+\begin{Pfbox}[($\Longto$)]
+Conversely, suppose $f$ is R. int.ble on $[a,\,b]$.
+
+Then, for $\epsilon>0$, $\exists d$, $r>0$ s.t.\v{-4}
+$$\mesh(P)<\delta\quad\tx{implies}\quad|S-r|<\epsilon\v{-4}$$
+for any Riemann sum $S$ with partition $P$.\v3
+
+Consider a partition $P=\{a=t_0<\cdots<t_n=b\}$ \\
+s.t. $\mesh(P)<\delta$.\v3
+
+Let $x_k\in[t_{k-1},\,t_k]$ s.t. $f(x_k)<m(f,\,[t_{k-1},\,t_k])+\epsilon$ for $k=1$, $2$, $\ldots$, $n$.
+
+Then we have\v{-4}
+$$\begin{aligned}\sum_{k=1}^nf(x_k)(t_k-t_{k-1})<{}&
+\phantom{{}+{}}\!\sum_{k=1}^nm(f,\,[t_{k-1},\,t_k])(t_k-t_{k-1})\\
+&+\sum_{k=1}^n\epsilon(t_k-t_{k-1})\tx,
+\end{aligned}\v{-4}$$
+hence $S<L(f,\,P)+\epsilon(b-a)$.
+
+It follows that\v{-2}
+$$\begin{aligned}
+L(f)\lqs L(f,\,P)&>S-\epsilon(b-a)\\
+&>r-\epsilon(b-a+1)\gqs r
+\end{aligned}\v{-4}$$
+since $\epsilon$ is arbitrary.
+
+Similarly, we can show $U(f)\lqs r$.\v3
+
+Since $L(f)\lqs U(f)$, we have $L(f)=U(f)=r$,\v2\\
+hence $f$ is [D.] integrable, and $\ds\int_a^bf=\mcl R\int_a^bf$.
+\end{Pfbox}\v9
+
+\item For \brk{bounded and Riemann int.ble} ftn. $f$ on $[a,\,b]$,\\
+let $(S_n)$ be a seq. of Riemann sum with\\
+a partition seq. $(P_n)$ s.t. \brk{$\lim\mesh(P_n)=0$}.\\
+Then we have\v{-4}
+$$\brk{\int_a^bf=\lim S_n}\tx.$$
+
+\begin{Pfbox}
+Let $\epsilon>0$. By the assumption, $\exists N>0$ s.t.\v{-4}
+$$n>N\quad\tx{implies}\quad \mesh(P_n)<\delta\v{-4}$$
+for $\delta>0$ s.t.\v{-4}
+$$\mesh(P)<\delta\quad\tx{implies}\quad\abs{S-\int_a^bf}<\epsilon\v{-4}$$
+for any Riemann sum $S$ with any $P$.\\
+(Such $\delta$ exists since $f$ is R. int.ble!)\v3
+
+Then, for $n>N$, $\ds\abs{S_n-\int_a^bf}<\epsilon$,\v2\\
+hence we conclude $\lim S_n=\ds\int_a^bf$.
+\end{Pfbox}
+\end{itemize}
+
+\newpage
+
+\Ltitle{33}{Properties of the Riemann Integral}
+
+\ltitle{Integrability}\v{-6}
+\begin{itemize}[label={-}]
+\item Every \brk{monotonic} ftn. $f$ on $[a,\,b]$ is \brk{integrable}.
+
+\begin{Pfbox}[(Increasing)]
+Assume $f$ is inc. ftn. on $[a,\,b]$ and $f(a)<f(b)$.
+
+Then $f(x)\in[f(a),\,f(b)]$ for any $x\in[a,\,b]$,\\
+hence $f$ is bounded on $[a,\,b]$.
+
+Let $\epsilon>0$, $P=\{a=t_0<\cdots<t_n=b\}$ with\v{-4}
+$$\mesh(P)<\frac\epsilon{f(b)-f(a)}\tx.\v{-4}$$
+
+Then we derive, for $\D_k=t_k-t_{k-1}$ and $I_k=[t_{k-1},\,t_k]$,\v{-4}
+$$\begin{aligned}
+&U(f,\,P)-L(f,\,P)\v{-2}\\
+={}&\sum_{k=1}^n[M(f,\,I_k)-m(f,\,I_k)]\D_k\\
+<{}&\sum_{k=1}^n[f(t_k)-f(t_{k-1})]\cdot\frac\epsilon{f(b)-f(a)}\\
+={}&[f(b)-f(a)]\cdot\frac\epsilon{f(b)-f(a)}=\epsilon\tx,
+\end{aligned}$$
+hence $f$ is integrable on $[a,\,b]$.
+\end{Pfbox}\v9
+
+\item Every \brk{continuous} ftn. on $[a,\,b]$ is \brk{integrable}.
+
+\begin{Pfbox}
+By the assumption, $f$ is bounded on $[a,\,b]$,\\
+thus $f$ is uniformly cont. on $[a,\,b]$.
+
+Then, for $\epsilon>0$, $\exists\delta>0$ for any $x$, $y\in[a,\,b]$ s.t.\v{-4}
+$$|x-y|<\delta\quad\tx{implies}\quad|f(x)-f(y)|<\frac\epsilon{b-a}\tx.\v{-4}$$
+
+Let $P=\{a=t_0<\cdots<t_n=b\}$ with $\mesh(P)<\delta$.
+
+Then, $M(f,\,I_k)-m(f,\,I_k)<\epsilon/(b-a)$, so\v{-4}
+$$U(f,\,P)-L(f,\,P)<\sum_{k=1}^n\frac\epsilon{b-a}\mu_k=\epsilon\tx,\v{-4}$$
+hence $f$ is integrable on $[a,\,b]$.
+\end{Pfbox}\v4
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\ltitle{Operation between Integrals}
+
+: On this chapter, let $f$, $g$ be integrable ftns on $[a,\,b]$.\v{-3}
+
+\begin{itemize}[label={-}]
+\item For $c\in\RR$, \brk{$cf$ is integrable}, and \brk{$\ds\int_a^bcf=c\int_a^bf$}.
+
+\begin{pfbox}[($\int_a^bcf=c\int_a^bf$)]
+\rnc{\qedsymbol}{\Sq}
+Let $P=\{a=t_0<\cdots<t_n=b\}$.
+\begin{proof}[\color{TGreen}(i: $c>0$)]
+Let $c>0$. Since\v{-4}
+$$\begin{aligned}
+M(cf,\,I_k)&=\sup{}\{cf(x):x\in I_k\}\\
+&=c\cdot\sup{}\{f(x):x\in I_k\}=c\cdot M(f,\,I_k)\tx,
+\end{aligned}\v{-4}
+$$
+$$\begin{aligned}
+U(cf,\,P)=\sum_{k=1}^nM(cf,\,I_k)&=c\sum_{k=1}^nM(f,\,I_k)\\
+&=cU(f,\,P)\tx,
+\end{aligned}\v{-4}$$
+thus $U(cf)=cU(f)$, and similarly, $L(cf)=cL(f)$.
+
+Since $f$ is integrable, we conclude\v{-4}
+$$U(cf)=cU(f)=c\int_a^bf=cL(f)=L(cf)\tx,\v{-4}$$
+so $cf$ is integrable, and $\ds\int_a^bcf=c\int_a^bf$.
+\end{proof}\v{-3}
+
+\dotfill
+
+\begin{proof}[\color{TGreen}(ii: $c=-1$)]
+Since\v{-4}
+$$\begin{aligned}
+M(-f,\,I_k)&=\sup{}\{-f(x):x\in I_k\}\\
+&=-\inf{}\{f(x):x\in I_k\}=-m(f,\,I_k)\tx,
+\end{aligned}\v{-4}$$
+$U(-f,\,P)=-L(f,\,P)$, thus\v{-4}
+$$\begin{aligned}
+U(-f)&=\inf{}\{U(-f,\,P):\tx{$P$ is ptt. of $[a,\,b]$}\}\\
+&=-\sup{}\{L(f,\,P):\tx{$P$ is ptt. of $[a,\,b]$}\}=-L(f)\tx.
+\end{aligned}\v{-4}$$
+Similarly, $L(f)=-U(f)$.
+
+Since $f$ is integrable,\v{-4}
+$$-U(f)=-L(f)=L(-f)=U(-f)=-\int_a^bf\tx,\v{-4}$$
+hence $-f$ is integrable, and $\ds\int_a^b(-f)=-\int_a^bf$.
+\end{proof}\v{-3}
+
+\dotfill
+\rnc{\qedsymbol}{\Bsq}
+\begin{proof}[\color{TGreen}(iii: $c<0$)] Let $c<0$, then $c=-d$ for some $d>0$,
+
+then $df$ and $(-d)f=-(df)=cf$ are int.ble on $[a,\,b]$\\
+by (i), (ii), and\v{-4}
+$$\int_a^bcf=\int_a^b(-df)=-\int_a^bdf=(-d)\int_a^bf=c\int_a^bf\tx.\v{-4}$$
+\end{proof}
+\end{pfbox}
+
+\newpage
+
+\item \brk{$f+g$ is integrable}, and \brk{$\ds\int_a^b(f+g)=\int_a^bf+\int_a^bg$}.
+\begin{pfbox}
+Let $\epsilon>0$.\v{-3}
+\begin{proof}[\color{TGreen}\ul{Integrability}.]
+\rnc{\qedsymbol}{\Sq}
+Since $f$ and $g$ are integrable,\\
+there exist partitions $P_1$, $P_2$ of $[a,\,b]$ s.t.\v{-4}
+$$\left\{\h{-4}\begin{tabular}{l}$U(f,\,P_1)-L(f,\,P_2)<\epsilon/2$,\v3\\$U(g,\,P_2)-L(g,\,P_2)<\epsilon/2$.\end{tabular}\right.\v{-4}$$
+
+Let $P=P_1\cup P_2$, then\v{-4}
+$$\left\{\h{-4}\begin{tabular}{l}$U(f,\,P)-L(f,\,P)<\epsilon/2$,\v3\\$U(g,\,P)-L(g,\,P)<\epsilon/2$.\end{tabular}\right.\v{-4}$$
+Since $m(f+g,\,S)\gqs m(f,\,S)+m(g,\,S)$ f.a. $S\in[a,\,b]$\\
+by the property of infimum, we have\v{-4}
+$$L(f+g,\,P)\gqs L(f,\,P)+L(g,\,P)\tx.\v{-4}$$
+Similarly, we can derive\v{-4}
+$$U(f+g,\,P)\lqs U(f,\,P)+U(g,\,P)\tx.\v{-4}$$
+
+Hence we conclude\v{-4}
+$$\begin{aligned}
+&U(f+g,\,P)-L(f+g,\,P)\\
+\lqs{}&U(f,\,P)+U(g,\,P)-L(f,\,P)-L(g,\,P)\\
+<{}&\epsilon/2\cdot2=\epsilon\tx,
+\end{aligned}\v{-4}$$
+so $f+g$ is integrable on $[a,\,b]$.
+\end{proof}\v{-3}
+
+\dotfill
+
+\begin{proof}[\color{TGreen}\ul{Equality}.]
+We calculate\v{-4}
+$$\begin{aligned}\int_a^b(f+g)&=U(f+g)\lqs U(f,\,P)+U(g,\,P)\\
+&<L(f,\,P)+L(g,\,P)+\epsilon\\
+&\lqs L(f)+L(g)+\epsilon=\int_a^bf+\int_a^bg+\epsilon\tx,\end{aligned}\v{-4}$$
+$$\begin{aligned}\int_a^b(f+g)&=L(f+g)\gqs L(f,\,P)+L(g,\,P)\\
+&>U(f,\,P)+U(g,\,P)-\epsilon\\
+&\lqs U(f)+U(g)-\epsilon=\int_a^bf+\int_a^bg-\epsilon\tx.
+\end{aligned}\v{-4}$$
+Since $\epsilon$ is arbitrary, we have\v{-4}
+$$\int_a^b(f+g)=\int_a^bf+\int_a^bg\tx.\v{-4}$$
+\end{proof}
+\end{pfbox}
+\end{itemize}
+
+\vfill\null\columnbreak
+
+\ltitle{Inequalities on Integrals}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Preservation of Inequality}\\
+: For integrable ftn. $f$, $g$ on $[a,\,b]$,\\
+\;\;if \brk{$f(x)\lqs g(x)$} for all $x\in[a,\,b]$, then $\ds\brk{\int_a^bf\lqs\int_a^bg}$.
+
+\begin{Pfbox}
+For integrable ftn $h=g-f{}(=g+(-1)f)$,\\
+$h(x)\gqs0$ for all $x\in[a,\,b]$.
+
+Then $L(h,\,P)\gqs0$ for all partitions $P$ of $[a,\,b]$,\v2\\
+thus $\ds\int_a^bh=L(h)\gqs0$, so we conclude\v{-4}
+$$\int_a^bg=\int_a^bf+\int_a^bh\lqs\int_a^bf\tx.\v{-4}$$
+\end{Pfbox}\v9
+
+\item For cont. nonnegative ftn $g$ on $[a,\,b]$,\\
+if \brk{$\ds\int_a^bg=0$}, then \brk{$g(x)=0$} for all $x\in[a,\,b]$.
+
+\begin{Pfbox}
+Assume $g(x_0)\neq0$ for some point $x_0$.
+
+Then, $\exists\alpha>0$ s.t. $g(x_0)\gqs\alpha$, so $\exists[c,\,d]\subseteq[a,\,b]$ s.t.\\
+$g(x)\gqs\alpha/2$ for all $x\in[c,\,d]$.
+
+We conclude\v{-4}
+$$\int_a^bg\gqs\int_c^dg\gqs\frac\alpha2(d-c)>0\tx,\quad\tx{thus}\quad \int_a^bg\neq0\tx.$$
+
+This contradicts to $\int_a^bg=0$,\\
+thus $g(x)=0$ for all $x\in[a,\,b]$.
+\end{Pfbox}\v9
+
+\item\stitle{Integrability of absolute function}\\
+: If $f$ is int.ble on $[a,\,b]$, then \brk{so is $|f|$}, and\v{-4}
+$$\brk{\abs{\int_a^bf}\lqs\int_a^b|f|}\tx.\v9$$
+\end{itemize}
+
+\ltitle{Splitting/Combining Integrals}
+
+: For $a<c<b$, let $f$ be a ftn. on $[a,\,b]$ s.t.\\
+\quad\;\;int.ble on each $[a,\,c]$ and $[c,\,b]$.\v2
+
+\;\;Then \brk{$f$ is int.ble on $[a,\,b]$}, and \brk{$\ds\int_a^bf=\int_a^cf+\int_c^bf$}.\v4
+
+\hfill\ti{\color{TGreen}(pf. on next page.)}\v{15}
+
+\ltitle{Integrating Finitely Inequal Function}
+
+: For an int.ble ftn. $f$ on $[a,\,b]$, let $g$ be a ftn. on $[a,\,b]$ s.t.\\
+\quad\;\;\brk{$g(x)=f(x)$ except for finitely many $x\in[a,\,b]$}.\v4
+
+\;\;Then \brk{$g$ is int.ble}, and \brk{$\ds\int_a^bf=\int_a^bg$}.
+
+\newpage
+
+\begin{pfbox}[($|\int_a^bf|\lqs\int_a^b|f|$)]
+\begin{proof}[\color{TGreen}\ul{Integrability}.]\rnc{\qedsymbol}{\Sq}
+Let $S\subseteq[a,\,b]$, and $x_0$, $y_0\in S$.
+
+Then we have\v{-4}
+$$\begin{aligned}
+|f(x_0)|-|f(y_0)|&\lqs |f(x_0)-f(y_0)|\\
+&\lqs M(f,\,S)-m(f,\,S)\tx,\quad\cdots\cdots\;(1)
+\end{aligned}\v{-4}$$
+thus\v{-4}
+$$\begin{aligned}
+&\sup{}\{|f(x_0)|-|f(y_0)|:x_0\tx,\,y_0\in S\}\\
+={}&\sup{}\{|f(x_0)|:x_0\in S\}-\inf{}\{|f(y_0)|:y_0\in S\}\\
+={}&M(|f|,\,S)-m(|f|,\,S)\\
+\lqs{}&M(f,\,S)-m(f,\,S)\quad\tx{\Gray(by $(1)$)}\qquad\qquad\cdots\cdots\;(2)
+\end{aligned}\v{-4}$$
+
+For $\epsilon>0$, since $f$ is int.ble,\\
+$\exists$ a partition $P$ of $[a,\,b]$ s.t. $U(f,\,P)-L(f,\,P)<\epsilon$.\v3
+
+By $(2)$ and letting $S=[t_{k-1},\,t_k]$ for $k=1$, $2$, $\ldots$, $n$,\v{-4}
+$$U(|f|,\,P)-L(|f|,\,P)\lqs U(f,\,P)-L(f,\,P)<\epsilon\tx,\v{-4}$$
+hence $|f|$ is integrable on $[a,\,b]$.
+\end{proof}\v{-3}
+
+\dotfill
+
+\begin{proof}[\color{TGreen}\ul{Inequality}.]
+By Thm 33.4(i), and since\v{-6}
+$$-|f(x)|\lqs f(x)\lqs |f(x)|\quad\tx{for all $x\in[a,\,b]$,}\v{-4}$$
+$\ds-\int_a^b|f|\lqs \int_a^bf\lqs\int_a^b|f|\;\Longto\;\abs{\int_a^bf}\lqs\int_a^b|f|$.
+\end{proof}
+\end{pfbox}
+
+\;
+
+\begin{pfbox}[($\int_a^bf=\int_a^cf+\int_c^bf$)]
+\begin{proof}[\color{TGreen}\ul{Integrability}.]\rnc{\qedsymbol}{\Sq}Since $f$ is bdd. on $[a,\,c]$ and $[c,\,b]$,\\
+so is on $[a,\,b]$.
+
+For $\epsilon>0$, $\exists$ partitions $P_1$, $P_2$ of each $[a,\,c]$, $[c,\,b]$ s.t.\v{-4}
+$$\begin{cases}
+U_a^c(f,\,P_1)-L_a^c(f,\,P_1)<\epsilon/2\tx,\\
+U_c^b(f,\,P_2)-L_c^b(f,\,P_2)<\epsilon/2
+\end{cases}\v{-4}$$
+since $f$ is int.ble on both $[a,\,c]$ and $[c,\,b]$.\v4
+
+For $P=P_1\cup P_2$, it is obvious that\v{-4}
+$$\begin{cases}
+U_a^b(f,\,P)=U_a^c(f,\,P_1)+U_c^b(f,\,P_1)\tx,\\
+L_a^b(f,\,P)=L_a^c(f,\,P_1)+L_c^b(f,\,P_2)\tx.
+\end{cases}$$
+Then $U_a^b(f,\,P)-L_a^b(f,\,P)<\epsilon$, thus $f$ is int.ble on $[a,\,b]$.
+\end{proof}\v{-3}
+
+\dotfill
+
+\begin{proof}[\color{TGreen}\ul{Equality}.] We calculate\v{-4}
+$$\begin{aligned}
+\int_a^bf&\lqs U_a^b(f,\,P)=U_a^c(f,\,P_1)+U_c^b(f,\,P_2)\\
+&<L_a^c(f,\,P_1)+L_c^b(f,\,P_2)+\epsilon\lqs\int_a^cf+\int_c^bf+\epsilon\tx,
+\end{aligned}\v{-4}$$
+and similarly, $\int_a^bf\gqs \int_a^cf+\int_c^bf-\epsilon$.\v3
+
+Since $\epsilon$ is arbitrary, we have $\ds\int_a^bf=\int_a^cf+\int_c^bf$.
+\end{proof}
+\end{pfbox}
+
+\vfill\null\columnbreak
+
+\ltitle{Function Defined Piecewise}\v{-6}
+\begin{itemize}[label={-}]
+\item\stitle{Piecewise Monotonic Fuction}\\
+: A ftn. $f$ on $[a,\,b]$ is \brk{piecewise monotonic}\\
+\;\;if $\exists P=\{a=t_0<\cdots<t_n=b\}$ of $[a,\,b]$ s.t.\\
+\;\;\brk{$f$ is monotonic on each $(t_{k-1},\,t_k)$}.\v9
+
+\item\stitle{Piecewise Continuous Function}\\
+: A ftn. $f$ on $[a,\,b]$ is \brk{piecewise continuous}\\
+\;\;if $\exists P=\{a=t_0<\cdots<t_n=b\}$ of $[a,\,b]$ s.t.\\
+\;\;\brk{$f$ is \ul{uniformly} continuous on each $(t_{k-1},\,t_k)$}.\v9
+
+\item\stitle{Expansion of Piecewise-defined Function}
+\begin{itemize}[label=\Cdot]
+\setlength{\leftskip}{-10pt}
+\item For a \brk{\ul{bounded} piecewise monotonic} funtion $f$ on $[a,\,b]$,\\
+$f$ can be \brk{expanded to a mono. ftn. $\tilde f$ on $\ul{[t_{k-1},\,t_k]}$}.\v9
+
+\item For a \brk{piecewise continuous} funtion $f$ on $[a,\,b]$,\\
+$f$ can be \brk{expanded to a cont. ftn. $\tilde f$ on $\ul{[t_{k-1},\,t_k]}$}.\v9
+
+\h{-10}$\Gray\left(\tx{You can take $\tilde f(x)=\left\{\h{-4}\begin{tabular}{cl}$f(x)$ & if $x\in(t_{k-1},\,t_k)$,\\$\ds\lim_{x\to t_{k-1}}f(x)$ & if $x=t_{k-1}$,\\$\ds\lim_{x\to t_k}f(x)$ & if $x=t_k$.\end{tabular}\right.$}\right)$\v9
+\end{itemize}
+
+\item\stitle{Integrability}\\
+: If $f$ is a \brk{\ul{bounded} piecewise monotonic} function on $[a,\,b]$,\\
+\;\;or a \brk{piecewise continuous} function on $[a,\,b]$,\v2\\
+\;\;then \brk{$f$ is integrable} on $[a,\,b]$.
+
+\begin{Pfbox}[(monotonic)]
+Let $f$ be a bounded piecewise monotonic ftn. on $[a,\,b]$ with a partition $P=\{a=t_0<\cdots<t_n=b\}$.\v3
+
+Then $f$ can be extended to a mono. ftn. $f_k$ on $[t_{k-1},\,t_k]$ s.t. $f_k(x)=\left\{\h{-4}\begin{tabular}{cl}$f(x)$ & if $x\in(t_{k-1},\,t_k)$,\\$\ds\lim_{x\to t_{k-1}}f(x)$ & if $x=t_{k-1}$,\\$\ds\lim_{x\to t_k}f(x)$ & if $x=t_k$.\end{tabular}\right.$\v3
+
+Then, by Thm 33.1, $f_k$ is int.ble on $[t_{k-1},\,t_k]$.\v4
+
+Since $f(x)=f_k(x)$ on $[t_{k-1},\,t_k]$ except $t_{k-1}$ and $t_k$,\v2\\
+$f$ is int.ble on $[t_{k-1},\,t_k]$ and $\ds\int_{t_{k-1}}^{t_k} f=\int_{t_{k-1}}^{t_k} f_k$.\v2
+
+Then, $f$ is int.ble on $[a,\,b]$ by Thm 33.6, and\v{-4}
+$$\int_a^bf=\sum_{k=1}^n\int_{t_{k-1}}^{t_k}f\tx.\v{-15}$$
+\end{Pfbox}
+\end{itemize}
+
+\newpage
+
+\Ltitle{34}{Fundamental Theorem of Calculus}
+
+\ltitle{Fundamental Theorem of Calculus I}
+
+: For a function $g$ s.t. \brk{cont.} on $[a,\,b]$ \& \brk{diff.ble} on $(a,\,b)$,\\
+\quad\;\;if \brk{$g'$ is int.ble} on $[a,\,b]$, then\v{-4}
+$$\brk{\int_a^bg'=\bigg[g(x)\bigg]^b_a=g(b)-g(a)}.\v{-4}$$
+
+\begin{Pfbox}
+For $\epsilon>0$, $\exists$ a partition $P=\{a=t_0<\cdots<t_n=b\}$\\
+s.t. $U(g',\,P)-L(g',\,P)<\epsilon$.
+
+Apply the Mean Value Theorem to $g$ on $[t_{k-1},\,t_k]$:\v4\\
+$\exists x_k\in(t_{k-1},\,t_k)$ s.t. $g'(x_k)=\dfrac{g(t_k)-g(t_{k-1})}{t_k-t_{k-1}}$,\\
+i.e., $g'(x_k)(t_k-t_{k-1})=g(t_k)-g(t_{k-1})$.\v4
+
+Then $\ds\sum_{k=1}^ng'(x_k)\D_k=\sum_{k=1}^n[g(t_k)-g(t_{k-1})]=g(b)-g(a)$.
+
+Since $m(g',\,I_k)\lqs g'(x_k)\lqs M(g',\,I_k)$,\v{-4}
+$$L(g',\,P)\lqs\sum_{k=1}^ng'(x_k)\D_k=g(b)-g(a)\lqs U'(g,\,P)\tx.\v{-4}$$
+
+And we know $L(g',\,P)\lqs\int_a^bg'\lqs U(g',\,P)$, thus\v{-4}
+$$\abs{\int_a^bg'-\sum_{k=1}^ng'(x_k)\D_k}=\abs{\int_a^bg'-(g(b)-g(a))}<\epsilon\tx.\v{-4}$$
+
+Since $\epsilon$ is arbitrary, we conclude $\ds\int_a^bg'=g(b)-g(a)$.
+\end{Pfbox}\v9
+
+\ltitle{Integration by Parts}
+
+: For functions $u$, $b$ s.t. \brk{cont.} on $[a,\,b]$ \& \brk{diff.ble} on $(a,\,b)$,\\
+\quad\;\;if \brk{$u'$ and $v'$ are int.ble} on $[a,\,b]$,\v{-4}
+$$\brk{\int_a^bu'(t)v(t)\dt+\int_a^bu(t)v'(t)\dt=\bigg[u(t)v(t)\bigg]^b_a}\tx.\v{-4}$$
+
+\begin{Pfbox}
+Let $g=uv$, where $g$ is cont. on $[a,\,b]$ and diff.ble on $(a,\,b)$,\\
+and $g'=u'v+uv'$ is int.ble. Then we conclude\v{-4}
+$$\int_a^bu'v+\int_a^buv'=\int_a^bg'=g(t)\bigg|_a^b=u(t)v(t)\bigg|^b_a\tx.\v{-4}$$
+\end{Pfbox}\v{25}
+
+\ltitle{Fundamental Theorem of Calculus II}
+
+: For an \brk{int.ble ftn. $f$} on $[a,\,b]$ and $x\in[a,\,b]$, let\v{-4}
+$$\brk{F(x)=\int_a^xf(t)\dt}\tx.\v{-4}$$
+
+\;\;Then \brk{$F$ is cont.} on $[a,\,b]$.\v4
+
+\;\;If $f$ is cont. at $x_0\in(a,\,b)$, then $F$ is diff.ble at $x_0$ and\v{-4}
+$$\brk{F'(x_0)=f(x_0)}\tx.\v{-4}$$
+
+\vfill\null\columnbreak
+
+
+\begin{pfbox}\footnotesize
+\begin{proof}[\color{TGreen}\ul{Continuity}.]\rnc{\qedsymbol}{\Sq}Since $f$ is int.ble, it is bdd, i.e.,\\
+$\exists B\gqs 0$ s.t. $|f(x)|\lqs B$ for all $x\in[a,\,b]$.
+
+For $\epsilon>0$, let $\delta=\epsilon/B$, and $x$, $y\in[a,\,b]$ s.t. $0<y-x<\delta$.
+
+Then we have\v{-4}
+$$\begin{aligned}
+|F(y)-F(x)|&=\textstyle\abs{\int_a^yf-\int_a^xf}=\abs{\int_x^yf(t)\dt}\\
+&\textstyle\lqs\int_x^y|f|\lqs\int_x^y B\dt=B(y-x)<\epsilon\tx,
+\end{aligned}\v{-4}$$
+hence $F$ is [unif.] cont. on $[a,\,b]$
+\end{proof}\v{-3}
+
+\dotfill
+
+\begin{proof}[\color{TGreen}\ul{Equality}.] Let $x\in(a,\,b)\setminus\{x_0\}$. Note that\v{-4}
+$$\frac{F(x)-F(x_0)}{x-x_0}=\frac{\int_{x_0}^xf(t)\dt}{x-x_0}\tx,\quad f(x_0)=\frac{\int_{x_0}^x f(x_0)\dt}{x-x_0}\tx.\v{-4}$$
+Then we have\v{-4}
+$$\frac{F(x)-F(x_0)}{x-x_0}-f(x)=\frac1{x-x_0}\int_{x_0}^x(f(t)-f(x_0))\dt\tx.\v{-2}$$
+
+Let $\epsilon>0$. Since $f$ is cont. on $x_0$, $\exists\delta>0$ s.t.\v{-4}
+$$x\in(a,\,b)\;\;\tx{and}\;\;|t-x_0|<\delta\quad\tx{imply}\quad |f(t)-f(x_0)|<\epsilon\tx.\v{-4}$$
+Then, for $x\in(a,\,b)$ s.t. $0<|x-x_0|<\delta$,\v{-4}
+$$\begin{aligned}
+\abs{\frac{F(x)-F(x_0)}{x-x_0}-f(x)}&=\abs{\frac1{x-x_0}\int_{x_0}^x(f(t)-f(x_0))\dt}\\
+&\lqs\frac1{|x-x_0|}\int_{x_0}^x|f(t)-f(x_0)|\dt\\
+&\lqs\frac1{|x-x_0|}\int_{x_0}^x\epsilon\dt<\epsilon\tx,
+\end{aligned}\v{-4}$$
+hence $\ds\lim_{x\to x_0}\frac{F(x)-F(x_0)}{x-x_0}=F'(x_0)=f(x)$.
+\end{proof}
+\end{pfbox}\v9
+
+\ltitle{Change of Variable} {\Gray($a$, $b\in J$)}
+
+: For a diff.ble ftn. $u$ on an open interval $J$ s.t. $u'$ is cont.,\\
+\quad\;\;let $I$ be an open interval s.t. $u'(J)\subseteq I$. If $f$ is cont. on $I$,\v{-4}
+$$\brk{\int_a^b(f\Circ u)(x)u'(x)\dx=\int_{u(a)}^{y(b)}f(u)\d u}\tx.$$
+
+\begin{Pfbox}\footnotesize
+Fix $c\in I$, and let $F(a)=\int_c^a f$. Then, $F'=f$ on $I$ by FTCII.
+
+Let $g=F\Circ u$, then $g$ is diff.ble on $J$, and $g'=(f\Circ u)u'$. Then,\v{-4}
+$$\begin{aligned}
+\int_a^b(f\Circ u)u'&=\int_a^bg'=g(x)\bigg|_a^b=F(u(x))\bigg|_a^b\\
+&=\int_c^{u(b)}f-\int_c^{u(a)}f=\int_{u(a)}^{u(b)}f\tx.
+\end{aligned}\v{-10}$$
+\end{Pfbox}\v9
+
+\ltitle{Integral of Inversive Function}\\
+: For injective diff.ble ftn. $g$ on $I$,\v{-4}
+$$\brk{\int_a^bg+\int_{g(a)}^{g(b)}g^{-1}=xg(x)\bigg|_a^b}\tx.$$
+
+\begin{Pfbox}\footnotesize
+\;\v{-5}$$\begin{aligned}
+&\int_a^b(g^{-1}\Circ g)(x)g'(x)\dx\h{-10}&&=\int_{g(a)}^{g(b)}g^{-1}\\
+={}&\int_a^bxg'(x)\dx&&=xg(x)\bigg|_a^b-\int_a^bg\tx.
+\end{aligned}\v{-10}$$
+\end{Pfbox}
+\end{multicols*}
+\end{document}
