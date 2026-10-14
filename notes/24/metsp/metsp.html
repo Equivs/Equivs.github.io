@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" href="/Files/Images/eq_favicon.png" type="image/png">
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
     
     <style>
         body {
@@ -139,6 +141,64 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
+
+        /* PDF 페이지 박스 스타일 */
+        .pdf-page-box {
+                margin: 0 auto 40px auto;
+                text-align: center;
+        }
+
+        /* 이미지 스타일 */
+        .pdf-page {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 캡션(각주) 전체 스타일 */
+        .pdf-caption {
+                margin-top: 12px;
+                text-align: left;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 10px;
+        }
+
+        /* 첫 번째 줄 헤더 */
+        .caption-header {
+                background-color: #e6fcf5; /* 옅은 민트색 배경 */
+                padding: 4px 8px;
+                border-radius: 4px;
+                display: inline-block;
+                margin-bottom: 4px;
+        }
+
+        /* 섹션명 (크기 1.0~1.2) */
+        .section-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #82bab3;
+        }
+
+        /* 페이지 번호 (크기를 작게 .75로 설정) */
+        .page-num {
+                font-size: 0.75rem;
+                font-weight: 500;
+                color: #5d7572; 
+                margin-left: 6px;
+        }
+
+        /* 두 번째 줄: [설명] (.75 크기) */
+        .caption-desc {
+                font-size: 0.75rem;
+                color: #555555;
+                line-height: 1.4;
+                padding-left: 4px;
+        }
     </style>
 </head>
 <body>
@@ -147,31 +207,31 @@
     <p class="text-center">≡が実際に授業を受けながら書いたまとめノートのアーカイブページです。</p>
   
     <nav>
-        <a href="../../../index.html">Home</a>
+        <a href="/index.html">Home</a>
         <span class="divider"> | </span>
-        <a href="../../../sub1.html">Studies</a>
+        <a href="/sub1.html">Studies</a>
         <span class="divider"> | </span>
-        <a href="../../../sub2.html">Sakumon</a>
+        <a href="/sub2.html">Sakumon</a>
         <span class="divider"> | </span>
-        <a href="../../../sub3.html">Class Notes</a>
+        <a href="/sub3.html">Class Notes</a>
         <span class="divider"> | </span>
         <a href="https://x.com/Equiv__" target="_blank" class="sns-link">
-            <img src="../../../Files/Images/Favicons/favicon_x.png" alt="X (旧 Twitter)" class="sns-icon">
+            <img src="/Files/Images/Favicons/favicon_x.png" alt="X (旧 Twitter)" class="sns-icon">
         </a>
         <a href="https://mathlog.info/users/Irpyu20e3hMAgrXR8FOOajbKAvu1" target="_blank" class="sns-link">
-            <img src="../../../Files/Images/Favicons/favicon_mathlog.png" alt="Mathlog" class="sns-icon">
+            <img src="/Files/Images/Favicons/favicon_mathlog.png" alt="Mathlog" class="sns-icon">
         </a>
     </nav>
 
     <!-- 목록으로 돌아가기 버튼 -->
     <div class="top-nav">
-        <a href="../../../sub3.html" class="back-btn">◀ 科目一覧に戻る</a>
+        <a href="/sub3.html" class="back-btn">◀ 科目一覧に戻る</a>
     </div>
 
     <h2>Metric Space  <span class="small-text"> ― 距離空間論</span></h2>
     <p class="text-right">
         2024-2 (B2) / Pure Mathematics<br>
-        <a href="metsp.pdf" target="blank" class="sns-link"><img src="../../../Files/Images/Favicons/icon_pdf.png" alt="PDF" class="sns-icon"></a><a href="metsp.tex" target="blank" class="sns-link"><img src="../../../Files/Images/Favicons/icon_tex.png" alt="TeX" class="sns-icon"></a>
+        <a href="metsp.pdf" target="blank" class="sns-link"><img src="/Files/Images/Favicons/icon_pdf.png" alt="PDF" class="sns-icon"></a><a href="metsp.tex" target="blank" class="sns-link"><img src="/Files/Images/Favicons/icon_tex.png" alt="TeX" class="sns-icon"></a>
     </p>
 
     <p>距離空間論です。B3向けの『位相数学』にワンクッションを挟ませたみたいな科目ですね。</p>
@@ -194,6 +254,130 @@
         <img src="metsp_p15.png" alt="Metric Space (p. 15/17)" class="pdf-page">
         <img src="metsp_p16.png" alt="Metric Space (p. 16/17)" class="pdf-page">
         <img src="metsp_p17.png" alt="Metric Space (p. 17/17)" class="pdf-page">
+    </div>
+
+    <div class="pdf-container">
+        <figure class="pdf-page-box">
+            <img src="metsp_p1.png" alt="Metric Space (p. 1/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§0. 背景知識</span>
+                    <span class="page-num">(p. 1)</span>
+                </div>
+                <div class="caption-desc">高校では教えてくれないけど大学じゃ当たり前のように使ってるやつら。</div>
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="metsp_p2.png" alt="Metric Space (p. 2/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§1.1. 距離関数と開球</span>
+                    <span class="page-num">(p. 2)</span>
+                </div>
+                <div class="caption-desc">一番基本ながら一番大事。</div>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p3.png" alt="Metric Space (p. 3/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p4.png" alt="Metric Space (p. 4/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p5.png" alt="Metric Space (p. 5/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p6.png" alt="Metric Space (p. 6/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p7.png" alt="Metric Space (p. 7/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p8.png" alt="Metric Space (p. 8/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p9.png" alt="Metric Space (p. 9/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§1.2. 距離空間論における重要な点、部分集合</span>
+                    <span class="page-num">(pp. 2-9)</span>
+                </div>
+                <div class="caption-desc">開集合・閉集合、近傍など。ここで躓くとマズいよぉ？</div>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p10.png" alt="Metric Space (p. 10/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p11.png" alt="Metric Space (p. 11/17)" class="pdf-page">
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p12.png" alt="Metric Space (p. 12/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§2.1. 連続関数と一様連続関数</span>
+                    <span class="page-num">(pp. 9-12)</span>
+                </div>
+                <div class="caption-desc">実は位相数学での定義と結構違ったりする。</div>
+        </figure>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p13.png" alt="Metric Space (p. 13/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§2.2. 等距離空間と等距離写像</span>
+                    <span class="page-num">(p. 13)</span>
+                </div>
+                <div class="caption-desc">線形代数でもやった「同型」ですよ。</div>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p14.png" alt="Metric Space (p. 14/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§2.3. 実数への（一様）連続関数の拡張</span>
+                    <span class="page-num">(p. 14)</span>
+                </div>
+                <div class="caption-desc">任意の集合と実数を結んでしまう方法。</div>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p15.png" alt="Metric Space (p. 15/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§3.1. コーシー数列と完備性</span>
+                    <span class="page-num">(p. 14)</span>
+                </div>
+                <div class="caption-desc">隙間がない上にめっちゃ詰まってる。</div>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p16.png" alt="Metric Space (p. 16/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§3.2-5. 稠密性、ベールの範疇、完備化</span>
+                    <span class="page-num">(p. 16)</span>
+                </div>
+                <div class="caption-desc">隙間がないけどスカスカだという矛盾を解決したよ！（$\overline{\mathbb{Q}}=\mathbb{R}$の話）</div>
+        </figure>
+        
+        <figure class="pdf-page-box">
+            <img src="metsp_p17.png" alt="Metric Space (p. 17/17)" class="pdf-page">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§3.4-2. コンパクト距離空間</span>
+                    <span class="page-num">(p. 16)</span>
+                </div>
+                <div class="caption-desc">すべての数列がその中で完結（部分列が収束）すればいいよ、的なもの。</div>
+        </figure>
     </div>
 
 </body>
