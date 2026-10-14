@@ -182,16 +182,52 @@
         <img src="anlys_2-17.png" alt="Analysis 2 (p. 17/17)" class="pdf-page">
     </div>
     
-    <script>
-    fetch('/nav.html')
-        .then(response => {
-            if (!response.ok) throw new Error('네비게이션 파일을 찾을 수 없습니다.');
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error:', error));
+<script>
+        // 1. 현재 페이지의 경로를 분석하여 최상위 루트까지 가기 위해 필요한 '../' 개수 계산
+        // (예: /Notes/24/metsp/metsp.html 이라면 상위로 3번 나가야 함)
+        const pathSegments = window.location.pathname.split('/').filter(segment => 
+            segment && !segment.endsWith('.html') && segment !== 'index.html'
+        );
+        
+        // 로컬 환경과 깃허브 페이지 환경을 모두 고려한 상대 경로 접두사 생성
+        // (깃허브 페이지에서 첫 번째 세그먼트가 저장소 이름인 경우 예외 처리)
+        let depth = window.location.pathname.split('/').length - 2;
+        if (window.location.hostname.includes('github.io')) {
+            depth -= 1; // 깃허브 페이지의 저장소 이름 폴더 만큼 보정
+        }
+        if (depth < 0) depth = 0;
+
+        let prefix = '';
+        for (let i = 0; i < depth; i++) {
+            prefix += '../';
+        }
+
+        // 2. nav.html 가져오기 (계산된 prefix 적용)
+        const navFetchPath = prefix + 'nav.html';
+
+        fetch(navFetchPath)
+            .then(response => {
+                if (!response.ok) throw new Error('nav.html을 찾을 수 없습니다.');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+
+                // 3. nav 내부의 <a> 태그 링크 경로 자동 변환
+                const links = document.querySelectorAll('#nav-placeholder [data-link]');
+                links.forEach(link => {
+                    const target = link.getAttribute('data-link');
+                    link.href = prefix + target;
+                });
+
+                // 4. nav 내부의 <img> 태그 이미지 경로 자동 변환
+                const images = document.querySelectorAll('#nav-placeholder [data-src]');
+                images.forEach(img => {
+                    const target = img.getAttribute('data-src');
+                    img.src = prefix + target;
+                });
+            })
+            .catch(err => console.error('Nav load error:', err));
     </script>
 
 </body>
