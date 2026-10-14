@@ -181,13 +181,17 @@
         <img src="anlys_2-16.png" alt="Analysis 2 (p. 16/17)" class="pdf-page">
         <img src="anlys_2-17.png" alt="Analysis 2 (p. 17/17)" class="pdf-page">
     </div>
-
+    
     <script>
-        fetch('../../../nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
+    fetch('/nav.html')
+        .then(response => {
+            if (!response.ok) throw new Error('네비게이션 파일을 찾을 수 없습니다.');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
     </script>
 
 </body>
