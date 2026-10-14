@@ -105,11 +105,30 @@
     <p>ここはメインページです。色々使いたい用途が確定してそれぞれのページが作られたらここもある程度凝らしていくつもりですよ。</p>
 
     <script>
-        fetch('nav.html') // nav.html 파일의 상대 경로에 맞게 수정
+        const pathArray = window.location.pathname.split('/');
+        const repoName = window.location.hostname.includes('github.io') ? '/' + pathArray[1] + '/' : '/';
+        const navFetchPath = repoName === '/' ? '/nav.html' : repoName + 'nav.html';
+
+        fetch(navFetchPath)
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
-            });
+
+                // 1. <a> 태그의 data-link 경로 변환
+                const links = document.querySelectorAll('#nav-placeholder [data-link]');
+                links.forEach(link => {
+                    const target = link.getAttribute('data-link');
+                    link.href = repoName + target;
+                });
+
+                // 2. <img> 태그의 data-src 경로를 실제 src로 변환
+                const images = document.querySelectorAll('#nav-placeholder [data-src]');
+                images.forEach(img => {
+                    const target = img.getAttribute('data-src');
+                    img.src = repoName + target;
+                });
+            })
+            .catch(err => console.error('Nav load error:', err));
     </script>
 </body>
 </html>
