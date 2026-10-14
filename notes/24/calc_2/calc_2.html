@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Metric Spaces | Equiv's Garage</title>
+    <title>Calculus with Recitation 2 | Equiv's Garage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
@@ -144,7 +144,22 @@
     <h1>≡の大学授業ノートアーカイブ</h1>
     <p class="text-center">≡が実際に授業を受けながら書いたまとめノートのアーカイブページです。</p>
   
-    <div id="nav-placeholder"></div>
+    <nav>
+        <a href="/index.html">Home</a>
+        <span class="divider"> | </span>
+        <a href="/sub1.html">Studies</a>
+        <span class="divider"> | </span>
+        <a href="/sub2.html">Sakumon</a>
+        <span class="divider"> | </span>
+        <a href="/sub3.html">Class Notes 🔐</a>
+        <span class="divider"> | </span>
+        <a href="https://x.com/Equiv__" target="_blank" class="sns-link">
+            <img src="/Files/Images/Favicons/favicon_x.png" alt="X (旧 Twitter)" class="sns-icon">
+        </a>
+        <a href="https://mathlog.info/users/Irpyu20e3hMAgrXR8FOOajbKAvu1" target="_blank" class="sns-link">
+            <img src="/Files/Images/Favicons/favicon_mathlog.png" alt="Mathlog" class="sns-icon">
+        </a>
+    </nav>
 
     <!-- 목록으로 돌아가기 버튼 -->
     <div class="top-nav">
@@ -176,13 +191,5 @@
         <img src="calc_2-12.png" alt="Calculus 2 (p. 12/13)" class="pdf-page">
         <img src="calc_2-13.png" alt="Calculus 2 (p. 13/13)" class="pdf-page">
     </div>
-
-    <script>
-        fetch('../../../nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-    </script>
 </body>
 </html>
