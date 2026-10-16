@@ -139,6 +139,78 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
+
+        /* PDF 페이지 박스 스타일 */
+        .pdf-page-box {
+                margin: 0 auto 40px auto;
+                text-align: center;
+                max-width: 800px;
+        }
+
+        /* 캡션(각주) 전체 스타일 */
+        .pdf-caption {
+                margin-bottom: 8px; /* 캡션과 이미지 사이의 간격 */
+                text-align: right;   /* 우측 정렬 */
+                padding: 0 10px;
+        }
+
+        /* 첫 번째 줄 헤더 */
+        .caption-header {
+                padding: 4px 8px;
+                border-radius: 4px;
+                display: inline-block;
+                margin-bottom: 4px;
+        }
+
+        /* 섹션명 */
+        .section-title {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #82bab3;
+        }
+
+        /* 페이지 번호 */
+        .page-num {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #5d7572; 
+                margin-left: 6px;
+        }
+
+
+        /* 섹션명 */
+        .section-divider {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-left: 8pt;
+                margin-right: 8pt;
+                color: #BBBBBB;
+        }
+
+        /* 두 번째 줄: [설명] */
+        .caption-desc {
+                font-size: 0.9rem;
+                color: #555555;
+                line-height: 1.4;
+                padding-left: 4px;
+        }
+
+        /* 이미지 스타일 */
+        .pdf-page {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .pdf-divider {
+                border: none;
+                border-top: 1px solid #BBBBBB;
+                margin: 50px auto;
+                max-width: 800px;
+        }
     </style>
 </head>
 <body>
@@ -182,23 +254,79 @@
         区分求積法よりもう一段階進化したダルブー積分のややこしい定義をご覧あれ。</p>
     
     <div class="pdf-container">
-        <img src="anlys_2-01.png" alt="Analysis 2 (p. 1/17)" class="pdf-page">
-        <img src="anlys_2-02.png" alt="Analysis 2 (p. 2/17)" class="pdf-page">
-        <img src="anlys_2-03.png" alt="Analysis 2 (p. 3/17)" class="pdf-page">
-        <img src="anlys_2-04.png" alt="Analysis 2 (p. 4/17)" class="pdf-page">
-        <img src="anlys_2-05.png" alt="Analysis 2 (p. 5/17)" class="pdf-page">
-        <img src="anlys_2-06.png" alt="Analysis 2 (p. 6/17)" class="pdf-page">
-        <img src="anlys_2-07.png" alt="Analysis 2 (p. 7/17)" class="pdf-page">
-        <img src="anlys_2-08.png" alt="Analysis 2 (p. 8/17)" class="pdf-page">
-        <img src="anlys_2-09.png" alt="Analysis 2 (p. 9/17)" class="pdf-page">
-        <img src="anlys_2-10.png" alt="Analysis 2 (p. 10/17)" class="pdf-page">
-        <img src="anlys_2-11.png" alt="Analysis 2 (p. 11/17)" class="pdf-page">
-        <img src="anlys_2-12.png" alt="Analysis 2 (p. 12/17)" class="pdf-page">
-        <img src="anlys_2-13.png" alt="Analysis 2 (p. 13/17)" class="pdf-page">
-        <img src="anlys_2-14.png" alt="Analysis 2 (p. 14/17)" class="pdf-page">
-        <img src="anlys_2-15.png" alt="Analysis 2 (p. 15/17)" class="pdf-page">
-        <img src="anlys_2-16.png" alt="Analysis 2 (p. 16/17)" class="pdf-page">
-        <img src="anlys_2-17.png" alt="Analysis 2 (p. 17/17)" class="pdf-page">
+        <figure class="pdf-page-box">
+            <figcaption class="pdf-caption">
+                <div class="caption-header">
+                    <span class="section-title">§0. 解析学Ⅰの振り返り</span>
+                    <span class="page-num">(p. 1/17)</span>
+                </div>
+                <div class="caption-desc">自分なりに解析Ⅰで大事そうなものを取り上げてみました。<br>これさえできない場合はね。この先やってけないよ。</div>
+            </figcaption>
+            <img src="anlys_2-01.png" alt="Analysis 2 (p. 1/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+                <div class="caption-header">
+                    <span class="section-title">§23. べき級数</span>
+                    <span class="page-num">(p. 2/17)</span>
+                    <span class="section-divider">|</span>
+                    <span class="section-title">§24. 一様収束</span>
+                    <span class="page-num">(pp. 2-3/17)</span>
+                </div>
+                <div class="caption-desc">べき級数は微積でやったやつそのもの。一様収束はのε－Nの一歩先を行くなにか。ムズい。</div>
+            </figcaption>
+            <img src="anlys_2-02.png" alt="Analysis 2 (p. 2/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+                <div class="caption-header">
+                    <span class="section-title">§25. 一様収束Ⅱ</span>
+                    <span class="page-num">(pp. 3-4/17)</span>
+                </div>
+                <div class="caption-desc">一様コーシーとかも出てきて、あーもうめちゃくちゃだよこれ</div>
+            </figcaption>
+            <img src="anlys_2-03.png" alt="Analysis 2 (p. 3/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-04.png" alt="Analysis 2 (p. 4/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-05.png" alt="Analysis 2 (p. 5/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-06.png" alt="Analysis 2 (p. 6/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-07.png" alt="Analysis 2 (p. 7/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-08.png" alt="Analysis 2 (p. 8/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-09.png" alt="Analysis 2 (p. 9/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-10.png" alt="Analysis 2 (p. 10/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-11.png" alt="Analysis 2 (p. 11/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-12.png" alt="Analysis 2 (p. 12/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-13.png" alt="Analysis 2 (p. 13/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-14.png" alt="Analysis 2 (p. 14/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-15.png" alt="Analysis 2 (p. 15/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-16.png" alt="Analysis 2 (p. 16/17)" class="pdf-page">
+        </figure>
+        <figure class="pdf-page-box">
+            <img src="anlys_2-17.png" alt="Analysis 2 (p. 17/17)" class="pdf-page">
+        </figure>
     </div>
 
 </body>
